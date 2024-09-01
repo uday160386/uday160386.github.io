@@ -36,7 +36,7 @@ Drawing inspiration from the quote **_Every accomplishment starts with the decis
 
 
 
-🧑📸🌄📰 **_Digital photography_**, 
+🧑📸🌄📰 **_Digital photographer_**, 
 
 <!-- <img src="/images/aboutme/travel_profile.jpeg" alt="drawing" style="width:300px;height:300px;align=center" align="center"/> -->
 
