@@ -12,7 +12,7 @@ title                    : "Uday's Tales"
 title_separator          : "-"
 name                     : &name "(Uday)"
 description              : &description "I use this platform to share and publish technical stories related to Green Software, Cloud Native, DeepLearning, GenAI and MLOps"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://uday160386.github.io/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
 
