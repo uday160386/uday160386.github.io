@@ -5,12 +5,9 @@ permalink: /greensoftware/
 author_profile: true
 ---
 
-{% if site.talkmap_link == true %}
-
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
-
-{% endif %}
-
+<p align="center">
+  <img src="../images/green_software/GSF_logo_Page_01.png" style="width:150px;height:100px; border-radius: 15px;box-shadow: 0px 0px 5px 5px #000000;">
+</p>
 {% for post in site.greensoftware reversed %}
   {% include archive-single-talk.html %}
 {% endfor %}
