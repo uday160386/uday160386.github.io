@@ -1,13 +1,19 @@
 ---
 layout: archive
 title: ""
-permalink: /toolsresources/
+permalink: /onsparetime/
 author_profile: true
 redirect_from:
   - /resume
 ---
 
+
 {% include base_path %}
+
+## Presentations
+
+  - [Automated Speech Recognization in English] 22/10/2024  
+
 
 
 ## Projects
@@ -17,3 +23,6 @@ redirect_from:
 {% for post in site.aiprojects %}
   {% include archive-single.html %}
 {% endfor %}
+
+
+[Automated Speech Recognization in English]: ../Documents/ASR-Presentation.pdf
