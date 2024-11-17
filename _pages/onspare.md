@@ -12,7 +12,7 @@ redirect_from:
 
 
 ## Presentations
-
+----
   - [Automated Speech Recognization in English] 22/10/2024  
 
 
@@ -31,7 +31,7 @@ redirect_from:
 
 
 ## Certifications/Courses
-  
+----
   - [IIIT-H] : One Year PostGraduate in AI/ML
   - [AWS] : AWS Cloud Practitioner
   - [Microsoft] : Microsoft Certified: Azure Fundamentals
