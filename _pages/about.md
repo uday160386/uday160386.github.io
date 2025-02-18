@@ -24,7 +24,7 @@ Hey, my name is UdayKumar (Uday). I`m
 
 **_Gearheaded programmer_**, 
 
-I have a strong passion for learning new things and enhancing my existing skills, especially in the areas of <b style='color:#106581'>**_Green Software, Cloud-Native, Deep Learning, and Gen AI_** .
+I have a strong passion for learning new things and enhancing my existing skills, especially in the areas of <b style='color:#106581'>**Solutioning, Architecture, Green Software, Automation, Cloud-Native, AI/ML, Gen AI, Open Source & Programming.
 
 Drawing inspiration from the quote **_Every accomplishment starts with the decision to try!_**
 

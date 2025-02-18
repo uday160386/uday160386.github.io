@@ -32,7 +32,7 @@ redirect_from:
 
 ## Certifications/Courses
 ----
-  - [IIIT-H] : One Year PostGraduate in AI/ML
+  - [IIIT-H] : PG Certification Program in Artificial Intelligence and Machine Learning
   - [AWS] : AWS Cloud Practitioner
   - [Microsoft] : Microsoft Certified: Azure Fundamentals
   - [AWS] : AWS Certified Security – Specialty

@@ -21,7 +21,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpeg"
   name             : ""
   pronouns         :  
   bio              : "  <i>💬  Learning gives creativity, Creativity leads to thinking, Thinking leads to knowledge, Knowledge makes you great <br><br> 💬 Learning is a continuous process; no one can stop you until you stop learning. <br><br>― Dr. APJ Abdul Kalam</i>"
@@ -38,9 +38,9 @@ author:
   
 
   # Social media
-  # flickr           : "vukhere"
-  # instagram        : "vukclicks"
+  instagram        : "vukclicks"
   linkedin         : "bkvudaykumar"
+  
   
 
 # Site Settings
