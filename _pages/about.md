@@ -8,6 +8,12 @@ redirect_from:
 ---
 
 <!-- ![screenshot](/images/aboutme/profile.jpeg) -->
+  <a href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github icon-pad-right" aria-hidden="true"></i></a>
+  <a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i></a>
+  <a href="https://instagram.com/{{ author.instagram }}"><i class="fab fa-fw fa-instagram icon-pad-right" aria-hidden="true"></i></a>
+
+
+I use this platform to share and publish technical stories related to Green Software, Azure AI, GenAI, DeepLearning, and MLOps.
 
 Hey, my name is UdayKumar (Uday). I`m
 
@@ -15,8 +21,6 @@ Hey, my name is UdayKumar (Uday). I`m
 - adept at creatively, 
 - continious learner, 
 - dreamer and acheiver
-
-
 
 
 **_Who am I_** ?
@@ -37,7 +41,7 @@ Drawing inspiration from the quote **_Every accomplishment starts with the decis
 is more than a hobby for me; it is a way of expressing my artistic vision and creativity.
  My work on my website [VUKCLICKS][VUKCLICKS], where I invite others to join me on my photographic journey and discover the stories behind each image.
 <p align="center">
-  <img src="/images/aboutme/DSC03937.jpg" style="width:300px;height:300px; border-radius: 15px;box-shadow: 0px 0px 5px 5px #000000;">
+  <!-- <img src="/images/aboutme/DSC03937.jpg" style="width:300px;height:300px; border-radius: 15px;box-shadow: 0px 0px 5px 5px #000000;"> -->
 </p>
 **_Avid traveller_**️,
 I have been fortunate enough to travel to amazing places all over the world. From the majestic mountains of Japan to the vibrant streets of India, I have witnessed the beauty and diversity of our planet. If you are curious about my journeys, you can check out website [VUK-Travels][VUK-Travels].
@@ -60,9 +64,10 @@ I will do my best to keep the content informative, interesting and worth reading
 
 > ℹ️   The note content:
  I'm solely responsible for the content posted on this blog and the views expressed are my own. Feel free to contact me via email if you have any questions or concerns.
-
+ 
 [Github]: https://github.com/uday160386/
 [LinkedIn]: https://www.linkedin.com/in/bkvudaykumar/
 [Instagram]: https://www.instagram.com/vukclicks/
 [VUKCLICKS]: http://www.vukclicks.com
 [VUK-Travels]: https://www.vukclicks.com/public/pages/portfolio/travel/travel.html
+

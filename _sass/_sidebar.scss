@@ -11,7 +11,6 @@
           transform: translate3d(0, 0 , 0);
   background-color: #080808;
   border-radius: 30px;
-  text-align: left;
 
   @include clearfix();
   margin-bottom: 1em;
@@ -20,8 +19,8 @@
     height: auto;
     overflow-y: auto;               // Add scrollbar if the sidebar is too long
     position: fixed;
-    width: auto;
-    padding-top: $masthead-height;
+    width: 100%;
+    padding-top:auto;
   }
 
   @include breakpoint($large) {
@@ -55,14 +54,12 @@
     line-height: 1.5;
   }
 
-  img {
-    width: 100%;
-  }
+  
 }
 
 .sidebar__right {
   margin-bottom: 1em;
-  background-color: #2f2e2e;
+  background-color: #0e0d0d;
   @include breakpoint($large) {
     position: relative;
     float: right;
@@ -109,15 +106,13 @@
 .author__content {
   background-color: #090808;
   color:white;
-  display: table-cell;
-  vertical-align: top;
-  padding-left: 15px;
-  padding-right: 25px;
-  line-height: 1;
+  text-align: center;
+  top:1%;
+  
   
 
   @include breakpoint($large) {
-    display: block;
+    
     width: 100%;
     padding-left: 0;
     padding-right: 0;
@@ -128,7 +123,7 @@
   margin: 0;
 
   @include breakpoint($large) {
-    margin-top: 10px;
+    margin-top: 1px;
     margin-bottom: 10px;
   }
 }
@@ -148,7 +143,7 @@
   margin: 0;
 
   @include breakpoint($large) {
-    margin-top: 10px;
+    margin-top: 1px;
     margin-bottom: 10px;
   }
 }
@@ -163,17 +158,17 @@
 }
 
 .author__urls-wrapper {
-  background-color: #333334;
+  background-color: #fff;
   position: relative;
   display: table-cell;
   vertical-align: middle;
   font-family: $sans-serif;
   text-align: center;
-  font-size: 22px;
+  font-size: 20px;
   z-index: 10;
   position: relative;
   cursor: pointer;
-  color: #f4efef;
+  color: #040303;
   li:last-child {
     a {
       margin-bottom: 0;

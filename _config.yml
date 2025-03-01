@@ -21,13 +21,13 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.jpeg"
+  avatar           : ""
   name             : ""
   pronouns         :  
-  bio              : "  <i>💬  Learning gives creativity, Creativity leads to thinking, Thinking leads to knowledge, Knowledge makes you great <br><br> 💬 Learning is a continuous process; no one can stop you until you stop learning. <br><br>― Dr. APJ Abdul Kalam</i>"
+  bio              : "<i>💬  Learning gives creativity, Creativity leads to thinking, Thinking leads to knowledge, Knowledge makes you great ― Dr. APJ Abdul Kalam</i>"
   location         : "Singapore"
     # employer         : "Bits Pilani"
-  uri              : # URL
+  uri              : 
   # email            : "venkata.uday24@gmail.com" 
 
   # Academic websites
@@ -45,7 +45,7 @@ author:
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
-breadcrumbs              : false # true, false (default)
+breadcrumbs              : true # true, false (default)
 words_per_minute         : 160
 future                   : true
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
@@ -248,7 +248,6 @@ defaults:
       layout: talk
       author_profile: true
       share: true
-
 
 # Sass/SCSS
 sass:
