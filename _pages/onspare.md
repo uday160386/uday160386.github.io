@@ -40,15 +40,17 @@ redirect_from:
   </ul>
 </div>
 </details>
-
+-->
 <details>
   <summary>Robo Toys </summary>
-   <div style = "background: #bdc1c4; width:auto">
-  <ul>
-  <li><a href =""></a> </li>
-  </ul>
+    <div style = "background: #bdc1c4; width:auto">
+{% include base_path %}
+
+{% for post in site.robotoys %}
+  {% include archive-single.html %}
+{% endfor %}
 </div>
-</details> -->
+</details> 
 
 <hr>
 
