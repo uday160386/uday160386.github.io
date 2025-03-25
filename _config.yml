@@ -181,9 +181,6 @@ collections:
   aiengineering:
     output: true
     permalink: /:collection/:path/  
-  talks:
-    output: true
-    permalink: /:collection/:path/
   robotoys:
     output: true
     permalink: /:collection/:path/
@@ -254,14 +251,7 @@ defaults:
       comments: true
       share: true
       related: true    
-  # _talks
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: true
+
 
 # Sass/SCSS
 sass:
