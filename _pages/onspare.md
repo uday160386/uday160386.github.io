@@ -32,7 +32,7 @@ redirect_from:
 </div>
 </details>
 
-<details>
+<!-- <details>
   <summary>Posters </summary>
    <div style = "background: #bdc1c4; width:auto">
   <ul>
@@ -48,7 +48,7 @@ redirect_from:
   <li><a href =""></a> </li>
   </ul>
 </div>
-</details>
+</details> -->
 
 <hr>
 

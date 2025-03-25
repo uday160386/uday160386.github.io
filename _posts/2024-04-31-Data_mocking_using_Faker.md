@@ -1,8 +1,8 @@
 ---
 title: 'Data mocking using Faker'
 date: 2024-05-31
-permalink: /Posts/2024/01/blog-post-2/
-collection: Posts
+permalink: /posts/2024/05/blog-post-2/
+collection: posts
 tags:
   - Data engineering
 ---
