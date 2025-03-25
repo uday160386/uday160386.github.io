@@ -2,7 +2,7 @@
 main:
 
   - title: "Posts"
-    url: /Posts/
+    url: /posts/
   - title: "Spare Time"
     url: /sparetime/  
 
