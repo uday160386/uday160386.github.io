@@ -14,7 +14,7 @@ redirect_from:
   <a href="https://www.instagram.com/vukclicks/"><i class="fab fa-fw fa-instagram icon-pad-right" aria-hidden="true" style="font-size:25px"></i></a> -->
 
 
-With 17 years of extensive global experience in the information technology sector, I have positioned myself as an Engineering Tech Lead, commencing my career at the age of 20. 
+With extensive global experience in the information technology sector, I have positioned myself as an Engineering Tech Lead, commencing my career at the age of 20. 
 
 My professional expertise encompasses Backend engineering, mobile applications, digital banking, financial technology, payment systems, energy utilities, and product lifecycle management. 
 
