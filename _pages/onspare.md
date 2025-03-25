@@ -10,12 +10,12 @@ redirect_from:
 
 {% include base_path %}
 
-<details>
+<details open>
   <summary>Presentations </summary>
   <ul>
   <li><a href ="../Documents/ASR-Presentation.pdf">Automated Speech Recognization in English 22/10/2024</a> </li>
   </ul>
-
+ 
 </details>
 
 <details>
@@ -30,6 +30,14 @@ redirect_from:
 
 <details>
   <summary>Posters </summary>
+  <ul>
+  <li><a href =""></a> </li>
+  </ul>
+
+</details>
+
+<details>
+  <summary>Robo Toys </summary>
   <ul>
   <li><a href =""></a> </li>
   </ul>
@@ -84,7 +92,12 @@ redirect_from:
   <!-- <img src="/images/aboutme/DSC03937.jpg" style="width:300px;height:300px; border-radius: 15px;box-shadow: 0px 0px 5px 5px #000000;"> -->
 <p align="center">
 🇰🇭 🇮🇳 🇨🇦 🇭🇰 🇮🇩 🇯🇵 🇲🇾 🏴 🇰🇷 🇸🇬 🇹🇭 🇬🇧<br><br>
-  <img src="/images/aboutme/travel.jpeg" style="width:200px;height:200px; border-radius: 15px;box-shadow: 0px 0px 5px 5px #000000;">
+
+  <video width="360" height="340" autoplay controls style=" border-radius: 15px;box-shadow: 0px 0px 5px 5px #000000;">
+  <source src="/images/aboutme/background.mp4" type="video/mp4">
+
+</video>
+
 </p>
 
 I have been fortunate enough to travel to amazing places all over the world. From the majestic mountains of Japan to the vibrant streets of India, I have witnessed the beauty and diversity of our planet.
