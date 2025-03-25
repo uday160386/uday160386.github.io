@@ -10,44 +10,51 @@ redirect_from:
 
 {% include base_path %}
 
+
 <details open>
   <summary>Presentations </summary>
+   <div style = "background: #bdc1c4; width:auto">
   <ul>
   <li><a href ="../Documents/ASR-Presentation.pdf">Automated Speech Recognization in English 22/10/2024</a> </li>
   </ul>
+  </div>
  
 </details>
 
 <details>
   <summary>Projects </summary>
-
+ <div style = "background: #bdc1c4; width:auto">
 {% include base_path %}
 
 {% for post in site.aiprojects %}
   {% include archive-single.html %}
 {% endfor %}
+</div>
 </details>
 
 <details>
   <summary>Posters </summary>
+   <div style = "background: #bdc1c4; width:auto">
   <ul>
   <li><a href =""></a> </li>
   </ul>
-
+</div>
 </details>
 
 <details>
   <summary>Robo Toys </summary>
+   <div style = "background: #bdc1c4; width:auto">
   <ul>
   <li><a href =""></a> </li>
   </ul>
-
+</div>
 </details>
 
 <hr>
 
 <details>
   <summary>Certifications </summary>
+   <div style = "background: #bdc1c4; width:auto">
   <ul>
   <li>[AWS] : AWS Cloud Practitioner </li>
   <li>[Microsoft] : Microsoft Certified: Azure Fundamentals </li>
@@ -57,10 +64,11 @@ redirect_from:
   <li> [Linux] : Green Software for Practitioners</li>
   <li> [DevOps Institute] : Site Reliability Engineering (SRE) Foundation℠ Certification</li>
   </ul>
-
+</div>
 </details>
 <details>
   <summary>Courses </summary>
+   <div style = "background: #bdc1c4; width:auto">
   <ul>
   <li> [Udemy] : REST API Management, Monitoring & Analytics using Kong 3</li>
   <li> [Udemy] : Microservices Software Architecture: Patterns and Techniques</li>
@@ -70,20 +78,31 @@ redirect_from:
   <li> [Linkedin Learning] : Mentoring Others</li>
   <li> [Linkedin Learning] : Leadership Foundations (2013)</li>
   </ul>
-
+</div>
 </details>
  
 <details>
   <summary>Education</summary>
+   <div style = "background: #bdc1c4; width:auto">
   <ul>
   <li>[IIIT-H] : PG Certification Program in Artificial Intelligence and Machine Learning</li>
   <li>[Bits Pilani] : Masters in Software Engineering</li>
   </ul>
+  </div>
 </details>
 <hr>
 <details>
+  <summary>Books</summary>
+   <div style = "background: #bdc1c4; width:auto">
+  <ul>
+  <li><a href ="https://www.amazon.in/7-Roots-Alex-Heli/dp/B01MXKK3E9">Roots</a></li>
+  <li><a href ="https://www.amazon.sg/Simply-Fly-Odyssey-Captain-Gopinath/dp/8172238428">Simply Fly: A Deccan Odyssey</a> </li>
+  </ul>
+  </div>
+</details>
+<details>
   <summary>Digital Photographer </summary>
-  
+   <div style = "background: #bdc1c4; width:auto">
   <!-- <img src="/images/aboutme/travel_profile.jpeg" alt="drawing" style="width:300px;height:300px;align=center" align="center"/> -->
   <p align="right"> 
          is more than a hobby for me; it is a way of expressing my artistic vision and creativity.
@@ -101,7 +120,8 @@ redirect_from:
 </p>
 
 I have been fortunate enough to travel to amazing places all over the world. From the majestic mountains of Japan to the vibrant streets of India, I have witnessed the beauty and diversity of our planet.
-</p>                          
+</p>     
+</div>                     
 </details>
 
 [Github]: https://github.com/uday160386/
