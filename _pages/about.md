@@ -14,12 +14,11 @@ redirect_from:
   <a href="https://www.instagram.com/vukclicks/"><i class="fab fa-fw fa-instagram icon-pad-right" aria-hidden="true" style="font-size:25px"></i></a> -->
 
 
-With extensive global experience in the information technology sector, I have positioned myself as an Engineering Tech Lead, commencing my career at the age of 20. 
+With 17 years of rich experience in the IT sector, I currently serve as an Engineering Tech Lead, having embarked on my career at the age of 20. My professional journey has been marked by significant contributions in areas such as Open API Banking, Neo Banking, Mobile Banking, AI/ML, Generative AI Apps, Payments, Loans, Energy and Utilities, product lifecycle management, and FinTech. 
 
-My professional expertise encompasses Backend engineering, mobile applications, digital banking, financial technology, payment systems, energy utilities, and product lifecycle management. 
+I have played pivotal roles in large-scale initiatives, driving digital transformations, executing technology migrations, delivering software solutions, and developing cloud-native products tailored for both B2B and B2C environments. My expertise lies in Solutioning and delivery of scalable, reliable and secured back-end services leveraging modern tech stacks and Agile frameworks, while rigorously applying best practices such as, SOLID principles, design patterns, and the twelve-factor app methodology.
 
-Throughout my career, I have successfully contributed to enterprise-level initiatives, including digital transformations, foundational projects, technology migrations, software delivery, 
-the adoption of modern technologies, and the development of cloud-enabled products for both business-to-business and business-to-consumer applications. 
+Moreover, I have refined my leadership capabilities through the implementation of SAFe (Scaled Agile Framework) practices, fostering collaboration with customers, internal teams, external stakeholders, and sales divisions to expedite product launches effectively.
 
 
 I utilize this platform to share and publish technical stories focused on Green Software, AI in the Cloud, AI Apps epecially Speech Recognition, and Natural Language Processing (NLP). 
