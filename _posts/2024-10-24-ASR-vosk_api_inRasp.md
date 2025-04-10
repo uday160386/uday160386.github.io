@@ -1,7 +1,7 @@
 ---
 title: 'Unlock the power of offline speech recognition with the VOSK API!'
 date: 2024-05-31
-permalink: /posts/2024/05/blog-post-2/
+permalink: posts/2024/05/blog-post-2/
 collection: posts
 tags:
   - ASR

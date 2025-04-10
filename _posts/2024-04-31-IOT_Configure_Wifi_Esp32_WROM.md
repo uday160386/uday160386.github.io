@@ -1,7 +1,7 @@
 ---
 title: 'Configuring Wifi in ESP32 WORM using code'
 date: 2024-06-15
-permalink: /posts/2024/06/blog-post-3/
+permalink: posts/2024/06/blog-post-3/
 collection: posts
 tags:
   - IOT

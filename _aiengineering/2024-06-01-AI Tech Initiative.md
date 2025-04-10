@@ -19,4 +19,4 @@ date: 2024-09-25
 [Hosting ASR Kaldi Model to Azure using Container Apps]: https://www.instagram.com/vukclicks/
 [Converting a Kaldi Model to re-usable python package  ]: http://www.vukclicks.com
 [Create a ONNX spec from Kaldi model]: https://www.vukclicks.com/public/pages/portfolio/travel/travel.html
-[Unlock the power of offline speech recognition with the VOSK API!]: https://uday160386.github.io//posts/2024/05/blog-post-2/
+[Unlock the power of offline speech recognition with the VOSK API]: https://uday160386.github.io//posts/2024/05/blog-post-2/
