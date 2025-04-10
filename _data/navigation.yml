@@ -2,13 +2,13 @@
 main:
 
   - title: "Posts"
-    url: /posts/
+    url: posts/
   - title: "Spare Time"
-    url: /sparetime/  
+    url: sparetime/  
 
   - title: "Green Software"
-    url: /greensoftware/
+    url: greensoftware/
 
   - title: "AI Engineering"
-    url: /aiengineering/              
+    url: aiengineering/              
 
