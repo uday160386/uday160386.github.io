@@ -27,7 +27,7 @@ author:
   bio              : "<i>Swot up on #AI #Speech #NLP #Transformers #Green IT #Gen-AI #LLM #Open -Source #Python #AIOps #AI-Cloud  #NativeAI #Agentic AI #RAG #Graph Rag #Pytorch #PromptEngineering</i>"
   location         : "Singapore"
     # employer         : "Bits Pilani"
-  uri              : 
+  uri              : https://www.vukclicks.com
   # email            : "venkata.uday24@gmail.com" 
 
   # Academic websites
@@ -184,6 +184,7 @@ collections:
   robotoys:
     output: true
     permalink: /:collection/:path/
+    
 
 
 # Defaults
