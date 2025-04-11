@@ -11,7 +11,7 @@ tags:
 ## TL;DR 
 Vosk API Overview: A powerful, offline speech recognition framework for converting spoken language into text without needing an internet connection.
   
-I’m excited to share more about my journey with Automated Speech Recognition! Today, I’m diving into the Vosk API, an exceptional plug-and-play library that truly captivates me. As I mentioned in my previous posts, I successfully developed a speech model from scratch using the [Kaldi](https://kaldi-asr.org/) ASR toolkit, and I’m thrilled to see how Vosk effectively incorporates some of Kaldi’s best practices!
+I’m excited to share more about my journey with Automated Speech Recognition! Today, I’m diving into the Vosk API, an exceptional plug-and-play library that truly captivates me. As I mentioned in my previous posts, I successfully developed a speech model from scratch using the [Kaldi](https://kaldi-asr.org/) ASR toolkit, and I’m thrilled to see how Vosk effectively uses some of Kaldi’s practices!
 
 ## What is Vosk API?
 Vosk is an innovative framework for offline speech recognition that empowers users to seamlessly convert spoken language into text without needing an internet connection. It's a game-changer for those who want reliable and efficient voice processing on the go!
@@ -22,7 +22,7 @@ Facilitates Speaker Recognition
 Vosk supports 20+ languages and dialects - English, Indian English, German, French, Spanish, Portuguese, Chinese, Russian, Turkish, Vietnamese, Italian, Dutch, Catalan, Arabic, Greek, Farsi, Filipino, Ukrainian, Kazakh, Swedish, Japanese, Esperanto, Hindi, Czech, Polish, Uzbek, Korean, Breton, Gujarati, Tajik, Telugu. More to come.
 
 ## When and Why You Should Use Vosk?
-With my extensive experience, I confidently understand the complexities involved in training models, particularly in the area of speech recognition. The primary challenge in this process is obtaining high-quality data. However, the Vosk API provides a powerful solution, as its model has been trained on a considerable volume of speech data, ensuring outstanding accuracy. By utilizing this resource, we can significantly improve the performance of our speech models.
+With my extensive experience, I confidently understand the complexities involved in training models, particularly in the area of speech recognition. The primary challenge in this process is obtaining high-quality data. However, the Vosk API provides a powerful solution, as its model has been trained on a considerable volume of speech data, ensuring outstanding accuracy. 
 
 The Vosk API is an excellent choice for any application requiring seamless integration with speech recognition. This includes chatbots, smart home devices, and virtual assistants. Additionally, it can efficiently generate subtitles for movies and provide accurate transcriptions for lectures and interviews.
 
