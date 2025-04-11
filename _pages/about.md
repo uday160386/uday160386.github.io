@@ -13,7 +13,7 @@ redirect_from:
   <a href="https://www.linkedin.com/in/bkvudaykumar/"><i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true" style="font-size:25px"></i></a>
   <a href="https://www.instagram.com/vukclicks/"><i class="fab fa-fw fa-instagram icon-pad-right" aria-hidden="true" style="font-size:25px"></i></a> -->
 
-
+<br />
 With 17 years of rich experience in the IT sector, I currently serve as an Engineering Tech Lead, having embarked on my career at the age of 20. My professional journey has been marked by significant contributions in areas such as Open API Banking and Partnerships, Neo Banking, Mobile Banking, AI/ML, Generative AI Apps, Embedded finance,  Payments, Loans, Energy and Utilities, Product lifecycle management, and FinTech. 
 
 I have played pivotal roles in large-scale initiatives, working for digital transformations, executing technology migrations, delivering software solutions, and developing cloud-native products tailored for both B2B and B2C environments. My expertise lies in Solutioning and delivery of scalable, reliable and secured back-end services leveraging modern tech stacks and Agile frameworks, while rigorously applying best practices such as, SOLID principles, design patterns, DevSecOps, AI OPS, 4C’s, and the twelve-factor app methodology.
