@@ -87,4 +87,5 @@ References are available at:
 
 
 ## What's Next?
-  Working a Whisper API. Will share more info soon.
+  I am currently exploring the capabilities of the Whisper API for voice-to-text conversion, which appears to demonstrate a high level of accuracy. I will provide additional information in due course.
+
