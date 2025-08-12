@@ -72,6 +72,8 @@ redirect_from:
   <summary>Courses </summary>
    <div style = "background: #bdc1c4; width:auto">
   <ul>
+  <li>[Linkedin Learning] : ai-product-development-technical-feasibility-and-prototyping</li>
+  <li>[Linkedin Learning] : integrating-ai-into-the-product-architecture</li>
   <li> [Udemy] : REST API Management, Monitoring & Analytics using Kong 3</li>
   <li> [Udemy] : Microservices Software Architecture: Patterns and Techniques</li>
   <li>[Linkedin Learning] : Design a Cloud Migration Strategy</li>
@@ -79,6 +81,12 @@ redirect_from:
   <li> [Linkedin Learning] : Cloud Security Architecture for the Enterprise (2022)</li>
   <li> [Linkedin Learning] : Mentoring Others</li>
   <li> [Linkedin Learning] : Leadership Foundations (2013)</li>
+  <li> [Linkedin Learning] : Integrating AI into the Product Architecture</li>
+  <li> [Linkedin Learning] : AI Product Development: Technical Feasibility and Prototyping</li>
+
+
+
+
   </ul>
 </div>
 </details>

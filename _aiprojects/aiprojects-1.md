@@ -35,7 +35,3 @@ After cloning this repository, install required packages using the below command
 - PhotosByFacialRecognition: This utility will help identify similar photos from a group of photos. It internally uses facial recognition.
 
         python PhotosByFacialRecognition.py --trainedPath <Give path to the folder with selected photos for training purpose> --sourcePath <Give path to the folder with photos which need to be identified>
-
-
-### Next Steps?
-Work is in progress...
