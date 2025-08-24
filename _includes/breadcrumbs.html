@@ -14,6 +14,7 @@
   {% assign crumb_path = site.categories.path %}
 {% endif %}
 
+<br><br>
 <nav class="breadcrumbs">
   <ol itemscope itemtype="http://schema.org/BreadcrumbList">
     {% assign crumbs = page.url | split: '/' %}
@@ -34,6 +35,7 @@
           <a href="{{ base_path }}{{ crumb | downcase | replace: '%20', '-' | prepend: path_type | prepend: crumb_path }}" itemprop="item"><span itemprop="name">{{ crumb | replace: '-', ' ' | replace: '%20', ' ' | capitalize }}</span></a>
           <meta itemprop="position" content="{{ i }}" />
         </li>
+
         <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
       {% endif %}
     {% endfor %}
