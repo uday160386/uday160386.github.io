@@ -7,6 +7,10 @@ tags:
   - AI Engineering
   - Green AI
   - MCP Implementation
+  - Azure Solutions
+  - Sustainability
+  - Carbon Emission
+  - Green AI Metrics 
 ---
 
 
