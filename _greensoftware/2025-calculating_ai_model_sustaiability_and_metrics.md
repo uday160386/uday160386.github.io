@@ -45,8 +45,6 @@ Over the weekend, I dedicated time to expanding my knowledge on Green AI and fou
 - utilzie cloud based data centers, to reduce enerygy consumption and emission by 20-30% 
 
 
-
-
 References: 
 - https://www.sciencedirect.com/science/article/pii/S0925231224008671#d1e151
 - https://spectrum.ieee.org/ai-energy-consumption
