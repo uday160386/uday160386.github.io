@@ -1,5 +1,5 @@
----
-title: 'Unlock the power of offline speech recognition with the VOSK API!'
+<!-- ---
+title: '[LLMOPS] - DATA PRE Processing Phase'
 date: 2024-05-31
 permalink: posts/2024/05/blog-post-2/
 collection: posts
@@ -89,4 +89,4 @@ References are available at:
 
 ## What's Next?
   I am currently exploring the capabilities of the Whisper API for voice-to-text conversion, which appears to demonstrate a high level of accuracy. I will provide additional information in due course.
-
+ -->
