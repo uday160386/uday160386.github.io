@@ -11,15 +11,13 @@ redirect_from:
 {% include base_path %}
 
 
-<details open>
-  <summary>Presentations </summary>
-   <div style = "background: #bdc1c4; width:auto">
-  <ul>
-  <li><a href ="../Documents/ASR-Presentation.pdf">Automated Speech Recognization in English 22/10/2024</a> </li>
-  </ul>
-  </div>
- 
-</details>
+## 📊 **Presentations**
+*Sharing knowledge and expertise through technical presentations*
+
+- **[Automated Speech Recognition in English](../Documents/ASR-Presentation.pdf)** 📈  
+  *Presented: October 22, 2024*
+
+---
 
 <details>
   <summary>Projects </summary>
@@ -52,88 +50,72 @@ redirect_from:
 </div>
 </details> 
 
-<hr>
 
-<details>
-  <summary>Certifications </summary>
-   <div style = "background: #bdc1c4; width:auto">
-  <ul>
-  <li>[AWS] : AWS Cloud Practitioner </li>
-  <li>[Microsoft] : Microsoft Certified: Azure Fundamentals </li>
-  <li>[AWS] : AWS Certified Security – Specialty </li>
-  <li>[sAFE] : Certified SAFe® 6 Agilist </li>
-  <li> [Scrum Alliance] : Certified ScrumMaster</li>
-  <li> [Linux] : Green Software for Practitioners</li>
-  <li> [DevOps Institute] : Site Reliability Engineering (SRE) Foundation℠ Certification</li>
-  </ul>
-</div>
-</details>
-<details>
-  <summary>Courses </summary>
-   <div style = "background: #bdc1c4; width:auto">
-  <ul>
-  <li>[Linkedin Learning] : ai-product-development-technical-feasibility-and-prototyping</li>
-  <li>[Linkedin Learning] : integrating-ai-into-the-product-architecture</li>
-  <li> [Udemy] : REST API Management, Monitoring & Analytics using Kong 3</li>
-  <li> [Udemy] : Microservices Software Architecture: Patterns and Techniques</li>
-  <li>[Linkedin Learning] : Design a Cloud Migration Strategy</li>
-  <li> [Linkedin Learning] : Microservices: Security</li>
-  <li> [Linkedin Learning] : Cloud Security Architecture for the Enterprise (2022)</li>
-  <li> [Linkedin Learning] : Mentoring Others</li>
-  <li> [Linkedin Learning] : Leadership Foundations (2013)</li>
-  <li> [Linkedin Learning] : Integrating AI into the Product Architecture</li>
-  <li> [Linkedin Learning] : AI Product Development: Technical Feasibility and Prototyping</li>
+---
+
+## 🎖️ **Professional Certifications**
+*Committed to continuous learning and industry best practices*
+
+### Cloud & Security
+- **AWS Cloud Practitioner** ☁️
+- **Microsoft Certified: Azure Fundamentals** 🔵
+- **AWS Certified Security – Specialty** 🔒
+
+### Agile & Leadership
+- **Certified SAFe® 6 Agilist** 📋
+- **Certified ScrumMaster** (Scrum Alliance) 🏃‍♂️
+- **Site Reliability Engineering (SRE) Foundation℠** (DevOps Institute) ⚙️
+
+### Specialized
+- **Green Software for Practitioners** (Linux Foundation) 🌱
+
+---
+## 📚 **Continuous Learning**
+*Recent courses and professional development*
+
+### AI & Product Development
+- **AI Product Development: Technical Feasibility and Prototyping** (LinkedIn Learning) 🤖
+- **Integrating AI into the Product Architecture** (LinkedIn Learning) 🏗️
+
+### Architecture & Security
+- **REST API Management, Monitoring & Analytics using Kong 3** (Udemy) 🔧
+- **Microservices Software Architecture: Patterns and Techniques** (Udemy) 🏢
+- **Microservices: Security** (LinkedIn Learning) 🔐
+- **Cloud Security Architecture for the Enterprise** (LinkedIn Learning) 🛡️
+- **Design a Cloud Migration Strategy** (LinkedIn Learning) ☁️
+
+### Leadership & Soft Skills
+- **Mentoring Others** (LinkedIn Learning) 👥
+- **Leadership Foundations** (LinkedIn Learning) 🎯
+
+---
+
+## 🎓 **Education**
+*Strong academic foundation in technology*
+
+- **PG Certification Program in Artificial Intelligence and Machine Learning**  
+  *IIIT Hyderabad* 🧠
+- **Masters in Software Engineering**  
+  *BITS Pilani* 💻
 
 
+---
 
+## 📸 **Digital Photography**
+*Capturing the world through creative vision*
 
-  </ul>
-</div>
-</details>
- 
-<details>
-  <summary>Education</summary>
-   <div style = "background: #bdc1c4; width:auto">
-  <ul>
-  <li>[IIIT-H] : PG Certification Program in Artificial Intelligence and Machine Learning</li>
-  <li>[Bits Pilani] : Masters in Software Engineering</li>
-  </ul>
-  </div>
-</details>
-<hr>
-<details>
-  <summary>Volumes</summary>
-   <div style = "background: #bdc1c4; width:auto">
-  <ul>
-  <li><a href ="https://www.amazon.in/7-Roots-Alex-Heli/dp/B01MXKK3E9">Roots</a></li>
-  <li><a href ="https://www.amazon.sg/Simply-Fly-Odyssey-Captain-Gopinath/dp/8172238428">Simply Fly: A Deccan Odyssey</a> </li>
-  </ul>
-  </div>
-</details>
-<details>
-  <summary>Digital Photographer </summary>
-   <div style = "background: #bdc1c4; width:auto">
-  <!-- <img src="/images/aboutme/travel_profile.jpeg" alt="drawing" style="width:300px;height:300px;align=center" align="center"/> -->
-  <p align="right"> 
-         is more than a hobby for me; it is a way of expressing my artistic vision and creativity.
- My work on my website <a href ="http://www.vukclicks.com">VUKCLICKS</a>, where I invite others to join me on my photographic journey and discover the stories behind each image.
+Photography is more than a hobby—it's a way of expressing artistic vision and creativity. Through my work on **[VUKCLICKS](http://www.vukclicks.com)** 🌟, I invite others to join my photographic journey and discover the stories behind each image.
 
-  <!-- <img src="/images/aboutme/DSC03937.jpg" style="width:300px;height:300px; border-radius: 15px;box-shadow: 0px 0px 5px 5px #000000;"> -->
-<p align="center">
-🇰🇭 🇮🇳 🇨🇦 🇭🇰 🇮🇩 🇯🇵 🇲🇾 🏴 🇰🇷 🇸🇬 🇹🇭 🇬🇧<br><br>
+### 🌍 **Global Perspectives**
+*Photographic journeys across continents*
 
-  <video width="360" height="340" autoplay controls style=" border-radius: 15px;box-shadow: 0px 0px 5px 5px #000000;">
-  <source src="/images/aboutme/background.mp4" type="video/mp4">
+🇰🇭 Cambodia • 🇮🇳 India • 🇨🇦 Canada • 🇭🇰 Hong Kong • 🇮🇩 Indonesia  
+🇯🇵 Japan • 🇲🇾 Malaysia • 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland • 🇰🇷 Korea • 🇸🇬 Singapore  
+🇹🇭 Thailand • 🇬🇧 United Kingdom
 
-</video>
+*From the majestic mountains of Japan to the vibrant streets of India, I have witnessed the beauty and diversity of our planet through the lens.* 🌏
 
-</p>
-
-I have been fortunate enough to travel to amazing places all over the world. From the majestic mountains of Japan to the vibrant streets of India, I have witnessed the beauty and diversity of our planet.
-</p>     
-</div>                     
-</details>
-
+---
 [Github]: https://github.com/uday160386/
 [LinkedIn]: https://www.linkedin.com/in/bkvudaykumar/
 [Instagram]: https://www.instagram.com/vukclicks/
