@@ -1,4 +1,4 @@
----
+<!-- ---
 title: "Image Analysis and Classification using Azure "
 collection: aiengineering
 permalink: /aiengineering/image-analysis-using-azureai
@@ -15,4 +15,4 @@ tags:
   - Image Detection
   - Image Classification
   -  
----
+--- -->
