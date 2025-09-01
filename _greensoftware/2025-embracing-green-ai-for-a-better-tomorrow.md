@@ -1,5 +1,5 @@
 ---
-title: "Embracing Green AI for a better tomorrow."
+title: "Embracing Green AI for a better tomorrow"
 collection: greensoftware
 type: "green_software"
 permalink: /green_software/2024-05-23-1
