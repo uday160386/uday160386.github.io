@@ -204,7 +204,11 @@ Prometheus UI available at: http://localhost:9090
 
 ### Finally, we will create a Grafana dashboard with different panels using PromQL to display Green IT metrics.
  
+Note:Kepler providing a default grafana dashboard. Download as below and upload the json file into Grafana.
+```
+curl -O https://raw.githubusercontent.com/sustainable-computing-io/kepler-operator/v1alpha1/hack/dashboard/assets/kepler/dashboard.json
 
+```
 #### 1. Add Prometheus as a data source in Grafana
 - Open Grafana in your browser.
 - Create a new Dashboard and select the data source as Prometheus
@@ -269,12 +273,24 @@ Prometheus UI available at: http://localhost:9090
     ) / 3.6e6
   ) * $pue * 10
   ```
-#### 4. Visualize:
+#### 4. Visualize the consumption of carbon foot print  for your spring boot applicaiton:
+
+With this in place you’ll see live power (W), energy (kWh), total CO2e (g), and gCO2e per request in Grafana for your Spring Boot app—aligned to the SCI method. 
+
+What you’ll measure?
+
+- Energy & power at container/process level → from Kepler (K8s).
+
+- Work (R) from your app → HTTP request counts.
+
+- CO2e = energy × grid carbon intensity × PUE; optionally add embodied carbon (M) per SCI. 
+
 
 <img src="/images/green_software/kepler_grafana_springboot/grafana_dashboard_1.png" alt="drawing" style="width:500px;height:400px;align=center" align="center"/>
 
 <img src="/images/green_software/kepler_grafana_springboot/grafana_dashboard_2.png" alt="drawing" style="width:500px;height:400px;align=center" align="center"/>
 
+---
 
 Source is available at : [app-greenit-metrics]
 
