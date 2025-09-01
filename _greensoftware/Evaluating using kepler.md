@@ -123,7 +123,7 @@ NAME         TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)        AGE
 
 ### After that, we will install and run Kepler in the AWS EKS cluster.
 
-What is Kepler?
+What is [Kepler]?
 > From Kepler website: 
 > Kepler (Kubernetes-based Efficient Power Level Exporter) is a Prometheus exporter that measures energy consumption at the container, pod, VM, and process level by reading hardware sensors and attributing power based on resource utilization.
 
@@ -276,4 +276,7 @@ Prometheus UI available at: http://localhost:9090
 <img src="/images/green_software/kepler_grafana_springboot/grafana_dashboard_2.png" alt="drawing" style="width:500px;height:400px;align=center" align="center"/>
 
 
-Source is available at : https://github.com/uday160386/app-greenit-metrics
+Source is available at : [app-greenit-metrics]
+
+[app-greenit-metrics]: https://github.com/uday160386/app-greenit-metrics
+[Kepler]: https://sustainable-computing.io/
