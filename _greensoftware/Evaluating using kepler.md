@@ -88,7 +88,7 @@ To deploy the loans application to EKS, we need to define
   
 Note: example files are available in the repo https://github.com/uday160386/app-greenit-metrics
 
-Run the commands below to deploy workloads in EKS from local environment:
+Run the commands below to deploy workloads in EKS from the local environment:
 
 Configmap.yaml
 
@@ -148,11 +148,11 @@ What is [Kepler]?
 
 ### We will configure Prometheus and Grafana to collect logs from both the application and Kepler.
 
-For someone who is new: 
+For someone new: 
 - Prometheus is the data source — it scrapes and stores metrics.
 - Grafana is the visualization layer — it queries Prometheus using PromQL.
   
-Make sure, Prometheus/Grafana is running locally or in any cloud. If not, try running locally using below steps: 
+Make sure Prometheus/Grafana is running locally or in any cloud. If not, try running locally using the following steps: 
 
 ### Prometheus:
   - Download Prometheus:
