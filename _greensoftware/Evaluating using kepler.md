@@ -6,12 +6,12 @@ permalink: /green_software/2025-08-31-1
 date: 2025-08-31
 tags:
   - Green Software Engineering 
-  - Carbon Awarness
+  - Carbon Awareness
   - Green AI
   - Carbon Efficiency
   - AWS EKS
   - Kepler
-  - Monitoring Green AI Mertics
+  - Monitoring Green AI Metrics
   - Sustainability 
 
 ---
@@ -42,7 +42,7 @@ Pre-requisites
 - Java 17+
 - any IDE 
 - AWS login Credentials
-- access to internet
+- access to the internet
 
 ### First, we will create a Spring application for loan management and store it in AWS Elastic Container Registry (ECR). 
   - Clone the repo from https://github.com/uday160386/app-greenit-metrics.git
@@ -53,7 +53,7 @@ Pre-requisites
   java -jar target/metrics-api-*.jar
   ```
 
-  - Access the application url: http://localhost:8080 from browser/postman and proceed if resposne is SUCCESS
+  - Access the application url: http://localhost:8080 from browser/postman and proceed if response is SUCCESS
   - Create AWS ECR using
     ``` aws ecr create-repository --repository-name <app name>```
   - Authenticate Docker to ECR 
@@ -71,7 +71,7 @@ docker push <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<app name>:latest
 
 ### Next, we will set up an AWS Elastic Kubernetes Service (EKS) cluster to provide the necessary environment on AWS.
 
-  - Create a AWS Cluster by following 
+  - Create a an AWS Cluster by following 
     - Create an IAM role for EKS.
     - Use eksctl (recommended):
       ```eksctl create cluster --name <cluster name> --region <region> --nodes 2
@@ -81,14 +81,14 @@ docker push <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<app name>:latest
       ```
       
 ### Then, we will deploy the loan application on AWS EKS and open a public endpoint for access.
-To deploy loans application to EKS, we need to define
+To deploy the loans application to EKS, we need to define
 - deployment.yaml
 - service.yaml
 - configmap.yaml
   
-Note: same reference files are available in the repo https://github.com/uday160386/app-greenit-metrics
+Note: example files are available in the repo https://github.com/uday160386/app-greenit-metrics
 
-Run the below commands to deploy workloads in EKS from local environment:
+Run the commands below to deploy workloads in EKS from local environment:
 
 Configmap.yaml
 
