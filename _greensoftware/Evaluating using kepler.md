@@ -221,8 +221,20 @@ curl -O https://raw.githubusercontent.com/sustainable-computing-io/kepler-operat
     - $app (Constant): springboot-green (matches management.metrics.tags.application)
     - $pue (Constant): e.g., 1.2
     - $ci_g_per_kwh (Constant): grid carbon intensity in gCO2e/kWh for your region (e.g., 400). You can start as a constant and refine later.
+#### 3. What you’ll measure?
 
-#### 3. Build the core panels (PromQL) to visualize Green IT Metrics:
+    - Energy & power at container/process level → from Kepler (K8s).
+    - Work (R) from your app → HTTP request counts.
+    - CO2e = energy × grid carbon intensity × PUE; optionally add embodied carbon (M) per SCI. 
+    - Live power by pod (Watts)
+    - Top 10 power-consuming pods
+    - Top 5 most energy-intensive containers
+    - Aggregated energy consumption for a container
+    - Total power consumption over time
+    - Total power consumption per Kubernetes namespace
+
+
+#### 4. Build the core panels (PromQL) to visualize Green IT Metrics:
 
   - Live power by pod (Watts) : If you want power consumption (Watts) per pod, this query is good.
   ```
@@ -276,15 +288,6 @@ curl -O https://raw.githubusercontent.com/sustainable-computing-io/kepler-operat
 #### 4. Visualize the consumption of carbon foot print  for your spring boot applicaiton:
 
 With this in place you’ll see live power (W), energy (kWh), total CO2e (g), and gCO2e per request in Grafana for your Spring Boot app—aligned to the SCI method. 
-
-What you’ll measure?
-
-- Energy & power at container/process level → from Kepler (K8s).
-
-- Work (R) from your app → HTTP request counts.
-
-- CO2e = energy × grid carbon intensity × PUE; optionally add embodied carbon (M) per SCI. 
-
 
 <img src="/images/green_software/kepler_grafana_springboot/grafana_dashboard_1.png" alt="drawing" style="width:500px;height:400px;align=center" align="center"/>
 
