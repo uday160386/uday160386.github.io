@@ -27,7 +27,7 @@ For example:
 - **Cloud Carbon Footprint**: An open-source tool for measuring and analyzing carbon emissions from cloud usage, helping users understand their carbon impact.
 - **Kube Green**: A simple Kubernetes add-on that automatically powers down selected resources when they are not in use.
 
-### In this article, I will discuss a microservices use case where a Spring Boot application is deployed on AWS EKS, and the monitoring of metrics is visualized through Grafana. Below are detailed explanations and steps to achieve this use case.
+### In this article, I will discuss a microservices use case where a Spring Boot application is deployed on AWS EKS, and the monitoring of Green IT metrics is visualized through Grafana. Below are detailed explanations and steps to achieve this use case.
 
 - First, we will create a Spring application for loan management and store it in AWS Elastic Container Registry (ECR). 
 - Next, we will set up an AWS Elastic Kubernetes Service (EKS) cluster to provide the necessary environment on AWS. 
