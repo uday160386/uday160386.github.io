@@ -43,10 +43,16 @@ As an AI and machine learning enthusiast , I document my experiences, challenges
 I am always interested in connecting with like-minded professionals, discussing emerging technologies, and exploring potential collaboration opportunities. 
 ### Professional Links: 🔗
 
-- [GitHub Portfolio][Github] 
-- [LinkedIn Profile][LinkedIn] 
-- [Photography Portfolio][VUKCLICKS] 
-- [Travel Documentation][VUK-Travels] 
+<!-- Social Icons -->
+<a href="https://github.com/uday160386" target="_blank" title="GitHub">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="30" alt="GitHub"/>
+</a>
+<a href="https://www.linkedin.com/in/bkvudaykumar/" target="_blank" title="LinkedIn">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="30" alt="LinkedIn"/>
+</a>
+<a href="http://www.vukclicks.com" target="_blank" title="Website">
+  <img src="https://img.icons8.com/ios-filled/50/000000/domain.png" width="30" alt="Website"/>
+</a>
 
 I welcome feedback, discussions, and collaborations from fellow technology professionals and enthusiasts! 
 <br>Thank you for visiting my professional profile. I look forward to sharing insights and engaging in meaningful technology discussions. 
@@ -56,4 +62,4 @@ I welcome feedback, discussions, and collaborations from fellow technology profe
 [LinkedIn]: https://www.linkedin.com/in/bkvudaykumar/
 [Instagram]: https://www.instagram.com/vukclicks/
 [VUKCLICKS]: http://www.vukclicks.com
-[VUK-Travels]: https://www.vukclicks.com/public/pages/portfolio/travel/travel.html
+

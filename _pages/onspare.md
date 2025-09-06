@@ -6,118 +6,100 @@ author_profile: true
 redirect_from:
   - /resume
 ---
+<!-- Tabs Example -->
 
+<!-- Colorful Tabs Example -->
+<style>
+.tab-btn {
+  background: linear-gradient(90deg, #fbf8f7ff, #ffffffff);
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  font-weight: normal;+
+}
+.tab-btn.active {
+  background: linear-gradient(90deg, #eff5f5ff, #f7f7faff);
+}
+.tab-content {
+  border: none;
+  border-radius: 0 0 5px 5px;
+  padding: 15px;
+  background: #f7f7f7;
+  margin-bottom: 20px;
+}
+</style>
+<div style="text-align:center; font-weight:bold; font-size:24px;">Life Long Learning ( L3 )</div>
+<div>
 
-{% include base_path %}
+  <button class="tab-btn active" onclick="showTab('tab1', this)">Education</button>
+  <button class="tab-btn" onclick="showTab('tab2', this)">Certifications</button>
+  <button class="tab-btn" onclick="showTab('tab3', this)">Courses</button>
+  <button class="tab-btn" onclick="showTab('tab4', this)">Projects</button>
+  <button class="tab-btn" onclick="showTab('tab5', this)">Presentations</button>
+</div>
+<div id="tab1" class="tab-content" style="display:block;">
+  <p>
+  🎓 PG Certification Program in Artificial Intelligence and Machine Learning
+IIIT Hyderabad <br>
+ 🎓 Masters in Software Engineering
+BITS Pilani</p>
+</div>
+<div id="tab2" class="tab-content" style="display:none;">
 
-
-## 📊 **Presentations**
-*Sharing knowledge and expertise through technical presentations*
-
-- **[Automated Speech Recognition in English](../Documents/ASR-Presentation.pdf)** 📈  
+  <p>
+  ✔️ AWS Cloud Practitioner ☁️<br>
+  ✔️ Microsoft Certified: Azure Fundamentals 🔵<br>
+  ✔️ AWS Certified Security – Specialty 🔒<br>
+  ✔️ Certified SAFe® 6 Agilist 📋<br>
+  ✔️ Certified** ScrumMaster (Scrum Alliance) 🏃‍♂️<br>
+  ✔️ Site Reliability Engineering (SRE) Foundation℠ (DevOps Institute) ⚙️<br>
+  ✔️ Green Software for Practitioners (Linux Foundation) 🌱<br></p>
+</div>
+<div id="tab3" class="tab-content" style="display:none;">
+  <p>
+  AI & Product Development<br>
+  ✔️  AI Product Development: Technical Feasibility and Prototyping (LinkedIn Learning) 🤖<br>
+  ✔️  Integrating AI into the Product Architecture (LinkedIn Learning) 🏗️<br><br>
+Architecture & Security<br>
+  ✔️  REST API Management, Monitoring & Analytics using Kong 3 (Udemy) 🔧<br>
+  ✔️  Microservices Software Architecture: Patterns and Techniques (Udemy) 🏢<br>
+  ✔️  Microservices: Security (LinkedIn Learning) 🔐<br>
+  ✔️  Cloud Security Architecture for the Enterprise (LinkedIn Learning) 🛡️<br>
+  ✔️  Design a Cloud Migration Strategy (LinkedIn Learning) ☁️<br><br>
+  Leadership & Soft Skills<br>
+  ✔️  Mentoring Others (LinkedIn Learning) 👥<br>
+  ✔️  Leadership Foundations (LinkedIn Learning) 🎯<br>
+</p>
+</div>
+<div id="tab4" class="tab-content" style="display:none;">
+  <h3>Projects</h3>
+  <p>Details about projects go here.</p>
+</div>
+<div id="tab5" class="tab-content" style="display:none;">
+  <i>Sharing knowledge and expertise through technical presentations</i>
+  
+  <br><br>
+  
+  <a href="../Documents/ASR-Presentation.pdf">[Automated Speech Recognition in English 📈]</a>   
   *Presented: October 22, 2024*
-
----
-
-<details>
-  <summary>Projects </summary>
- <div style = "background: #bdc1c4; width:auto">
-{% include base_path %}
-
-{% for post in site.aiprojects %}
-  {% include archive-single.html %}
-{% endfor %}
+  
+  
 </div>
-</details>
-
-<!-- <details>
-  <summary>Posters </summary>
-   <div style = "background: #bdc1c4; width:auto">
-  <ul>
-  <li><a href =""></a> </li>
-  </ul>
-</div>
-</details>
--->
-<details>
-  <summary>Robo Toys </summary>
-    <div style = "background: #bdc1c4; width:auto">
-{% include base_path %}
-
-{% for post in site.robotoys %}
-  {% include archive-single.html %}
-{% endfor %}
-</div>
-</details> 
-
-
----
-
-## 🎖️ **Professional Certifications**
-*Committed to continuous learning and industry best practices*
-
-### Cloud & Security
-- **AWS Cloud Practitioner** ☁️
-- **Microsoft Certified: Azure Fundamentals** 🔵
-- **AWS Certified Security – Specialty** 🔒
-
-### Agile & Leadership
-- **Certified SAFe® 6 Agilist** 📋
-- **Certified ScrumMaster** (Scrum Alliance) 🏃‍♂️
-- **Site Reliability Engineering (SRE) Foundation℠** (DevOps Institute) ⚙️
-
-### Specialized
-- **Green Software for Practitioners** (Linux Foundation) 🌱
-
----
-## 📚 **Continuous Learning**
-*Recent courses and professional development*
-
-### AI & Product Development
-- **AI Product Development: Technical Feasibility and Prototyping** (LinkedIn Learning) 🤖
-- **Integrating AI into the Product Architecture** (LinkedIn Learning) 🏗️
-
-### Architecture & Security
-- **REST API Management, Monitoring & Analytics using Kong 3** (Udemy) 🔧
-- **Microservices Software Architecture: Patterns and Techniques** (Udemy) 🏢
-- **Microservices: Security** (LinkedIn Learning) 🔐
-- **Cloud Security Architecture for the Enterprise** (LinkedIn Learning) 🛡️
-- **Design a Cloud Migration Strategy** (LinkedIn Learning) ☁️
-
-### Leadership & Soft Skills
-- **Mentoring Others** (LinkedIn Learning) 👥
-- **Leadership Foundations** (LinkedIn Learning) 🎯
-
----
-
-## 🎓 **Education**
-*Strong academic foundation in technology*
-
-- **PG Certification Program in Artificial Intelligence and Machine Learning**  
-  *IIIT Hyderabad* 🧠
-- **Masters in Software Engineering**  
-  *BITS Pilani* 💻
-
-
----
-
-## 📸 **Digital Photography**
-*Capturing the world through creative vision*
-
-Photography is more than a hobby—it's a way of expressing artistic vision and creativity. Through my work on **[VUKCLICKS](http://www.vukclicks.com)** 🌟, I invite others to join my photographic journey and discover the stories behind each image.
-
-### 🌍 **Global Perspectives**
-*Photographic journeys across continents*
-
-🇰🇭 Cambodia • 🇮🇳 India • 🇨🇦 Canada • 🇭🇰 Hong Kong • 🇮🇩 Indonesia  
-🇯🇵 Japan • 🇲🇾 Malaysia • 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland • 🇰🇷 Korea • 🇸🇬 Singapore  
-🇹🇭 Thailand • 🇬🇧 United Kingdom
-
-*From the majestic mountains of Japan to the vibrant streets of India, I have witnessed the beauty and diversity of our planet through the lens.* 🌏
-
----
-[Github]: https://github.com/uday160386/
-[LinkedIn]: https://www.linkedin.com/in/bkvudaykumar/
-[Instagram]: https://www.instagram.com/vukclicks/
-[VUKCLICKS]: http://www.vukclicks.com
-[VUK-Travels]: https://www.vukclicks.com/public/pages/portfolio/travel/travel.html
+<script>
+function showTab(tabId, btn) {
+  document.getElementById('tab1').style.display = 'none';
+  document.getElementById('tab2').style.display = 'none';
+  document.getElementById('tab3').style.display = 'none';
+  document.getElementById('tab4').style.display = 'none';
+  document.getElementById('tab5').style.display = 'none';
+  document.getElementById(tabId).style.display = 'block';
+  var buttons = document.getElementsByClassName('tab-btn');
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove('active');
+  }
+  btn.classList.add('active');
+}
+</script>
