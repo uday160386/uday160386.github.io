@@ -11,9 +11,10 @@ redirect_from:
 <!-- Colorful Tabs Example -->
 <style>
 .tab-btn {
-  background: linear-gradient(90deg, #fbf8f7ff, #ffffffff);
+  background: #190903ff;
   border: none;
-  color: black;
+  
+  color: white;
   padding: 10px 20px;
   margin-right: 5px;
   cursor: pointer;
@@ -21,17 +22,17 @@ redirect_from:
   font-weight: normal;+
 }
 .tab-btn.active {
-  background: linear-gradient(90deg, #eff5f5ff, #f7f7faff);
+  background: linear-gradient(90deg, #191a1aff, #f6f1f1ff);
 }
 .tab-content {
   border: none;
   border-radius: 0 0 5px 5px;
   padding: 15px;
-  background: #f7f7f7;
+  background: #ffffffff;
   margin-bottom: 20px;
 }
 </style>
-<div style="text-align:center; font-weight:bold; font-size:24px;">Life Long Learning ( L3 )</div>
+<div style="text-align:left; font-weight:bold; font-size:24px;">Life Long Learning ( L3 )<br><br></div>
 <div>
 
   <button class="tab-btn active" onclick="showTab('tab1', this)">Education</button>
@@ -50,7 +51,7 @@ BITS Pilani</p>
 <div id="tab2" class="tab-content" style="display:none;">
 
   <p>
-  ✔️ AWS Cloud Practitioner ☁️<br>
+  ✔️  AWS Cloud Practitioner ☁️<br>
   ✔️ Microsoft Certified: Azure Fundamentals 🔵<br>
   ✔️ AWS Certified Security – Specialty 🔒<br>
   ✔️ Certified SAFe® 6 Agilist 📋<br>
