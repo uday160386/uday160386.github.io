@@ -32,7 +32,7 @@ redirect_from:
   margin-bottom: 20px;
 }
 </style>
-<div style="text-align:left; font-weight:bold; font-size:24px;">Life Long Learning ( L3 )<br><br></div>
+<div style="text-align:left; font-weight:bold; font-size:24px;">3L (Life Long Learning )<br><br></div>
 <div>
 
   <button class="tab-btn active" onclick="showTab('tab1', this)">Education</button>
