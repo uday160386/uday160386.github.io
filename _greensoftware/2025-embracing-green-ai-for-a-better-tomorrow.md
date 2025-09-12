@@ -2,7 +2,7 @@
 title: "Embracing Green AI for a better tomorrow"
 collection: greensoftware
 type: "green_software"
-permalink: /green_software/2024-05-23-1
+permalink: /green_software/2024-05-23-2
 date: 2025-01-22
 tags:
   - Green Software Engineering 
