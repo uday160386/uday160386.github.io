@@ -10,5 +10,8 @@ main:
     url: /greensoftware/
 
   - title: "AI Engineering"
-    url: /aiengineering/              
+    url: /aiengineering/       
+
+  # - title: "Projects"
+  #   url: /projects/        
 

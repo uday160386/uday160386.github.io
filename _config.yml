@@ -175,7 +175,7 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  aiprojects:
+  projects:
     output: true
     permalink: /:collection/:path/
   aiengineering:
@@ -218,6 +218,17 @@ defaults:
       comments: true
       share: true
       related: true
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
 
   # aiprojects
   - scope:
@@ -251,7 +262,18 @@ defaults:
       read_time: true
       comments: true
       share: true
-      related: true    
+      related: true   
+  # projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true  
 
 
 # Sass/SCSS

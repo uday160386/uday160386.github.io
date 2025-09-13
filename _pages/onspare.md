@@ -22,7 +22,7 @@ redirect_from:
   font-weight: normal;+
 }
 .tab-btn.active {
-  background: linear-gradient(90deg, #191a1aff, #f6f1f1ff);
+  background: linear-gradient(90deg, #191a1aff, #2f7f93);
 }
 .tab-content {
   border: none;
@@ -30,6 +30,7 @@ redirect_from:
   padding: 15px;
   background: #ffffffff;
   margin-bottom: 20px;
+  color: #131212ff;
 }
 </style>
 <div style="text-align:left; font-weight:bold; font-size:24px;">3L (Life Long Learning )<br><br></div>
@@ -38,14 +39,13 @@ redirect_from:
   <button class="tab-btn active" onclick="showTab('tab1', this)">Education</button>
   <button class="tab-btn" onclick="showTab('tab2', this)">Certifications</button>
   <button class="tab-btn" onclick="showTab('tab3', this)">Courses</button>
-  <button class="tab-btn" onclick="showTab('tab4', this)">Projects</button>
-  <button class="tab-btn" onclick="showTab('tab5', this)">Presentations</button>
+  <button class="tab-btn" onclick="showTab('tab4', this)">Presentations</button>
 </div>
 <div id="tab1" class="tab-content" style="display:block;">
   <p>
-  🎓 PG Certification Program in Artificial Intelligence and Machine Learning
+  🎓 PG Certification Program in Artificial Intelligence and Machine Learning, 
 IIIT Hyderabad <br>
- 🎓 Masters in Software Engineering
+ 🎓 Masters in Software Engineering,
 BITS Pilani</p>
 </div>
 <div id="tab2" class="tab-content" style="display:none;">
@@ -75,11 +75,8 @@ Architecture & Security<br>
   ✔️  Leadership Foundations (LinkedIn Learning) 🎯<br>
 </p>
 </div>
+
 <div id="tab4" class="tab-content" style="display:none;">
-  <h3>Projects</h3>
-  <p>Details about projects go here.</p>
-</div>
-<div id="tab5" class="tab-content" style="display:none;">
   <i>Sharing knowledge and expertise through technical presentations</i>
   
   <br><br>
@@ -95,7 +92,7 @@ function showTab(tabId, btn) {
   document.getElementById('tab2').style.display = 'none';
   document.getElementById('tab3').style.display = 'none';
   document.getElementById('tab4').style.display = 'none';
-  document.getElementById('tab5').style.display = 'none';
+
   document.getElementById(tabId).style.display = 'block';
   var buttons = document.getElementsByClassName('tab-btn');
   for (var i = 0; i < buttons.length; i++) {
