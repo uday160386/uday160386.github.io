@@ -38,7 +38,7 @@ As an AI and machine learning enthusiast , I document my experiences, challenges
 - Foster knowledge exchange within the technology community 
 
 
-<HR>
+
 ### Connect & Collaborate 
 I am always interested in connecting with like-minded professionals, discussing emerging technologies, and exploring potential collaboration opportunities. 
 
