@@ -45,9 +45,7 @@ I am always interested in connecting with like-minded professionals, discussing 
 I welcome feedback, discussions, and collaborations from fellow technology professionals and enthusiasts! 
 <br>Thank you for visiting my professional profile. I look forward to sharing insights and engaging in meaningful technology discussions. 
 
-
 [Github]: https://github.com/uday160386/
 [LinkedIn]: https://www.linkedin.com/in/bkvudaykumar/
 [Instagram]: https://www.instagram.com/vukclicks/
 [VUKCLICKS]: http://www.vukclicks.com
-
