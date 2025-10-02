@@ -97,69 +97,113 @@ redirect_from:
 }
 </style>
 
-<div style="font-weight:bold; font-size:20px; color:#fff; margin-bottom:24px;text-align:center">3L (Life Long Learning)</div>
-<div class="twocol-container">
-  <div class="twocol-left">
-    
-    <button class="tab-btn active" onclick="showTab('tab1', this)">Education</button>
-    <button class="tab-btn" onclick="showTab('tab2', this)">Certifications</button>
-    <button class="tab-btn" onclick="showTab('tab3', this)">Courses</button>
-    <button class="tab-btn" onclick="showTab('tab4', this)">Presentations</button>
-  </div>
-  <div class="twocol-right">
-    <div id="tab1" class="tab-content" style="display:block;">
-      <p>
-      🎓 PG Certification Program in Artificial Intelligence and Machine Learning, 
-      IIIT Hyderabad <br>
-      🎓 Masters in Software Engineering,
-      BITS Pilani</p>
-    </div>
-    <div id="tab2" class="tab-content" style="display:none;">
-      <p>
-      ✔️  AWS Cloud Practitioner ☁️<br>
-      ✔️ Microsoft Certified: Azure Fundamentals 🔵<br>
-      ✔️ AWS Certified Security – Specialty 🔒<br>
-      ✔️ Certified SAFe® 6 Agilist 📋<br>
-      ✔️ Certified** ScrumMaster (Scrum Alliance) 🏃‍♂️<br>
-      ✔️ Site Reliability Engineering (SRE) Foundation℠ (DevOps Institute) ⚙️<br>
-      ✔️ Green Software for Practitioners (Linux Foundation) 🌱<br></p>
-    </div>
-    <div id="tab3" class="tab-content" style="display:none;">
-      <p>
-      AI & Product Development<br>
-      ✔️  AI Product Development: Technical Feasibility and Prototyping (LinkedIn Learning) 🤖<br>
-      ✔️  Integrating AI into the Product Architecture (LinkedIn Learning) 🏗️<br><br>
-      Architecture & Security<br>
-      ✔️  REST API Management, Monitoring & Analytics using Kong 3 (Udemy) 🔧<br>
-      ✔️  Microservices Software Architecture: Patterns and Techniques (Udemy) 🏢<br>
-      ✔️  Microservices: Security (LinkedIn Learning) 🔐<br>
-      ✔️  Cloud Security Architecture for the Enterprise (LinkedIn Learning) 🛡️<br>
-      ✔️  Design a Cloud Migration Strategy (LinkedIn Learning) ☁️<br><br>
-      Leadership & Soft Skills<br>
-      ✔️  Mentoring Others (LinkedIn Learning) 👥<br>
-      ✔️  Leadership Foundations (LinkedIn Learning) 🎯<br>
-      </p>
-    </div>
-    <div id="tab4" class="tab-content" style="display:none;">
-      <i>Sharing knowledge and expertise through technical presentations</i>
-      <br><br>
-      <a href="../Documents/ASR-Presentation.pdf">[Automated Speech Recognition in English 📈]</a>   
-      *Presented: October 22, 2024*
-    </div>
-  </div>
-</div>
-<script>
-function showTab(tabId, btn) {
-  document.getElementById('tab1').style.display = 'none';
-  document.getElementById('tab2').style.display = 'none';
-  document.getElementById('tab3').style.display = 'none';
-  document.getElementById('tab4').style.display = 'none';
+  <h2 style="color:#2f7f93; font-size:2em; font-weight:800; margin-bottom:32px; text-align:center; letter-spacing:1px;">3L (Life Long Learning)</h2>
 
-  document.getElementById(tabId).style.display = 'block';
-  var buttons = document.getElementsByClassName('tab-btn');
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].classList.remove('active');
-  }
-  btn.classList.add('active');
-}
-</script>
+<div style="max-width: 1200px; margin: 32px auto; background: #1b1a1a; border-radius: 8px; box-shadow: 0 4px 24px rgba(0,0,0,0.30); overflow: hidden; padding: 40px 32px; text-align: left;">
+  <div class="tile-grid">
+    <div class="tile-box">
+      <div class="tile-title">🎓 Education</div>
+      <div class="tile-content">
+        <ul>
+          <li>PG Certification Program in Artificial Intelligence and Machine Learning, IIIT Hyderabad</li>
+          <li>Masters in Software Engineering, BITS Pilani</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tile-box">
+      <div class="tile-title">🏅 Certifications</div>
+      <div class="tile-content">
+        <ul>
+          <li>AWS Cloud Practitioner ☁️</li>
+          <li>Microsoft Certified: Azure Fundamentals 🔵</li>
+          <li>AWS Certified Security – Specialty 🔒</li>
+          <li>Certified SAFe® 6 Agilist 📋</li>
+          <li>Certified ScrumMaster (Scrum Alliance) 🏃‍♂️</li>
+          <li>Site Reliability Engineering (SRE) Foundation℠ (DevOps Institute) ⚙️</li>
+          <li>Green Software for Practitioners (Linux Foundation) 🌱</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tile-box">
+      <div class="tile-title">📚 Courses</div>
+      <div class="tile-content">
+        <ul>
+          <li><b>AI & Product Development</b><br>
+            AI Product Development: Technical Feasibility and Prototyping (LinkedIn Learning) 🤖<br>
+            Integrating AI into the Product Architecture (LinkedIn Learning) 🏗️</li>
+          <li><b>Architecture & Security</b><br>
+            REST API Management, Monitoring & Analytics using Kong 3 (Udemy) 🔧<br>
+            Microservices Software Architecture: Patterns and Techniques (Udemy) 🏢<br>
+            Microservices: Security (LinkedIn Learning) 🔐<br>
+            Cloud Security Architecture for the Enterprise (LinkedIn Learning) 🛡️<br>
+            Design a Cloud Migration Strategy (LinkedIn Learning) ☁️</li>
+          <li><b>Leadership & Soft Skills</b><br>
+            Mentoring Others (LinkedIn Learning) 👥<br>
+            Leadership Foundations (LinkedIn Learning) 🎯</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tile-box">
+      <div class="tile-title">🗣️ Presentations</div>
+      <div class="tile-content">
+        <i>Sharing knowledge and expertise through technical presentations</i><br><br>
+        <a href="../Documents/ASR-Presentation.pdf" style="color:#2f7f93; font-weight:600;">Automated Speech Recognition in English 📈</a><br>
+        <span style="font-size:0.98em; color:#bbb;">Presented: October 22, 2024</span>
+      </div>
+    </div>
+  </div>
+  <style>
+    .tile-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin: 0 auto 24px auto;
+      padding: 0;
+    }
+    .tile-box {
+      background: rgba(255,255,255,0.12);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(31,38,135,0.18);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 28px 18px 18px 18px;
+      color: #eee;
+      transition: box-shadow 0.3s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .tile-box:hover {
+      box-shadow: 0 12px 40px rgba(31,38,135,0.22);
+      transform: translateY(-4px) scale(1.02);
+    }
+    .tile-title {
+      font-size: 1.25em;
+      font-weight: 700;
+      color: #2f7f93;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    }
+    .tile-content {
+      font-size: 1.08em;
+      line-height: 1.7;
+    }
+    @media (max-width: 700px) {
+      .tile-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0 2px;
+      }
+      .tile-box {
+        padding: 14px 6px 8px 6px;
+        font-size: 1em;
+        border-radius: 12px;
+      }
+      .tile-title {
+        font-size: 1.08em;
+        margin-bottom: 8px;
+      }
+    }
+  </style>
+</div>

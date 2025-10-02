@@ -16,7 +16,7 @@ redirect_from:
 
 
 
-<div style="max-width: 700px; margin: 40px auto; background: linear-gradient(135deg, rgba(30,30,30,0.95) 80%, rgba(80,80,80,0.85) 100%); border-radius: 1px; box-shadow: 0 4px 24px rgba(0,0,0,0.30); overflow: hidden; padding: 32px 24px; text-align: left;">
+<div style="max-width: 3800px; margin: 10px auto; background: linear-gradient(135deg, rgba(30,30,30,0.95) 80%, rgba(80,80,80,0.85) 100%); border-radius: 1px; box-shadow: 0 4px 24px rgba(0,0,0,0.30); overflow: hidden; padding: 32px 24px; text-align: left;">
   <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
     <!-- <img src="/images/aboutme/profile.jpeg" alt="Profile" style="width: 40%; max-width: 500px; border-radius: 1px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 24px;" /> -->
   
