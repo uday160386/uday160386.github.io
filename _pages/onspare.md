@@ -129,17 +129,18 @@ redirect_from:
       <div class="tile-content">
         <ul>
           <li><b>AI & Product Development</b><br>
-            AI Product Development: Technical Feasibility and Prototyping (LinkedIn Learning) 🤖<br>
-            Integrating AI into the Product Architecture (LinkedIn Learning) 🏗️</li>
+            ✔️ AI Product Development: Technical Feasibility and Prototyping (LinkedIn Learning) 🤖<br>
+            ✔️ Integrating AI into the Product Architecture (LinkedIn Learning) 🏗️<br>
+            ✔️ AI-102: Microsoft Certified Azure AI Engineer Associate Prep <br></li>
           <li><b>Architecture & Security</b><br>
-            REST API Management, Monitoring & Analytics using Kong 3 (Udemy) 🔧<br>
-            Microservices Software Architecture: Patterns and Techniques (Udemy) 🏢<br>
-            Microservices: Security (LinkedIn Learning) 🔐<br>
-            Cloud Security Architecture for the Enterprise (LinkedIn Learning) 🛡️<br>
-            Design a Cloud Migration Strategy (LinkedIn Learning) ☁️</li>
+            ✔️ REST API Management, Monitoring & Analytics using Kong 3 (Udemy) 🔧<br>
+            ✔️ Microservices Software Architecture: Patterns and Techniques (Udemy) 🏢<br>
+            ✔️ Microservices: Security (LinkedIn Learning) 🔐<br>
+            ✔️ Cloud Security Architecture for the Enterprise (LinkedIn Learning) 🛡️<br>
+            ✔️ Design a Cloud Migration Strategy (LinkedIn Learning) ☁️</li>
           <li><b>Leadership & Soft Skills</b><br>
-            Mentoring Others (LinkedIn Learning) 👥<br>
-            Leadership Foundations (LinkedIn Learning) 🎯</li>
+            ✔️ Mentoring Others (LinkedIn Learning) 👥<br>
+            ✔️ Leadership Foundations (LinkedIn Learning) 🎯</li>
         </ul>
       </div>
     </div>
@@ -196,12 +197,12 @@ redirect_from:
         padding: 0 2px;
       }
       .tile-box {
-        padding: 14px 6px 8px 6px;
+        padding: 5px 6px 8px 6px;
         font-size: 1em;
-        border-radius: 12px;
+        border-radius: 2px;
       }
       .tile-title {
-        font-size: 1.08em;
+        font-size: 1.78em;
         margin-bottom: 8px;
       }
     }
