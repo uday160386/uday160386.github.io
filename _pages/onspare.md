@@ -63,7 +63,7 @@ redirect_from:
   background: #fff;
   color: #222;
 }
-@media (max-width: 700px) {
+@media (max-width: 2000px) {
   .twocol-container {
     flex-direction: column;
     max-width: 98vw;
@@ -97,9 +97,9 @@ redirect_from:
 }
 </style>
 
-  <h2 style="color:#2f7f93; font-size:2em; font-weight:800; margin-bottom:32px; text-align:center; letter-spacing:1px;">3L (Life Long Learning)</h2>
+  <h2 style="color:white; font-size:2em; font-weight:800; margin-bottom:32px; text-align:center; letter-spacing:1px;">3L (Life Long Learning)</h2>
 
-<div style="max-width: 1200px; margin: 32px auto; background: #1b1a1a; border-radius: 8px; box-shadow: 0 4px 24px rgba(0,0,0,0.30); overflow: hidden; padding: 40px 32px; text-align: left;">
+<div style="max-width: 2200px; margin: 32px auto;  border-radius: 8px; overflow: hidden; padding: 40px 32px; text-align: left;">
   <div class="tile-grid">
     <div class="tile-box">
       <div class="tile-title">🎓 Education</div>
@@ -162,8 +162,8 @@ redirect_from:
       padding: 0;
     }
     .tile-box {
-      background: rgba(255,255,255,0.12);
-      border-radius: 18px;
+      background: #050505;
+      /* border-radius: 18px; */
       box-shadow: 0 8px 32px rgba(31,38,135,0.18);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
