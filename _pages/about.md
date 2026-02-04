@@ -18,12 +18,21 @@ redirect_from:
 
 <div style="max-width: 3800px; margin: 10px auto;  border-radius: 1px; box-shadow: 0 4px 24px rgba(0,0,0,0.30); overflow: hidden; padding: 32px 24px; text-align: left;">
   <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
-    <!-- <img src="/images/aboutme/profile.jpeg" alt="Profile" style="width: 40%; max-width: 500px; border-radius: 1px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 24px;" /> -->
-  
+  <table style="border-collapse: collapse;border: none;"><tr style="border-collapse: collapse;border: none;"><td style="border-collapse: collapse;border: none;">
+  <p align="center">
+    <img src="/images/aboutme/profile.jpeg" alt="Profile" style="width: 50%; height:50%;border-radius: 50%; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 24px;" />
+</p></td>
+
+<td style="border-collapse: collapse;border: none;">
+  <h1 > <i><strong>Venkat UdayKumar BK</strong>   </i></h1>
+  <h2>Engineering Tech Lead &amp; AI enthusiast</h2>
+ <hr>
+  Based in Singapore 🇸🇬, I am a technology professional with a passion for innovation and a proven track record of delivering enterprise-scale solutions across diverse industry verticals.
+  </td>
+  </tr>
+  </table>
   </div>
-  <h2 >About Me</h2>
-  <p><strong>Uday Kumar</strong> | Engineering Tech Lead &amp; AI enthusiast.<br>
-  Based in Singapore 🇸🇬, I am a technology professional with a passion for innovation and a proven track record of delivering enterprise-scale solutions across diverse industry verticals.</p>
+  
   <h2 >Professional Overview</h2>
   <p>With 17 years of comprehensive experience in the IT sector, I currently serve as an Engineering Tech Lead, having begun my career at age 20. Throughout my professional journey, I have consistently delivered high-impact solutions across multiple domains:</p>
   <h2 >Content &amp; Knowledge Sharing</h2>
