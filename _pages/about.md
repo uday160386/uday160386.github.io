@@ -20,7 +20,7 @@ redirect_from:
   <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
   <table style="border-collapse: collapse;border: none;"><tr style="border-collapse: collapse;border: none;"><td style="border-collapse: collapse;border: none;">
   <p align="center">
-    <img src="/images/aboutme/profile.jpeg" alt="Profile" style="width: 50%; height:50%;border-radius: 50%; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 24px;" />
+    <img src="/images/aboutme/profile.jpeg" alt="Profile" style="width: 70%; height:50%;border-radius: 50%; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 24px;" />
 </p></td>
 
 <td style="border-collapse: collapse;border: none;">
