@@ -21,6 +21,25 @@ redirect_from:
   <table style="border-collapse: collapse;border: none;"><tr style="border-collapse: collapse;border: none;"><td style="border-collapse: collapse;border: none;">
   <p align="center">
     <img src="/images/aboutme/profile.jpeg" alt="Profile" style="width: 70%; height:50%;border-radius: 50%; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 24px;" />
+    <div class="page__footer-follow" style="text-align: center; margin-bottom: 10px;">
+  <ul class="social-icons" style="display: flex; justify-content: center; align-items: center; gap: 20px; list-style: none; padding: 0;">
+    <li>
+      <a href="http://github.com/{{ site.author.github }}" style="color: white;">
+        <i class="fab fa-github fa-3x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" style="color: white;">
+        <i class="fab fa-linkedin fa-3x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li>
+      <a href="/_pages/vukclicks/index.html" style="color: white;">
+        <i class="fas fa-link fa-3x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
 </p></td>
 
 <td style="border-collapse: collapse;border: none;">
