@@ -25,12 +25,12 @@ redirect_from:
   <ul class="social-icons" style="display: flex; justify-content: center; align-items: center; gap: 20px; list-style: none; padding: 0;">
     <li>
       <a href="http://github.com/{{ site.author.github }}" style="color: white;">
-        <i class="fab fa-github fa-3x" aria-hidden="true"></i>
+        <i class="fab fa-github fa-3x" style="color: white;" aria-hidden="true"></i>
       </a>
     </li>
     <li>
       <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" style="color: white;">
-        <i class="fab fa-linkedin fa-3x" aria-hidden="true"></i>
+        <i class="fab fa-linkedin fa-3x" style="color: white;" aria-hidden="true"></i>
       </a>
     </li>
     <li>
