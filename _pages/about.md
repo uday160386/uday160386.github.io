@@ -133,7 +133,7 @@ redirect_from:
 </p></td>
 
 <td style="border-collapse: collapse; border: none;">
-  <h1><i><strong>Venkat UdayKumar BK</strong></i></h1>
+  <h1><i><strong>Uday BKV</strong></i></h1>
   <h2>Engineering Tech Lead | AI enthusiast | Green Software Practioner</h2>
   <hr>
   Based in Singapore 🇸🇬, I am a technology professional with a passion for innovation and a proven track record of delivering enterprise-scale solutions across diverse industry verticals.
