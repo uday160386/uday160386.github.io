@@ -22,10 +22,10 @@ author_profile: true
 .aie-banner {
   position: relative;
   width: 100%;
-  height: 280px;
-  border-radius: 14px;
+  height: 140px;
+  border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 2.8rem;
+  margin-bottom: 2rem;
   background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #312e81 70%, #4f46e5 100%);
 }
 .aie-banner::before {
@@ -36,7 +36,6 @@ author_profile: true
     radial-gradient(ellipse 60% 80% at 80% 50%, rgba(99,102,241,0.25) 0%, transparent 60%),
     radial-gradient(ellipse 40% 60% at 10% 30%, rgba(139,92,246,0.15) 0%, transparent 50%);
 }
-/* animated grid lines */
 .aie-banner::after {
   content: '';
   position: absolute;
@@ -50,8 +49,8 @@ author_profile: true
   position: absolute;
   right: -40px;
   top: -40px;
-  width: 300px;
-  height: 300px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(99,102,241,0.4) 0%, transparent 70%);
   z-index: 1;
@@ -63,31 +62,15 @@ author_profile: true
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2.5rem 3rem;
-}
-.aie-banner-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: rgba(99,102,241,0.25);
-  border: 1px solid rgba(99,102,241,0.5);
-  color: #c7d2fe;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  padding: 0.28rem 0.8rem;
-  border-radius: 999px;
-  margin-bottom: 1rem;
-  width: fit-content;
+  padding: 1.4rem 2rem;
 }
 .aie-banner-title {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.03em;
   line-height: 1.15;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.35rem;
 }
 .aie-banner-title span {
   background: linear-gradient(90deg, #818cf8, #c084fc);
@@ -96,26 +79,25 @@ author_profile: true
   background-clip: text;
 }
 .aie-banner-sub {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: rgba(255,255,255,0.55);
   max-width: 380px;
-  line-height: 1.6;
+  line-height: 1.5;
 }
-/* floating dots */
 .aie-dots {
   position: absolute;
-  right: 3rem;
+  right: 2.5rem;
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
   display: grid;
   grid-template-columns: repeat(5, 10px);
-  gap: 10px;
-  opacity: 0.25;
+  gap: 8px;
+  opacity: 0.2;
 }
 .aie-dots span {
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
   background: #a5b4fc;
   display: block;
@@ -235,8 +217,8 @@ author_profile: true
 
 /* ── Responsive ── */
 @media (max-width: 560px) {
-  .aie-banner { height: 220px; border-radius: 10px; }
-  .aie-banner-content { padding: 1.5rem; }
+  .aie-banner { height: 110px; border-radius: 10px; }
+  .aie-banner-content { padding: 1rem 1.2rem; }
   .aie-dots { display: none; }
   .aie-item-excerpt { display: none; }
 }
@@ -248,7 +230,7 @@ author_profile: true
   <div class="aie-banner">
     <div class="aie-banner-glow"></div>
     <div class="aie-dots">
-      {% for i in (1..25) %}<span></span>{% endfor %}
+      {% for i in (1..20) %}<span></span>{% endfor %}
     </div>
     <div class="aie-banner-content">
       <div class="aie-banner-title">AI <span>Engineering</span></div>
