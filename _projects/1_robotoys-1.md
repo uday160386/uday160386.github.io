@@ -2,7 +2,7 @@
 
 title: "Robo - Toy Train"
 excerpt: "The goal of this project is to create a wooden toy train that can be controlled via Bluetooth. <br/><a href='https://github.com/uday160386/robo-toys-aurdino'>repo link..</a>"
-collection: robotoys
+collection: projects
 tags:
   - aurdino
 ---
