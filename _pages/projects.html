@@ -7,6 +7,228 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.projects reversed %}
-{% include archive-single.html %}
-{% endfor %}
+<div class="projects-header">
+  <h1>My Projects</h1>
+  <p>A collection of things I've built and worked on</p>
+</div>
+
+<div class="grid-container">
+  {% for post in site.projects reversed %}
+    <div class="tile-card">
+      <div class="tile-accent"></div>
+      <a href="{{ post.url }}">
+        <div class="tile-content">
+
+          <!-- Top row: small image + tag -->
+          <div class="tile-top">
+            {% if post.header.teaser %}
+              <div class="tile-thumb">
+                <img src="{{ post.header.teaser }}" alt="{{ post.title }}">
+              </div>
+            {% else %}
+              <div class="tile-thumb tile-thumb--placeholder">
+                <span>⚙️</span>
+              </div>
+            {% endif %}
+            <div class="tile-tag">{{ post.categories | first }}</div>
+          </div>
+
+          <!-- Title & excerpt -->
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt | strip_html | truncate: 110 }}</p>
+
+          <!-- Footer -->
+          <div class="tile-footer">
+            <span class="read-more">View Project →</span>
+            {% if post.date %}
+              <span class="tile-date">{{ post.date | date: "%b %Y" }}</span>
+            {% endif %}
+          </div>
+
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  /* ── Page Header ── */
+  .projects-header {
+    text-align: center;
+    padding: 40px 0 30px;
+  }
+
+  .projects-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+
+  .projects-header p {
+    color: #888;
+    font-size: 1rem;
+  }
+
+  /* ── Grid ── */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 10px 0 40px;
+  }
+
+  /* ── Card ── */
+  .tile-card {
+    position: relative;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .tile-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(102, 126, 234, 0.2);
+  }
+
+  /* Accent bar cycling colours */
+  .tile-card:nth-child(4n+1) .tile-accent { background: linear-gradient(90deg, #667eea, #764ba2); }
+  .tile-card:nth-child(4n+2) .tile-accent { background: linear-gradient(90deg, #f093fb, #f5576c); }
+  .tile-card:nth-child(4n+3) .tile-accent { background: linear-gradient(90deg, #4facfe, #00f2fe); }
+  .tile-card:nth-child(4n+4) .tile-accent { background: linear-gradient(90deg, #43e97b, #38f9d7); }
+
+  .tile-accent {
+    height: 5px;
+    width: 100%;
+  }
+
+  .tile-card a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* ── Content ── */
+  .tile-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  /* ── Top Row: thumbnail + tag ── */
+  .tile-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .tile-thumb {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    border: 2px solid #f0f0f0;
+  }
+
+  .tile-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .tile-card:hover .tile-thumb img {
+    transform: scale(1.1);
+  }
+
+  /* Placeholder if no image */
+  .tile-thumb--placeholder {
+    background: linear-gradient(135deg, #eef0fd, #d9dcfc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+  }
+
+  .tile-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #667eea;
+    background: #eef0fd;
+    padding: 4px 12px;
+    border-radius: 20px;
+    width: fit-content;
+  }
+
+  /* ── Title & Excerpt ── */
+  .tile-content h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0 0 10px;
+    line-height: 1.4;
+  }
+
+  .tile-content p {
+    font-size: 0.875rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+  }
+
+  /* ── Footer ── */
+  .tile-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .read-more {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #667eea;
+  }
+
+  .tile-card:hover .read-more {
+    letter-spacing: 0.03em;
+  }
+
+  .tile-date {
+    font-size: 0.78rem;
+    color: #aaa;
+  }
+
+  /* ── Dark mode ── */
+  @media (prefers-color-scheme: dark) {
+    .tile-card       { background: #1e1e2e; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+    .tile-content h3 { color: #e0e0f0; }
+    .tile-content p  { color: #999; }
+    .tile-footer     { border-top-color: #2e2e3e; }
+    .tile-tag        { background: #2a2a3e; }
+    .tile-thumb      { border-color: #2e2e3e; }
+    .projects-header p { color: #666; }
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 600px) {
+    .grid-container { grid-template-columns: 1fr; }
+    .projects-header h1 { font-size: 1.6rem; }
+  }
+</style>

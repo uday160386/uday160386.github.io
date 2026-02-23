@@ -1,7 +1,9 @@
 ---
 title: "Photo Sorter"
 excerpt: "Utilities to sort photos by facial recognition, remove duplicates and identify the quality of photos.<br/><a href='https://github.com/uday160386/photo-sorter'>repo link..</a>"
-collection: aiengineering
+collection: projects
+header:
+  teaser: /images/your-project-image.png
 tags:
   - python
   - supervised-learning

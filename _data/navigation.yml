@@ -1,8 +1,9 @@
 # main links links
 main:
 
-  - title: "Thoughts"
-    url: /posts/
+  # - title: "Thoughts"
+  #   url: /posts/
+
   - title: "3L"
     url: /sparetime/  
 
@@ -12,6 +13,6 @@ main:
   - title: "AI Engineering"
     url: /aiengineering/       
 
-  # - title: "Projects"
-  #   url: /projects/        
+  - title: "Thought's"
+    url: /projects/        
 

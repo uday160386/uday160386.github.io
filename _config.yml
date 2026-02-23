@@ -218,7 +218,8 @@ defaults:
       comments: true
       share: true
       related: true
-  # _projects
+
+  # projects
   - scope:
       path: ""
       type: projects
@@ -230,28 +231,6 @@ defaults:
       share: true
       related: true
 
-  # aiprojects
-  - scope:
-      path: ""
-      type: aiprojects
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  # robotoys
-  - scope:
-      path: ""
-      type: robotoys
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
   # aiengineering
   - scope:
       path: ""
@@ -263,17 +242,7 @@ defaults:
       comments: true
       share: true
       related: true   
-  # projects
-  - scope:
-      path: ""
-      type: projects
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true  
+
 
 
 # Sass/SCSS
