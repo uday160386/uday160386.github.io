@@ -4,15 +4,18 @@ main:
   # - title: "Thoughts"
   #   url: /posts/
 
-  - title: "3L"
-    url: /sparetime/  
+
+  - title: "Thought's"
+    url: /projects/   
 
   - title: "Green Software"
     url: /greensoftware/
 
   - title: "AI Engineering"
-    url: /aiengineering/       
-
-  - title: "Thought's"
-    url: /projects/        
+    url: /aiengineering/    
+        
+  - title: "3L"
+    url: /sparetime/  
+   
+     
 
