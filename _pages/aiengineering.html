@@ -7,6 +7,276 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.aiengineering reversed %}
-{% include archive-single.html %}
-{% endfor %}
+<style>
+/* ── Reset & Base ── */
+.aie-wrap * { box-sizing: border-box; }
+.aie-wrap {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #0f172a;
+  max-width: 860px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+/* ── Banner ── */
+.aie-banner {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 2.8rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #312e81 70%, #4f46e5 100%);
+}
+.aie-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(99,102,241,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 10% 30%, rgba(139,92,246,0.15) 0%, transparent 50%);
+}
+/* animated grid lines */
+.aie-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.aie-banner-glow {
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,102,241,0.4) 0%, transparent 70%);
+  z-index: 1;
+}
+.aie-banner-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem 3rem;
+}
+.aie-banner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(99,102,241,0.25);
+  border: 1px solid rgba(99,102,241,0.5);
+  color: #c7d2fe;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+.aie-banner-title {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+}
+.aie-banner-title span {
+  background: linear-gradient(90deg, #818cf8, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.aie-banner-sub {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  max-width: 380px;
+  line-height: 1.6;
+}
+/* floating dots */
+.aie-dots {
+  position: absolute;
+  right: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(5, 10px);
+  gap: 10px;
+  opacity: 0.25;
+}
+.aie-dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #a5b4fc;
+  display: block;
+}
+
+/* ── Section label ── */
+.aie-label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6366f1;
+  margin-bottom: 1.1rem;
+}
+.aie-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, #e0e7ff, transparent);
+}
+
+/* ── Post list ── */
+.aie-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.aie-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  background: #ffffff;
+  text-decoration: none !important;
+  color: inherit !important;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.18s;
+  position: relative;
+}
+.aie-item:last-child { border-bottom: none; }
+.aie-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #6366f1, #a855f7);
+  opacity: 0;
+  transition: opacity 0.18s;
+}
+.aie-item:hover { background: #fafafe; text-decoration: none !important; }
+.aie-item:hover::before { opacity: 1; }
+
+.aie-item-num {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #c7d2fe;
+  min-width: 22px;
+  padding-top: 0.15rem;
+  flex-shrink: 0;
+}
+.aie-item-body { flex: 1; min-width: 0; }
+.aie-item-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.4;
+  margin-bottom: 0.3rem;
+}
+.aie-item-excerpt {
+  font-size: 0.76rem;
+  color: #64748b;
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+.aie-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.aie-item-date {
+  font-size: 0.65rem;
+  color: #94a3b8;
+}
+.aie-tag {
+  background: #eef2ff;
+  color: #6366f1;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 600;
+}
+.aie-item-arrow {
+  color: #c7d2fe;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  align-self: center;
+  transition: color 0.18s, transform 0.18s;
+}
+.aie-item:hover .aie-item-arrow {
+  color: #6366f1;
+  transform: translateX(3px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+  .aie-banner { height: 220px; border-radius: 10px; }
+  .aie-banner-content { padding: 1.5rem; }
+  .aie-dots { display: none; }
+  .aie-item-excerpt { display: none; }
+}
+</style>
+
+<div class="aie-wrap">
+
+  <!-- ── Banner ── -->
+  <div class="aie-banner">
+    <div class="aie-banner-glow"></div>
+    <div class="aie-dots">
+      {% for i in (1..25) %}<span></span>{% endfor %}
+    </div>
+    <div class="aie-banner-content">
+      <div class="aie-banner-title">AI <span>Engineering</span></div>
+      <div class="aie-banner-sub">Building robust, scalable, and production-ready AI systems — from architecture to deployment.</div>
+    </div>
+  </div>
+
+  <!-- ── Posts ── -->
+  <div class="aie-label">All Posts</div>
+
+  <div class="aie-list">
+    {% assign posts = site.aiengineering | reverse %}
+    {% for post in posts %}
+    <a class="aie-item" href="{{ base_path }}{{ post.url }}">
+      <div class="aie-item-num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</div>
+      <div class="aie-item-body">
+        <div class="aie-item-title">{{ post.title }}</div>
+        {% if post.excerpt %}
+          <div class="aie-item-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</div>
+        {% endif %}
+        <div class="aie-item-meta">
+          {% if post.date %}<span class="aie-item-date">{{ post.date | date: "%b %Y" }}</span>{% endif %}
+          {% if post.venue %}<span class="aie-tag">{{ post.venue }}</span>{% endif %}
+        </div>
+      </div>
+      <div class="aie-item-arrow">→</div>
+    </a>
+    {% endfor %}
+  </div>
+
+</div>
