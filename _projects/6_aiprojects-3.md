@@ -1,7 +1,7 @@
 ---
 title: "Automatic Speech Recognition — Capstone Project"
 excerpt: "An end-to-end ASR system that accurately transcribes spoken language into text across diverse domains and accents, built with Kaldi, Vosk, FastAPI, and deployed on Azure AKS.<br/><a href='https://github.com/uday160386/asr-capstone-project'>repo link..</a>"
-collection: aiengineering
+collection: projects
 tags:
   - Python
   - Speech Recognition

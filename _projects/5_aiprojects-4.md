@@ -1,7 +1,7 @@
 ---
 title: "ChatBot using Spring AI and OpenAI"
 excerpt: "A conversational ChatBot built with Spring AI and OpenAI, demonstrating prompt engineering for domain-specific responses."
-collection: aiengineering
+collection: projects
 tags:
   - Java
   - SpringBoot
