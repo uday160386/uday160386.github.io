@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "ud AI | Tales"
+title                    : "udAI"
 title_separator          : "-"
 name                     : &name "(Uday)"
 description              : &description "- passionate about technology and right usage,- adept at creatively, - continious learner, - dreamer and acheiver"
