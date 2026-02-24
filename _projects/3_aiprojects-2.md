@@ -25,7 +25,7 @@ The pipeline runs in three stages:
 
 **3. Story → Audio** — A second HuggingFace model (`kan-bayashi/ljspeech_vits`) converts the generated text into spoken audio.
 
-![App screenshot](./images/output.png)
+![App screenshot](/images/projects/output.png)
 
 ---
 
