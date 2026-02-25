@@ -8,257 +8,181 @@ author_profile: true
 {% include base_path %}
 
 <style>
-/* ── Reset & Base ── */
-.aie-wrap * { box-sizing: border-box; }
 .aie-wrap {
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  color: #0f172a;
-  max-width: 860px;
+  color: #ffffff;
+  max-width: 780px;
   margin: 0 auto;
   padding-bottom: 4rem;
 }
 
-/* ── Banner ── */
-.aie-banner {
-  position: relative;
-  width: 100%;
-  height: 140px;
-  border-radius: 12px;
-  overflow: hidden;
+/* ── Header ── */
+.aie-header {
+  padding-bottom: 1.75rem;
   margin-bottom: 2rem;
-  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #312e81 70%, #4f46e5 100%);
+  border-bottom: 2px solid #ffffff;
 }
-.aie-banner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(99,102,241,0.25) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 60% at 10% 30%, rgba(139,92,246,0.15) 0%, transparent 50%);
-}
-.aie-banner::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-.aie-banner-glow {
-  position: absolute;
-  right: -40px;
-  top: -40px;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(99,102,241,0.4) 0%, transparent 70%);
-  z-index: 1;
-}
-.aie-banner-content {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1.4rem 2rem;
-}
-.aie-banner-title {
-  font-size: clamp(1.2rem, 3vw, 1.7rem);
+
+.aie-header h1 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
   font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 0 0 0.5rem 0;
   color: #ffffff;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-  margin-bottom: 0.35rem;
 }
-.aie-banner-title span {
-  background: linear-gradient(90deg, #818cf8, #c084fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.aie-banner-sub {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.55);
-  max-width: 380px;
+
+.aie-header p {
+  font-size: 0.82rem;
+  color: #ffffff;
+  margin: 0;
   line-height: 1.5;
 }
-.aie-dots {
-  position: absolute;
-  right: 2.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(5, 10px);
-  gap: 8px;
-  opacity: 0.2;
-}
-.aie-dots span {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #a5b4fc;
-  display: block;
-}
 
-/* ── Section label ── */
-.aie-label {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  font-size: 0.66rem;
+/* ── Post count ── */
+.aie-count {
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #6366f1;
-  margin-bottom: 1.1rem;
-}
-.aie-label::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, #e0e7ff, transparent);
+  color: #ffffff;
+  margin-bottom: 0.75rem;
 }
 
-/* ── Post list ── */
+/* ── List ── */
 .aie-list {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  overflow: hidden;
 }
 
 .aie-item {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 36px 1fr 16px;
+  align-items: start;
   gap: 1rem;
-  padding: 1.2rem 1.4rem;
-  background: #ffffff;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #e5e7eb;
   text-decoration: none !important;
   color: inherit !important;
-  border-bottom: 1px solid #f1f5f9;
-  transition: background 0.18s;
-  position: relative;
+  transition: background 0.15s;
 }
-.aie-item:last-child { border-bottom: none; }
-.aie-item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, #6366f1, #a855f7);
-  opacity: 0;
-  transition: opacity 0.18s;
-}
-.aie-item:hover { background: #fafafe; text-decoration: none !important; }
-.aie-item:hover::before { opacity: 1; }
 
-.aie-item-num {
+.aie-item:first-child { border-top: 1px solid #e5e7eb; }
+
+.aie-item:hover { background: none; }
+.aie-item:hover .aie-item-title { color: #7c6868; text-decoration: underline; text-underline-offset: 3px; }
+.aie-item:hover .aie-arrow { opacity: 1; transform: translateX(3px); }
+
+/* Index number */
+.aie-num {
   font-size: 0.68rem;
   font-weight: 700;
-  color: #c7d2fe;
-  min-width: 22px;
-  padding-top: 0.15rem;
-  flex-shrink: 0;
+  color: #d1d5db;
+  padding-top: 0.2rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
 }
-.aie-item-body { flex: 1; min-width: 0; }
+
+/* Body */
 .aie-item-title {
   font-size: 0.92rem;
   font-weight: 600;
-  color: #0f172a;
-  line-height: 1.4;
+  color: #ffffff;
+  line-height: 1.45;
   margin-bottom: 0.3rem;
+  transition: color 0.15s;
 }
+
 .aie-item-excerpt {
   font-size: 0.76rem;
-  color: #64748b;
-  line-height: 1.55;
+  color: #ffffff;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin-bottom: 0.5rem;
 }
+
 .aie-item-meta {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
 }
-.aie-item-date {
+
+.aie-date {
   font-size: 0.65rem;
-  color: #94a3b8;
+  color: #ffffff;
+  letter-spacing: 0.03em;
 }
+
 .aie-tag {
-  background: #eef2ff;
-  color: #6366f1;
-  padding: 0.1rem 0.45rem;
-  border-radius: 999px;
   font-size: 0.62rem;
   font-weight: 600;
+  color: #ffffff;
+  border: 1px solid #d1d5db;
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  letter-spacing: 0.03em;
 }
-.aie-item-arrow {
-  color: #c7d2fe;
-  font-size: 0.9rem;
-  flex-shrink: 0;
+
+/* Arrow */
+.aie-arrow {
+  font-size: 0.8rem;
+  color: #ffffff;
   align-self: center;
-  transition: color 0.18s, transform 0.18s;
+  opacity: 0;
+  transition: opacity 0.15s, transform 0.15s;
 }
-.aie-item:hover .aie-item-arrow {
-  color: #6366f1;
-  transform: translateX(3px);
+
+/* ── Empty state ── */
+.aie-empty {
+  font-size: 0.82rem;
+  color: #ffffff;
+  padding: 2rem 0;
 }
 
 /* ── Responsive ── */
-@media (max-width: 560px) {
-  .aie-banner { height: 110px; border-radius: 10px; }
-  .aie-banner-content { padding: 1rem 1.2rem; }
-  .aie-dots { display: none; }
+@media (max-width: 520px) {
+  .aie-item { grid-template-columns: 28px 1fr; }
+  .aie-arrow { display: none; }
   .aie-item-excerpt { display: none; }
 }
 </style>
 
 <div class="aie-wrap">
 
-  <!-- ── Banner ── -->
-  <div class="aie-banner">
-    <div class="aie-banner-glow"></div>
-    <div class="aie-dots">
-      {% for i in (1..20) %}<span></span>{% endfor %}
-    </div>
-    <div class="aie-banner-content">
-      <div class="aie-banner-title">AI <span>Engineering</span></div>
-      <div class="aie-banner-sub">Building robust, scalable, and production-ready AI systems — from architecture to deployment.</div>
-    </div>
+  <div class="aie-header">
+    <h1>AI Engineering</h1>
+    <p>Building robust, scalable, and production-ready AI systems — from architecture to deployment.</p>
   </div>
 
-  <!-- ── Posts ── -->
-  <div class="aie-label">All Posts</div>
+  {% assign posts = site.aiengineering | reverse %}
+
+  <div class="aie-count">{{ posts.size }} post{% if posts.size != 1 %}s{% endif %}</div>
 
   <div class="aie-list">
-    {% assign posts = site.aiengineering | reverse %}
-    {% for post in posts %}
-    <a class="aie-item" href="{{ base_path }}{{ post.url }}">
-      <div class="aie-item-num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</div>
-      <div class="aie-item-body">
-        <div class="aie-item-title">{{ post.title }}</div>
-        {% if post.excerpt %}
-          <div class="aie-item-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</div>
-        {% endif %}
-        <div class="aie-item-meta">
-          {% if post.date %}<span class="aie-item-date">{{ post.date | date: "%b %Y" }}</span>{% endif %}
-          {% if post.venue %}<span class="aie-tag">{{ post.venue }}</span>{% endif %}
+    {% if posts.size > 0 %}
+      {% for post in posts %}
+      <a class="aie-item" href="{{ base_path }}{{ post.url }}">
+        <div class="aie-num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</div>
+        <div>
+          <div class="aie-item-title">{{ post.title }}</div>
+          {% if post.excerpt %}
+            <div class="aie-item-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</div>
+          {% endif %}
+          <div class="aie-item-meta">
+            {% if post.date %}<span class="aie-date">{{ post.date | date: "%b %Y" }}</span>{% endif %}
+            {% if post.venue %}<span class="aie-tag">{{ post.venue }}</span>{% endif %}
+          </div>
         </div>
-      </div>
-      <div class="aie-item-arrow">→</div>
-    </a>
-    {% endfor %}
+        <div class="aie-arrow">→</div>
+      </a>
+      {% endfor %}
+    {% else %}
+      <p class="aie-empty">No posts yet.</p>
+    {% endif %}
   </div>
 
 </div>
