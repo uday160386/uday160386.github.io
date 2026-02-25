@@ -11,28 +11,14 @@ tags:
   - remove-duplicates
 ---
 
-  ## Utilities for sorting photos using facial recognition, removing duplicates, and identifying photo quality.
+## Utilities for 
 
-### First Step:
+-       sorting photos using facial recognition, 
+-       removing duplicates, and 
+-       identifying photo quality
 
 
 
-After cloning this repository, install required packages using the below command.
+![App screenshot](/images/projects/photo-sorter-ui.png)
 
-  
-    python3 install -r requirements.txt
-
-### Code:
-
-- RemoveDuplicates: This utility will remove all the duplicate photos from given folder path.
-
-        python RemoveDuplicatePhotos.py --path <Give the path to folder which contains a duplicate images>
-   
-   
-- ImageQualityIdentifier: This utility will help to know about the quality of a image on a scale of 0-100%
-
-        python ImageQualityIdentifier.py --path <Give the path to folder which contains a images>
-    
-- PhotosByFacialRecognition: This utility will help identify similar photos from a group of photos. It internally uses facial recognition.
-
-        python PhotosByFacialRecognition.py --trainedPath <Give path to the folder with selected photos for training purpose> --sourcePath <Give path to the folder with photos which need to be identified>
+Repo: [github.com/uday160386/chat_app_spring-ai_azure_ai](https://github.com/uday160386/chat_app_spring-ai_azure_ai)
