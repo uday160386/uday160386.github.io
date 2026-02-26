@@ -46,8 +46,8 @@ redirect_from:
   }
   .ll-hero-title {
     font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
-    font-weight: 400;
+    font-size: clamp(1.2rem, 2vw, 2.4rem);
+    font-weight: 200;
     line-height: 1.15;
     letter-spacing: -0.01em;
     margin: 0 0 18px;
@@ -282,9 +282,9 @@ redirect_from:
 
   <!-- Hero -->
   <div class="ll-hero">
-    <div class="ll-hero-label">Lifelong Learning</div>
-    <h1 class="ll-hero-title">3L — <em>Life Long Learning</em></h1>
-    <p class="ll-hero-sub">A curated record of formal education, certifications, courses, and knowledge I've shared over the years.</p>
+    <!-- <div class="ll-hero-label">Lifelong Learning</div> -->
+    <h1 class="ll-hero-title">3L — Life Long Learning</h1>
+    <p class="ll-hero-sub">A record of formal education, certifications, courses, and knowledge I've shared over the years.</p>
   </div>
 
   <!-- Education -->
