@@ -11,9 +11,9 @@ redirect_from:
 <style>
   .avatar-ring {
     position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 20px;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 16px;
   }
   .avatar-ring::before {
     content: '';
@@ -42,10 +42,10 @@ redirect_from:
   }
   .avatar-status {
     position: absolute;
-    bottom: 8px;
-    right: 8px;
-    width: 22px;
-    height: 22px;
+    bottom: 6px;
+    right: 6px;
+    width: 18px;
+    height: 18px;
     background: #fff;
     border: 3px solid #111;
     border-radius: 50%;
@@ -55,23 +55,6 @@ redirect_from:
   @keyframes avatarPulse {
     0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
     50% { box-shadow: 0 0 0 5px rgba(255,255,255,0); }
-  }
-
-  /* Profile name/title area */
-  .profile-name {
-    font-size: 2rem;
-    font-style: italic;
-    font-weight: 700;
-    margin: 0 0 8px 0;
-  }
-  .profile-subtitle {
-    font-size: 1.2rem;
-    margin: 0 0 12px 0;
-  }
-  .profile-bio {
-    font-size: 1.05rem;
-    line-height: 1.65;
-    max-width: 540px;
   }
 
   /* Focus Area Tiles */
@@ -137,8 +120,8 @@ redirect_from:
     display: inline-block;
     margin-top: 16px;
     padding: 12px 32px;
-    background: #FFFFFF;
-    color: #000000;
+    background: #FFFFFF
+    color: #FFFFFF
     font-size: 0.88rem;
     font-weight: 600;
     letter-spacing: 0.08em;
@@ -147,6 +130,7 @@ redirect_from:
     border-radius: 6px;
     border: 2px solid #000;
     font-family: 'Courier New', monospace;
+    /* transition: background 0.2s, color 0.2s; */
   }
   .get-in-touch-btn:hover {
     background: #fff;
@@ -162,7 +146,7 @@ redirect_from:
     <!-- Digital Avatar -->
     <div class="avatar-ring">
       <div class="avatar-inner">
-        <svg width="200" height="200" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+        <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
           <rect width="160" height="160" fill="#111"/>
           <ellipse cx="80" cy="148" rx="58" ry="38" fill="#111"/>
           <path d="M22 148 Q30 120 45 112 Q60 104 80 102 Q100 104 115 112 Q130 120 138 148" fill="#1a1a1a"/>
@@ -228,11 +212,11 @@ redirect_from:
 </div>
 </p></td>
 
-<td style="border-collapse: collapse; border: none; padding-left: 24px;">
-  <h1 class="profile-name"><i><strong>Uday BKV</strong></i></h1>
-  <h2 class="profile-subtitle">Engineering Tech Lead | AI enthusiast | Green Software Practioner</h2>
+<td style="border-collapse: collapse; border: none;">
+  <h1><i><strong>Uday BKV</strong></i></h1>
+  <h2>Engineering Tech Lead | AI enthusiast | Green Software Practioner</h2>
   <hr>
-  <p class="profile-bio">Based in Singapore 🇸🇬, I am a technology professional with a passion for innovation and a proven track record of delivering enterprise-scale solutions across diverse industry verticals.</p>
+  Based in Singapore 🇸🇬, I am a technology professional with a passion for innovation and a proven track record of delivering enterprise-scale solutions across diverse industry verticals.
   </td>
   </tr>
   </table>
