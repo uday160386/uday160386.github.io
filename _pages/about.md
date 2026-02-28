@@ -11,9 +11,9 @@ redirect_from:
 <style>
   .avatar-ring {
     position: relative;
-    width: 160px;
-    height: 160px;
-    margin: 0 auto 16px;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
   }
   .avatar-ring::before {
     content: '';
@@ -42,10 +42,10 @@ redirect_from:
   }
   .avatar-status {
     position: absolute;
-    bottom: 6px;
-    right: 6px;
-    width: 18px;
-    height: 18px;
+    bottom: 8px;
+    right: 8px;
+    width: 22px;
+    height: 22px;
     background: #fff;
     border: 3px solid #111;
     border-radius: 50%;
@@ -55,6 +55,102 @@ redirect_from:
   @keyframes avatarPulse {
     0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
     50% { box-shadow: 0 0 0 5px rgba(255,255,255,0); }
+  }
+
+  /* Profile name/title area */
+  .profile-name {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+  }
+  .profile-subtitle {
+    font-size: 1.2rem;
+    margin: 0 0 12px 0;
+  }
+  .profile-bio {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    max-width: 540px;
+  }
+
+  /* Focus Area Tiles */
+  .focus-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin: 20px 0 10px 0;
+    padding: 0;
+    list-style: none;
+  }
+  .focus-tile {
+    position: relative;
+    background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 22px 20px 18px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: default;
+  }
+  .focus-tile::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 12px 12px 0 0;
+    background: var(--tile-accent);
+  }
+  .focus-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+    border-color: var(--tile-accent-dim);
+  }
+  .focus-tile .tile-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+    line-height: 1;
+  }
+  .focus-tile .tile-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f0f0f0;
+    margin: 0 0 8px 0;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-family: 'Courier New', monospace;
+  }
+  .focus-tile .tile-desc {
+    font-size: 0.82rem;
+    color: #999;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .tile-ai-leadership   { --tile-accent: #6ee7f7; --tile-accent-dim: rgba(110,231,247,0.25); }
+  .tile-speech          { --tile-accent: #b98aff; --tile-accent-dim: rgba(185,138,255,0.25); }
+  .tile-research        { --tile-accent: #ffd166; --tile-accent-dim: rgba(255,209,102,0.25); }
+  .tile-responsible     { --tile-accent: #6bcb77; --tile-accent-dim: rgba(107,203,119,0.25); }
+
+  /* Get in Touch Button */
+  .get-in-touch-btn {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 32px;
+    background: #FFFFFF;
+    color: #000000;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    border-radius: 6px;
+    border: 2px solid #000;
+    font-family: 'Courier New', monospace;
+  }
+  .get-in-touch-btn:hover {
+    background: #fff;
+    color: #000000 !important;
   }
 </style>
 
@@ -66,7 +162,7 @@ redirect_from:
     <!-- Digital Avatar -->
     <div class="avatar-ring">
       <div class="avatar-inner">
-        <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+        <svg width="200" height="200" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
           <rect width="160" height="160" fill="#111"/>
           <ellipse cx="80" cy="148" rx="58" ry="38" fill="#111"/>
           <path d="M22 148 Q30 120 45 112 Q60 104 80 102 Q100 104 115 112 Q130 120 138 148" fill="#1a1a1a"/>
@@ -132,11 +228,11 @@ redirect_from:
 </div>
 </p></td>
 
-<td style="border-collapse: collapse; border: none;">
-  <h1><i><strong>Uday BKV</strong></i></h1>
-  <h2>Engineering Tech Lead | AI enthusiast | Green Software Practioner</h2>
+<td style="border-collapse: collapse; border: none; padding-left: 24px;">
+  <h1 class="profile-name"><i><strong>Uday BKV</strong></i></h1>
+  <h2 class="profile-subtitle">Engineering Tech Lead | AI enthusiast | Green Software Practioner</h2>
   <hr>
-  Based in Singapore 🇸🇬, I am a technology professional with a passion for innovation and a proven track record of delivering enterprise-scale solutions across diverse industry verticals.
+  <p class="profile-bio">Based in Singapore 🇸🇬, I am a technology professional with a passion for innovation and a proven track record of delivering enterprise-scale solutions across diverse industry verticals.</p>
   </td>
   </tr>
   </table>
@@ -144,15 +240,40 @@ redirect_from:
   
   <h2>Professional Overview</h2>
   <p>With 17 years of comprehensive experience in the IT sector, I currently serve as an Engineering Tech Lead, having begun my career at age 20. Throughout my professional journey, I have consistently delivered high-impact solutions across multiple domains:</p>
+
   <h2>Content &amp; Knowledge Sharing</h2>
   <p>I leverage this platform to publish technical insights and posts in several key areas:</p>
+
   <h3>Primary Focus Areas</h3>
-  <ul>
-    <li>Sustainable Technology: Green software development and environmental impact</li>
-    <li>Cloud AI Solutions: Artificial intelligence implementations in cloud environments</li>
-    <li>Speech Technology: AI-powered applications with focus on automated speech recognition and conversational-ai</li>
-    <li>Natural Language Processing: Advanced NLP techniques and applications</li>
-  </ul>
+
+  <div class="focus-tiles">
+
+    <div class="focus-tile tile-ai-leadership">
+      <span class="tile-icon">🤖</span>
+      <p class="tile-title">AI &amp; Leadership</p>
+      <p class="tile-desc">Driving productivity through strategic AI implementations; analyzing organizational challenges and crafting solutions through an AI-first lens.</p>
+    </div>
+
+    <div class="focus-tile tile-speech">
+      <span class="tile-icon">🎙️</span>
+      <p class="tile-title">Speech Technology</p>
+      <p class="tile-desc">Building AI-powered applications with a focus on automated speech recognition and conversational AI systems.</p>
+    </div>
+
+    <div class="focus-tile tile-research">
+      <span class="tile-icon">🔬</span>
+      <p class="tile-title">AI/ML Research</p>
+      <p class="tile-desc">Translating cutting-edge research papers into practical, real-world solutions that deliver measurable business value.</p>
+    </div>
+
+    <div class="focus-tile tile-responsible">
+      <span class="tile-icon">🛡️</span>
+      <p class="tile-title">Responsible AI</p>
+      <p class="tile-desc">Promoting awareness and education around safe, ethical AI usage — what to do, and what to avoid.</p>
+    </div>
+
+  </div>
+
   <h3>Content Philosophy</h3>
   <ul style="max-width:600px; margin:0 0 0 20px;">
     <li>Provide practical insights from hands-on experience</li>
@@ -160,8 +281,11 @@ redirect_from:
     <li>Offer actionable tips and best practices</li>
     <li>Foster knowledge exchange within the technology community</li>
   </ul>
+
   <h3>Connect &amp; Collaborate</h3>
   <p>I am always interested in connecting with like-minded professionals, discussing emerging technologies, and exploring potential collaboration opportunities.</p>
-  <p>I welcome feedback, discussions, and collaborations from fellow technology professionals and enthusiasts!<br>
-</p>
+  <p>I welcome feedback, discussions, and collaborations from fellow technology professionals and enthusiasts!</p>
+
+  <a href="mailto:vuday.bk@outlook.com" class="get-in-touch-btn">✉ Get in Touch</a>
+
 </div>
