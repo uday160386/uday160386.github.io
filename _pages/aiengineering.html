@@ -8,16 +8,6 @@ author_profile: true
 {% include base_path %}
 
 <style>
-/* ── Reset & Base ── */
-.aie-wrap * { box-sizing: border-box; }
-.aie-wrap {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  color: #0f172a;
-  max-width: 860px;
-  margin: 0 auto;
-  padding-bottom: 4rem;
-}
-
 /* ── Banner ── */
 .aie-banner {
   position: relative;
@@ -26,239 +16,199 @@ author_profile: true
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 2rem;
-  background: linear-gradient(135deg, #0f172a 0%, #1a1a1a 40%, #2d2d2d 70%, #444444 100%);
+  background: black
 }
 .aie-banner::before {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 60% at 10% 30%, rgba(255,255,255,0.05) 0%, transparent 50%);
+
 }
 .aie-banner::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+
   background-size: 40px 40px;
 }
-.aie-banner-glow {
-  position: absolute;
-  right: -40px;
-  top: -40px;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
-  z-index: 1;
-}
-.aie-banner-content {
+.aie-banner-overlay {
   position: absolute;
   inset: 0;
-  z-index: 2;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 1.4rem 2rem;
+  text-align: center;
+  padding: 1.2rem 2rem;
+  z-index: 2;
+}
+.aie-banner-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #d4d4d4;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
 }
 .aie-banner-title {
-  font-size: clamp(1.2rem, 3vw, 1.7rem);
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: #ffffff;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-  margin-bottom: 0.35rem;
-}
-.aie-banner-title span {
-  background: linear-gradient(90deg, #d4d4d4, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
 }
 .aie-banner-sub {
   font-size: 0.78rem;
-  color: rgba(255,255,255,0.55);
-  max-width: 380px;
-  line-height: 1.5;
-}
-.aie-dots {
-  position: absolute;
-  right: 2.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(5, 10px);
-  gap: 8px;
-  opacity: 0.2;
-}
-.aie-dots span {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #d4d4d4;
-  display: block;
+  color: rgba(255,255,255,0.65);
+  max-width: 420px;
 }
 
 /* ── Section label ── */
-.aie-label {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #ffffff;
-  margin-bottom: 1.1rem;
-}
-.aie-label::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, #d4d4d4, transparent);
-}
-
-/* ── Post list ── */
-.aie-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.aie-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1.2rem 1.4rem;
-  background: #ffffff;
-  text-decoration: none !important;
-  color: inherit !important;
-  border-bottom: 1px solid #f1f5f9;
-  transition: background 0.18s;
-  position: relative;
-}
-.aie-item:last-child { border-bottom: none; }
-.aie-item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, #1a1a1a, #555555);
-  opacity: 0;
-  transition: opacity 0.18s;
-}
-.aie-item:hover { background: #f9f9f9; text-decoration: none !important; }
-.aie-item:hover::before { opacity: 1; }
-
-.aie-item-num {
+.aie-section-label {
   font-size: 0.68rem;
   font-weight: 700;
-  color: #c4c4c4;
-  min-width: 22px;
-  padding-top: 0.15rem;
-  flex-shrink: 0;
-}
-.aie-item-body { flex: 1; min-width: 0; }
-.aie-item-title {
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: #0f172a;
-  line-height: 1.4;
-  margin-bottom: 0.3rem;
-}
-.aie-item-excerpt {
-  font-size: 0.76rem;
-  color: #64748b;
-  line-height: 1.55;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  margin-bottom: 0.5rem;
-}
-.aie-item-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-.aie-item-date {
-  font-size: 0.65rem;
-  color: #94a3b8;
-}
-.aie-tag {
-  background: #f0f0f0;
-  color: #1a1a1a;
-  padding: 0.1rem 0.45rem;
-  border-radius: 999px;
-  font-size: 0.62rem;
-  font-weight: 600;
-}
-.aie-item-arrow {
-  color: #c4c4c4;
-  font-size: 0.9rem;
-  flex-shrink: 0;
-  align-self: center;
-  transition: color 0.18s, transform 0.18s;
-}
-.aie-item:hover .aie-item-arrow {
-  color: #1a1a1a;
-  transform: translateX(3px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #334155;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-/* ── Responsive ── */
-@media (max-width: 560px) {
-  .aie-banner { height: 110px; border-radius: 10px; }
-  .aie-banner-content { padding: 1rem 1.2rem; }
-  .aie-dots { display: none; }
-  .aie-item-excerpt { display: none; }
+/* ── Card Grid ── */
+.aie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.aie-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.aie-card:hover {
+  border-color: #94a3b8;
+  box-shadow: 0 4px 18px rgba(15,23,42,0.10);
+  transform: translateY(-2px);
+  text-decoration: none !important;
+}
+.aie-card-bar {
+  height: 5px;
+  background: linear-gradient(90deg, #1a1a1a, #555555);
+  flex-shrink: 0;
+}
+.aie-card-body {
+  padding: 1.2rem 1.3rem 1.1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.aie-card-icon {
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+  line-height: 1;
+}
+.aie-card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+  margin-bottom: 0.45rem;
+}
+.aie-card-excerpt {
+  font-size: 0.76rem;
+  color: #6b7280;
+  line-height: 1.55;
+  flex: 1;
+  margin-bottom: 0.9rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.aie-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f3f4f6;
+}
+.aie-card-meta {
+  font-size: 0.67rem;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.aie-tag {
+  background: #f1f5f9;
+  color: #334155;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.63rem;
+  font-weight: 600;
+}
+.aie-card-read {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+@media (max-width: 540px) {
+  .aie-grid { grid-template-columns: 1fr; }
+  .aie-banner { height: 110px; }
+  .aie-banner-title { font-size: 1.2rem; }
 }
 </style>
 
-<div class="aie-wrap">
-
-  <!-- ── Banner ── -->
-  <div class="aie-banner">
-    <div class="aie-banner-glow"></div>
-    <div class="aie-dots">
-      {% for i in (1..20) %}<span></span>{% endfor %}
-    </div>
-    <div class="aie-banner-content">
-      <div class="aie-banner-title">AI <span>Engineering</span></div>
-      <div class="aie-banner-sub">Building robust, scalable, and production-ready AI systems — from architecture to deployment.</div>
-    </div>
+<!-- ── Banner ── -->
+<div class="aie-banner">
+  <div class="aie-banner-overlay">
+    <div class="aie-banner-badge">⚙️ Production AI Systems</div>
+    <div class="aie-banner-title">AI Engineering</div>
+    <div class="aie-banner-sub">Building robust, scalable, and production-ready AI systems — from architecture to deployment.</div>
   </div>
+</div>
 
-  <!-- ── Posts ── -->
-  <div class="aie-label">All Posts</div>
+<!-- ── Posts Grid ── -->
+<div class="aie-section-label">Latest Posts</div>
 
-  <div class="aie-list">
-    {% assign posts = site.aiengineering | reverse %}
-    {% for post in posts %}
-    <a class="aie-item" href="{{ base_path }}{{ post.url }}">
-      <div class="aie-item-num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</div>
-      <div class="aie-item-body">
-        <div class="aie-item-title">{{ post.title }}</div>
-        {% if post.excerpt %}
-          <div class="aie-item-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</div>
-        {% endif %}
-        <div class="aie-item-meta">
-          {% if post.date %}<span class="aie-item-date">{{ post.date | date: "%b %Y" }}</span>{% endif %}
-          {% if post.venue %}<span class="aie-tag">{{ post.venue }}</span>{% endif %}
+<div class="aie-grid">
+{% assign posts = site.aiengineering | reverse %}
+{% for post in posts %}
+  <a class="aie-card" href="{{ base_path }}{{ post.url }}">
+    <div class="aie-card-bar"></div>
+    <div class="aie-card-body">
+      <div class="aie-card-icon"></div>
+      <div class="aie-card-title">{{ post.title }}</div>
+      {% if post.excerpt %}
+        <div class="aie-card-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</div>
+      {% endif %}
+      <div class="aie-card-footer">
+        <div class="aie-card-meta">
+          {% if post.date %}
+            <span>{{ post.date | date: "%b %Y" }}</span>
+          {% endif %}
+          {% if post.venue %}
+            <span class="aie-tag">{{ post.venue }}</span>
+          {% endif %}
         </div>
+        <div class="aie-card-read">Read →</div>
       </div>
-      <div class="aie-item-arrow">→</div>
-    </a>
-    {% endfor %}
-  </div>
-
+    </div>
+  </a>
+{% endfor %}
 </div>
