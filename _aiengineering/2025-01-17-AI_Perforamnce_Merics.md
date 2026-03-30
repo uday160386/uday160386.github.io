@@ -2,7 +2,7 @@
 title: "AI Model Performance metrics"
 collection: aiengineering
 permalink: /aiengineering/aimodelmetrics
-excerpt: ''
+excerpt: 'these metrics are important for model monitoring and improvement'
 date: 2025-01-17
 tags:
   - AI Bascis
