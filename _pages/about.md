@@ -214,7 +214,7 @@ redirect_from:
 
 <td style="border-collapse: collapse; border: none;">
   <h1><i><strong>Uday BKV</strong></i></h1>
-  <h2>Engineering Tech Lead | AI enthusiast | Green Software Practioner</h2>
+  <h2> Engineering Lead | AI enthusiast | Green Software Practioner | Traveller</h2>
   <hr>
   Based in Singapore 🇸🇬, I am a technology professional with a passion for innovation and a proven track record of delivering enterprise-scale solutions across diverse industry verticals.
   </td>
@@ -223,7 +223,7 @@ redirect_from:
   </div>
   
   <h2>Professional Overview</h2>
-  <p>With 17 years of comprehensive experience in the IT sector, I currently serve as an Engineering Tech Lead, having begun my career at age 20. Throughout my professional journey, I have consistently delivered high-impact solutions across multiple domains:</p>
+  <p>Comprehensive experience in the IT sector, I currently serve as an Engineering Tech Lead, having begun my career at age 20. Throughout my professional journey, I have consistently delivered high-impact solutions across multiple domains:</p>
 
   <h2>Content &amp; Knowledge Sharing</h2>
   <p>I leverage this platform to publish technical insights and posts in several key areas:</p>
