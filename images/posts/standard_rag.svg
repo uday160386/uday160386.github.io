@@ -1,0 +1,246 @@
+<svg viewBox="0 0 960 1180" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono','Fira Code',monospace">
+<defs>
+  <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#050d1a"/><stop offset="100%" style="stop-color:#0a1928"/>
+  </linearGradient>
+  <linearGradient id="gBlue"   x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#1d4ed8"/><stop offset="100%" style="stop-color:#60a5fa"/></linearGradient>
+  <linearGradient id="gGreen"  x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#065f46"/><stop offset="100%" style="stop-color:#34d399"/></linearGradient>
+  <linearGradient id="gOrange" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#92400e"/><stop offset="100%" style="stop-color:#fb923c"/></linearGradient>
+  <linearGradient id="gPurple" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#4c1d95"/><stop offset="100%" style="stop-color:#a78bfa"/></linearGradient>
+  <linearGradient id="gRed"    x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#7f1d1d"/><stop offset="100%" style="stop-color:#f87171"/></linearGradient>
+  <linearGradient id="gAmber"  x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#78350f"/><stop offset="100%" style="stop-color:#fbbf24"/></linearGradient>
+  <linearGradient id="gTeal"   x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#164e63"/><stop offset="100%" style="stop-color:#22d3ee"/></linearGradient>
+  <linearGradient id="hdr"     x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#1e3a8a"/><stop offset="100%" style="stop-color:#1d4ed8"/></linearGradient>
+  <marker id="aB" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#60a5fa"/></marker>
+  <marker id="aG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#34d399"/></marker>
+  <marker id="aR" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#f87171"/></marker>
+  <marker id="aA" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#fbbf24"/></marker>
+  <filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+
+<rect width="960" height="1180" fill="url(#bg)"/>
+<pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0L0 0 0 30" fill="none" stroke="#0d1f35" stroke-width="0.8"/></pattern>
+<rect width="960" height="1180" fill="url(#g)"/>
+
+<!-- Header -->
+<rect x="0" y="0" width="960" height="76" fill="url(#hdr)" opacity="0.25"/>
+<rect x="0" y="74" width="960" height="2" fill="url(#gBlue)"/>
+<text x="480" y="32" text-anchor="middle" fill="#dbeafe" font-size="24" font-weight="800" letter-spacing="3" filter="url(#glow)">STANDARD RAG PIPELINE</text>
+<text x="480" y="56" text-anchor="middle" fill="#3b82f6" font-size="10" letter-spacing="5">TF-IDF · CHUNKING · SENTENCE TRANSFORMERS · HNSW · LSH · CAG · CONTEXT ENG. · GUARDRAILS</text>
+
+<!-- ═══════════════════════ STEP 1: INPUT + GUARDRAILS ════════════════════════ -->
+<circle cx="46" cy="106" r="16" fill="#1d4ed8" stroke="#60a5fa" stroke-width="1.5"/>
+<text x="46" y="111" text-anchor="middle" fill="#fff" font-size="12" font-weight="800">1</text>
+<text x="72" y="112" fill="#60a5fa" font-size="12" font-weight="700" letter-spacing="1">INPUT  +  GUARDRAILS  (guardrails.py)</text>
+
+<!-- User query box -->
+<rect x="36" y="122" width="240" height="52" rx="7" fill="#080f1e" stroke="#3b82f6" stroke-width="2"/>
+<text x="156" y="143" text-anchor="middle" fill="#93c5fd" font-size="12" font-weight="700">💬 User Query</text>
+<text x="156" y="161" text-anchor="middle" fill="#475569" font-size="9">Web · CLI · MCP · Claude Desktop</text>
+
+<!-- Arrow right to guards -->
+<line x1="276" y1="148" x2="310" y2="148" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#aB)"/>
+
+<!-- Input guardrails panel -->
+<rect x="312" y="122" width="612" height="210" rx="7" fill="#080f1e" stroke="#f87171" stroke-width="1.5"/>
+<rect x="312" y="122" width="612" height="26" rx="7" fill="#200a0a"/>
+<text x="618" y="140" text-anchor="middle" fill="#fca5a5" font-size="11" font-weight="700">🛡 INPUT GUARDRAILS  (run before retrieval)</text>
+
+<!-- 6 guard pills in 2 rows -->
+<rect x="322" y="154" width="184" height="38" rx="5" fill="#0d0505" stroke="#ef4444" stroke-width="1"/>
+<text x="414" y="168" text-anchor="middle" fill="#f87171" font-size="9" font-weight="700">① QueryLengthGuard</text>
+<text x="414" y="182" text-anchor="middle" fill="#64748b" font-size="8">3–2000 chars  ·  BLOCK if violated</text>
+
+<rect x="516" y="154" width="184" height="38" rx="5" fill="#0d0505" stroke="#ef4444" stroke-width="1"/>
+<text x="608" y="168" text-anchor="middle" fill="#f87171" font-size="9" font-weight="700">② InjectionGuard</text>
+<text x="608" y="182" text-anchor="middle" fill="#64748b" font-size="8">jailbreak / prompt injection  ·  BLOCK</text>
+
+<rect x="710" y="154" width="204" height="38" rx="5" fill="#0d0505" stroke="#ef4444" stroke-width="1"/>
+<text x="812" y="168" text-anchor="middle" fill="#f87171" font-size="9" font-weight="700">③ ToxicityGuard</text>
+<text x="812" y="182" text-anchor="middle" fill="#64748b" font-size="8">weapons / CSAM / harm  ·  BLOCK</text>
+
+<rect x="322" y="198" width="184" height="38" rx="5" fill="#080e1a" stroke="#f59e0b" stroke-width="1"/>
+<text x="414" y="212" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="700">④ PIIDetector</text>
+<text x="414" y="226" text-anchor="middle" fill="#64748b" font-size="8">email/phone/SSN  ·  REDACT in query</text>
+
+<rect x="516" y="198" width="184" height="38" rx="5" fill="#080e1a" stroke="#f59e0b" stroke-width="1"/>
+<text x="608" y="212" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="700">⑤ TopicBoundaryGuard</text>
+<text x="608" y="226" text-anchor="middle" fill="#64748b" font-size="8">off-topic queries  ·  WARN / BLOCK</text>
+
+<rect x="710" y="198" width="204" height="38" rx="5" fill="#080e1a" stroke="#f59e0b" stroke-width="1"/>
+<text x="812" y="212" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="700">⑥ RateLimitGuard</text>
+<text x="812" y="226" text-anchor="middle" fill="#64748b" font-size="8">20 req/60s · Redis-backed · BLOCK</text>
+
+<!-- outcome labels -->
+<text x="618" y="250" text-anchor="middle" fill="#64748b" font-size="8">BLOCK → return error immediately  ·  REDACT → sanitise query  ·  WARN → attach warning to response</text>
+<text x="618" y="264" text-anchor="middle" fill="#64748b" font-size="8">PASS → proceed to retrieval with (possibly sanitised) query</text>
+<text x="618" y="278" text-anchor="middle" fill="#475569" font-size="8" font-weight="600">Ordered: fail fast on hardest blocks (length → injection → toxic → PII → topic → rate)</text>
+
+<!-- Arrow down -->
+<line x1="480" y1="332" x2="480" y2="358" stroke="#60a5fa" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#aB)"/>
+
+<!-- ═══════════════════════ STEP 2: INGESTION ════════════════════════════════ -->
+<circle cx="46" cy="376" r="16" fill="#1d4ed8" stroke="#60a5fa" stroke-width="1.5"/>
+<text x="46" y="381" text-anchor="middle" fill="#fff" font-size="12" font-weight="800">2</text>
+<text x="72" y="382" fill="#60a5fa" font-size="12" font-weight="700" letter-spacing="1">INGESTION  (create_vector_db.py)</text>
+
+<!-- Documents -->
+<rect x="36" y="392" width="200" height="50" rx="7" fill="#080f1e" stroke="#334155" stroke-width="1.5"/>
+<rect x="36" y="392" width="5" height="50" rx="3" fill="url(#gOrange)"/>
+<text x="140" y="413" text-anchor="middle" fill="#fb923c" font-size="11" font-weight="700">📄 Documents</text>
+<text x="140" y="429" text-anchor="middle" fill="#475569" font-size="9">.txt .md .pdf .json .csv</text>
+
+<!-- Agentic chunking -->
+<rect x="256" y="392" width="208" height="50" rx="7" fill="#080f1e" stroke="#d97706" stroke-width="1.5"/>
+<text x="360" y="411" text-anchor="middle" fill="#fb923c" font-size="10" font-weight="700">⚡ Agentic Chunking</text>
+<text x="360" y="425" text-anchor="middle" fill="#475569" font-size="8">TF-IDF boundary detect · 200w/40w</text>
+<text x="360" y="436" text-anchor="middle" fill="#475569" font-size="8">page index: 500w virtual pages</text>
+
+<!-- TF-IDF -->
+<rect x="484" y="392" width="208" height="50" rx="7" fill="#080f1e" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="588" y="411" text-anchor="middle" fill="#a78bfa" font-size="10" font-weight="700">📐 TF-IDF Vectoriser</text>
+<text x="588" y="425" text-anchor="middle" fill="#475569" font-size="8">offline fallback embedder</text>
+<text x="588" y="436" text-anchor="middle" fill="#475569" font-size="8">context compression scoring</text>
+
+<!-- Sentence Transformer -->
+<rect x="712" y="392" width="212" height="50" rx="7" fill="#080f1e" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="818" y="409" text-anchor="middle" fill="#a78bfa" font-size="10" font-weight="700">🤗 Sentence Transformer</text>
+<text x="818" y="423" text-anchor="middle" fill="#a78bfa" font-size="9" font-weight="600">BAAI/bge-small-en-v1.5</text>
+<text x="818" y="436" text-anchor="middle" fill="#475569" font-size="8">dim=384 · normalize=True</text>
+
+<line x1="480" y1="442" x2="480" y2="468" stroke="#60a5fa" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#aB)"/>
+
+<!-- ═══════════════════════ STEP 3: VECTOR STORE ═════════════════════════════ -->
+<circle cx="46" cy="486" r="16" fill="#1d4ed8" stroke="#60a5fa" stroke-width="1.5"/>
+<text x="46" y="491" text-anchor="middle" fill="#fff" font-size="12" font-weight="800">3</text>
+<text x="72" y="492" fill="#60a5fa" font-size="12" font-weight="700" letter-spacing="1">VECTOR STORE  (ChromaDB · HNSW · LSH)</text>
+
+<rect x="36" y="502" width="284" height="120" rx="7" fill="#080f1e" stroke="#065f46" stroke-width="1.5"/>
+<rect x="36" y="502" width="5" height="120" rx="3" fill="url(#gGreen)"/>
+<text x="178" y="521" text-anchor="middle" fill="#34d399" font-size="11" font-weight="700">🗄 ChromaDB Collections</text>
+<line x1="46" y1="527" x2="310" y2="527" stroke="#1e293b" stroke-width="1"/>
+<text x="178" y="543" text-anchor="middle" fill="#34d399" font-size="9" font-weight="600">documents  (chunk index)</text>
+<text x="178" y="557" text-anchor="middle" fill="#64748b" font-size="8">200w chunks · cosine · persistent</text>
+<text x="178" y="572" text-anchor="middle" fill="#a78bfa" font-size="9" font-weight="600">page_index  (page index)</text>
+<text x="178" y="586" text-anchor="middle" fill="#64748b" font-size="8">500w pages · cosine · persistent</text>
+<text x="178" y="600" text-anchor="middle" fill="#64748b" font-size="8">Two collections · queried in parallel</text>
+<text x="178" y="613" text-anchor="middle" fill="#475569" font-size="7">./chroma_db/chroma.sqlite3</text>
+
+<rect x="340" y="502" width="284" height="120" rx="7" fill="#080f1e" stroke="#065f46" stroke-width="1.5"/>
+<text x="482" y="521" text-anchor="middle" fill="#34d399" font-size="11" font-weight="700">📐 HNSW Index</text>
+<line x1="350" y1="527" x2="614" y2="527" stroke="#1e293b" stroke-width="1"/>
+<text x="482" y="542" text-anchor="middle" fill="#64748b" font-size="9">Hierarchical Navigable Small World</text>
+<text x="482" y="556" text-anchor="middle" fill="#475569" font-size="8">Layer 2 (sparse):  A ───────── F</text>
+<text x="482" y="568" text-anchor="middle" fill="#475569" font-size="8">Layer 1 (medium): A ── C ── F</text>
+<text x="482" y="580" text-anchor="middle" fill="#475569" font-size="8">Layer 0 (dense):  A─B─C─D─E─F</text>
+<text x="482" y="596" text-anchor="middle" fill="#34d399" font-size="9" font-weight="600">O(log n) ANN · sub-ms queries</text>
+<text x="482" y="610" text-anchor="middle" fill="#475569" font-size="8">greedy descent from top layer</text>
+
+<rect x="644" y="502" width="280" height="120" rx="7" fill="#080f1e" stroke="#065f46" stroke-width="1.5"/>
+<text x="784" y="521" text-anchor="middle" fill="#34d399" font-size="11" font-weight="700">🔑 LSH Pre-filter</text>
+<line x1="654" y1="527" x2="914" y2="527" stroke="#1e293b" stroke-width="1"/>
+<text x="784" y="542" text-anchor="middle" fill="#64748b" font-size="9">Locality Sensitive Hashing</text>
+<text x="784" y="556" text-anchor="middle" fill="#64748b" font-size="9">similar vectors → same bucket</text>
+<text x="784" y="570" text-anchor="middle" fill="#64748b" font-size="9">multiple hash tables → candidates</text>
+<text x="784" y="584" text-anchor="middle" fill="#34d399" font-size="9" font-weight="600">fast candidate pre-selection</text>
+<text x="784" y="598" text-anchor="middle" fill="#64748b" font-size="9">HNSW refines LSH candidates</text>
+<text x="784" y="612" text-anchor="middle" fill="#475569" font-size="8">hnsw:space = cosine</text>
+
+<line x1="480" y1="622" x2="480" y2="648" stroke="#60a5fa" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#aB)"/>
+
+<!-- ═══════════════════════ STEP 4: CAG + CONTEXT ENG ════════════════════════ -->
+<circle cx="46" cy="666" r="16" fill="#1d4ed8" stroke="#60a5fa" stroke-width="1.5"/>
+<text x="46" y="671" text-anchor="middle" fill="#fff" font-size="12" font-weight="800">4</text>
+<text x="72" y="672" fill="#60a5fa" font-size="12" font-weight="700" letter-spacing="1">CAG  +  CONTEXT ENGINEERING  (rag.py · context_engine.py)</text>
+
+<!-- Redis CAG -->
+<rect x="36" y="684" width="210" height="154" rx="7" fill="#080f1e" stroke="#7f1d1d" stroke-width="1.5"/>
+<rect x="36" y="684" width="5" height="154" rx="3" fill="url(#gRed)"/>
+<text x="141" y="703" text-anchor="middle" fill="#f87171" font-size="11" font-weight="700">🔴 Redis  (CAG)</text>
+<line x1="46" y1="709" x2="236" y2="709" stroke="#1e293b" stroke-width="1"/>
+<text x="141" y="724" text-anchor="middle" fill="#64748b" font-size="9">Cache-Augmented Generation</text>
+<text x="141" y="738" text-anchor="middle" fill="#34d399" font-size="9" font-weight="600">HIT → return instantly (~2ms)</text>
+<text x="141" y="752" text-anchor="middle" fill="#f87171" font-size="9" font-weight="600">MISS → continue pipeline</text>
+<text x="141" y="766" text-anchor="middle" fill="#64748b" font-size="8">SHA256(query+top_k) key</text>
+<text x="141" y="779" text-anchor="middle" fill="#64748b" font-size="8">TTL 3600s · JSON payload</text>
+<text x="141" y="793" text-anchor="middle" fill="#64748b" font-size="8">40%+ hit rate typical</text>
+<text x="141" y="806" text-anchor="middle" fill="#475569" font-size="7">answer+sources+scores cached</text>
+<text x="141" y="818" text-anchor="middle" fill="#475569" font-size="7">guardrail_warnings included</text>
+
+<!-- Context Engine -->
+<rect x="266" y="684" width="316" height="154" rx="7" fill="#080f1e" stroke="#4c1d95" stroke-width="1.5"/>
+<text x="424" y="703" text-anchor="middle" fill="#a78bfa" font-size="11" font-weight="700">⚙ Context Engine</text>
+<line x1="276" y1="709" x2="572" y2="709" stroke="#1e293b" stroke-width="1"/>
+<text x="284" y="723" fill="#f97316" font-size="9" font-weight="700">①</text><text x="296" y="723" fill="#e2e8f0" font-size="9">QueryRewriter</text><text x="400" y="723" fill="#64748b" font-size="9">resolve pronouns via history</text>
+<text x="284" y="739" fill="#f97316" font-size="9" font-weight="700">②</text><text x="296" y="739" fill="#e2e8f0" font-size="9">Two-Stage Retrieval</text><text x="418" y="739" fill="#64748b" font-size="9">page + chunk indexes</text>
+<text x="284" y="755" fill="#f97316" font-size="9" font-weight="700">③</text><text x="296" y="755" fill="#e2e8f0" font-size="9">MMR Re-rank</text><text x="394" y="755" fill="#64748b" font-size="9">λ=0.7 diversity balance</text>
+<text x="284" y="771" fill="#f97316" font-size="9" font-weight="700">④</text><text x="296" y="771" fill="#e2e8f0" font-size="9">ContextCompressor</text><text x="412" y="771" fill="#64748b" font-size="9">TF-IDF sentence drop</text>
+<text x="284" y="787" fill="#f97316" font-size="9" font-weight="700">⑤</text><text x="296" y="787" fill="#e2e8f0" font-size="9">TokenBudgetManager</text><text x="416" y="787" fill="#64748b" font-size="9">3000 token window</text>
+<text x="284" y="803" fill="#f97316" font-size="9" font-weight="700">⑥</text><text x="296" y="803" fill="#e2e8f0" font-size="9">SystemPromptBuilder</text><text x="418" y="803" fill="#64748b" font-size="9">structured assembly</text>
+<text x="284" y="819" fill="#f97316" font-size="9" font-weight="700">⑦</text><text x="296" y="819" fill="#e2e8f0" font-size="9">ConversationMemory</text><text x="418" y="819" fill="#64748b" font-size="9">6-turn rolling window</text>
+
+<!-- LLM -->
+<rect x="602" y="684" width="322" height="154" rx="7" fill="#080f1e" stroke="#1d4ed8" stroke-width="1.5"/>
+<text x="763" y="703" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="700">🤖 LLM Generation</text>
+<line x1="612" y1="709" x2="914" y2="709" stroke="#1e293b" stroke-width="1"/>
+<rect x="612" y="716" width="144" height="66" rx="5" fill="#06091a" stroke="#d97706" stroke-width="1"/>
+<text x="684" y="735" text-anchor="middle" fill="#fb923c" font-size="11" font-weight="700">Gemini</text>
+<text x="684" y="751" text-anchor="middle" fill="#64748b" font-size="8">gemini-2.0-flash-lite</text>
+<text x="684" y="764" text-anchor="middle" fill="#64748b" font-size="8">cloud · retry on 429</text>
+<text x="684" y="776" text-anchor="middle" fill="#475569" font-size="7">free tier</text>
+<rect x="770" y="716" width="136" height="66" rx="5" fill="#06091a" stroke="#065f46" stroke-width="1"/>
+<text x="838" y="735" text-anchor="middle" fill="#34d399" font-size="11" font-weight="700">Ollama</text>
+<text x="838" y="751" text-anchor="middle" fill="#64748b" font-size="8">llama3.2 / mistral</text>
+<text x="838" y="764" text-anchor="middle" fill="#64748b" font-size="8">local · no quota</text>
+<text x="838" y="776" text-anchor="middle" fill="#475569" font-size="7">recommended</text>
+<text x="763" y="804" text-anchor="middle" fill="#64748b" font-size="9">answer · sources · scores</text>
+<text x="763" y="818" text-anchor="middle" fill="#64748b" font-size="9">cache_hit · context_steps</text>
+<text x="763" y="830" text-anchor="middle" fill="#475569" font-size="7">guardrail_warnings passed through</text>
+
+<line x1="480" y1="838" x2="480" y2="864" stroke="#60a5fa" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#aB)"/>
+
+<!-- ═══════════════════════ STEP 5: OUTPUT GUARDRAILS ════════════════════════ -->
+<circle cx="46" cy="882" r="16" fill="#1d4ed8" stroke="#60a5fa" stroke-width="1.5"/>
+<text x="46" y="887" text-anchor="middle" fill="#fff" font-size="12" font-weight="800">5</text>
+<text x="72" y="888" fill="#60a5fa" font-size="12" font-weight="700" letter-spacing="1">OUTPUT GUARDRAILS  (guardrails.py)</text>
+
+<rect x="36" y="900" width="888" height="170" rx="7" fill="#080f1e" stroke="#f59e0b" stroke-width="1.5"/>
+<rect x="36" y="900" width="888" height="26" rx="7" fill="#1c1000"/>
+<text x="480" y="918" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="700">⚡ OUTPUT GUARDRAILS  (run after generation, before returning to user)</text>
+
+<rect x="46" y="932" width="204" height="50" rx="5" fill="#0d0a00" stroke="#f59e0b" stroke-width="1"/>
+<text x="148" y="950" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="700">⑦ ConfidenceGuard</text>
+<text x="148" y="964" text-anchor="middle" fill="#64748b" font-size="8">top score &lt; 0.3 → WARN</text>
+<text x="148" y="975" text-anchor="middle" fill="#475569" font-size="7">"answer may not be accurate"</text>
+
+<rect x="260" y="932" width="204" height="50" rx="5" fill="#0d0a00" stroke="#f59e0b" stroke-width="1"/>
+<text x="362" y="950" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="700">⑧ HallucinationGuard</text>
+<text x="362" y="964" text-anchor="middle" fill="#64748b" font-size="8">answer/source overlap &lt; 15%</text>
+<text x="362" y="975" text-anchor="middle" fill="#475569" font-size="7">"possible hallucination"</text>
+
+<rect x="474" y="932" width="204" height="50" rx="5" fill="#0d0a00" stroke="#f59e0b" stroke-width="1"/>
+<text x="576" y="950" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="700">⑨ CitationGuard</text>
+<text x="576" y="964" text-anchor="middle" fill="#64748b" font-size="8">no source ref in long answer</text>
+<text x="576" y="975" text-anchor="middle" fill="#475569" font-size="7">"add source references"</text>
+
+<rect x="688" y="932" width="226" height="50" rx="5" fill="#0d0a00" stroke="#f59e0b" stroke-width="1"/>
+<text x="801" y="950" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="700">⑩ PIIScrubber</text>
+<text x="801" y="964" text-anchor="middle" fill="#64748b" font-size="8">redact PII leaked into answer</text>
+<text x="801" y="975" text-anchor="middle" fill="#475569" font-size="7">email/phone/SSN → [REDACTED]</text>
+
+<text x="480" y="1010" text-anchor="middle" fill="#64748b" font-size="8">WARN → attach warning to response   ·   REDACT → replace answer with scrubbed version</text>
+<text x="480" y="1024" text-anchor="middle" fill="#64748b" font-size="8">All output guards run on every response  ·  warnings shown in red in Web Chat UI</text>
+<text x="480" y="1040" text-anchor="middle" fill="#475569" font-size="8" font-weight="600">Output guards NEVER block — they warn and optionally sanitise</text>
+<text x="480" y="1056" text-anchor="middle" fill="#475569" font-size="7">Chain: ConfidenceGuard → HallucinationGuard → CitationGuard → PIIScrubber</text>
+
+<line x1="480" y1="1070" x2="480" y2="1096" stroke="#34d399" stroke-width="2" marker-end="url(#aG)"/>
+
+<!-- Final answer -->
+<rect x="36" y="1098" width="888" height="52" rx="7" fill="#060e12" stroke="#065f46" stroke-width="2"/>
+<text x="480" y="1120" text-anchor="middle" fill="#34d399" font-size="13" font-weight="700">✅ Final Answer  +  Sources  +  Scores  +  Warnings</text>
+<text x="480" y="1138" text-anchor="middle" fill="#475569" font-size="9">text  ·  citations  ·  similarity scores  ·  cache_hit  ·  guardrail_warnings  ·  context_steps</text>
+
+<!-- footer -->
+<rect x="0" y="1158" width="960" height="22" fill="#030810"/>
+<text x="480" y="1172" text-anchor="middle" fill="#0f1f35" font-size="8" letter-spacing="2">guardrails.py  ·  rag.py  ·  context_engine.py  ·  create_vector_db.py  ·  search.py  ·  chat_server.py  ·  mcp_server.py</text>
+</svg>
