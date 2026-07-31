@@ -94,7 +94,6 @@ redirect_from:
   <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
    
     <h2>Engineering Lead | AI enthusiast | Green Software Practioner | Traveller</h2>
-    <hr>
     <p>Based in Singapore 🇸🇬, I am a technology professional with a passion for innovation and a proven track record of delivering enterprise-scale solutions across diverse industry verticals.</p>
   </div>
       <div class="page__footer-follow" style="text-align: center; margin-bottom: 10px;">
