@@ -88,13 +88,84 @@ redirect_from:
     background: #fff;
     color: #000000 !important;
   }
+
+  /* Core Expertise badges */
+  .expertise-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 1rem 0 0.5rem 0;
+    padding: 0;
+    list-style: none;
+  }
+  .expertise-badge {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 8px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.82rem;
+    color: #ffffff;
+    font-weight: 500;
+    line-height: 1.3;
+    transition: border-color 0.2s, background 0.2s, transform 0.18s;
+  }
+  .expertise-badge:hover {
+    border-color: #ffffff;
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-1px);
+  }
+
+  /* Education cards */
+  .edu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 1rem 0 0.5rem 0;
+  }
+  .edu-item {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    padding: 1rem 1.3rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .edu-item:hover {
+    border-color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.09);
+  }
+  .edu-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ffffff;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .edu-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .edu-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.5;
+  }
+  .edu-school {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.4;
+  }
 </style>
 
 <div style="max-width: 3800px; margin: 10px auto; border-radius: 1px; box-shadow: 0 4px 24px rgba(0,0,0,0.30); overflow: hidden; padding: 32px 24px; text-align: left;">
   <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
    
-    <h2>Engineering Lead | AI enthusiast | Green Software Practioner | Traveller</h2>
-    <p>Based in Singapore 🇸🇬, I am a technology professional with a passion for innovation and a proven track record of delivering enterprise-scale solutions across diverse industry verticals.</p>
+  
+    <p>Based in Singapore 🇸🇬, I am an Engineering Lead with a strong global track record across Banking, Energy &amp; Utilities, and Digital Transformation. I specialize in closing the gap between business strategy and technical delivery — bringing hands-on depth in designing and shipping production-ready, cloud-native APIs at enterprise scale.</p>
   </div>
       <div class="page__footer-follow" style="text-align: center; margin-bottom: 10px;">
   <ul class="social-icons" style="display: flex; justify-content: center; align-items: center; gap: 20px; list-style: none; padding: 0;">
@@ -116,7 +187,28 @@ Linkedin
   </ul>
 </div>
   <h2>Professional Overview</h2>
-  <p>Comprehensive experience in the IT sector, I currently serve as an Engineering Tech Lead, having begun my career at age 20. Throughout my professional journey, I have consistently delivered high-impact solutions across multiple domains:</p>
+    <h2>Engineering Lead | AI enthusiast | Green Software Practioner | Traveller</h2>
+  <p>My background spans the full delivery lifecycle: requirements gathering, architecture, API management, backend and test engineering, and production-grade execution. Having begun my career in the IT sector at age 20, I currently serve as Engineering Tech Lead for the SME Digital, Open API and Partnerships program at Standard Chartered, Singapore, where I continue to deliver high-impact solutions across multiple domains.</p>
+
+  <h3>Core Expertise</h3>
+  <ul class="expertise-grid">
+    <li class="expertise-badge">Technical Leadership</li>
+    <li class="expertise-badge">Open API</li>
+    <li class="expertise-badge">Solution Design</li>
+    <li class="expertise-badge">Artificial Intelligence</li>
+    <li class="expertise-badge">ML Models</li>
+    <li class="expertise-badge">Automated Speech</li>
+    <li class="expertise-badge">Green Software</li>
+        <li class="expertise-badge">Cloud Migration</li>
+  </ul>
+
+  <h2>Education</h2>
+
+   <ul>
+    <li>PG Certification Program in Artificial Intelligence and Machine Learning from IIIT Hyderabad</li>
+    <li>Masters in Software Engineering from BITS Pilani</li>
+  </ul>
+
 
   <h2>Content &amp; Knowledge Sharing</h2>
   <p>I leverage this platform to publish technical insights and posts in several key areas:</p>
