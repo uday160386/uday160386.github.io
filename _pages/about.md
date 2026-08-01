@@ -168,23 +168,7 @@ redirect_from:
     <p>Based in Singapore 🇸🇬, I am an Engineering Lead with a strong global track record across Banking, Energy &amp; Utilities, and Digital Transformation. I specialize in closing the gap between business strategy and technical delivery — bringing hands-on depth in designing and shipping production-ready, cloud-native APIs at enterprise scale.</p>
   </div>
       <div class="page__footer-follow" style="text-align: center; margin-bottom: 10px;">
-  <ul class="social-icons" style="display: flex; justify-content: center; align-items: center; gap: 20px; list-style: none; padding: 0;">
-    <li>
-      <a href="http://github.com/{{ site.author.github }}" style="color: white;">
-github
-      </a>
-    </li>
-    <li>
-      <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" style="color: white;">
-Linkedin
-      </a>
-    </li>
-    <li>
-      <a href="/_pages/vukclicks/index.html" style="color: white;">
-        vukclicks
-      </a>
-    </li>
-  </ul>
+ 
 </div>
   <h2>Professional Overview</h2>
     <h2>Engineering Lead | AI enthusiast | Green Software Practioner | Traveller</h2>
