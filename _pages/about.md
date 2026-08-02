@@ -171,7 +171,7 @@ redirect_from:
  
 </div>
   <h2>Professional Overview</h2>
-    <h2>Engineering Lead | AI enthusiast | Green Software Practioner | Traveller</h2>
+    <h2>Engineering Lead | AI enthusiast | Green Software Practioner</h2>
   <p>My background spans the full delivery lifecycle: requirements gathering, architecture, API management, backend and test engineering, and production-grade execution. Having begun my career in the IT sector at age 20, I currently serve as Engineering Tech Lead for the SME Digital, Open API and Partnerships program at Standard Chartered, Singapore, where I continue to deliver high-impact solutions across multiple domains.</p>
 
   <h3>Core Expertise</h3>
