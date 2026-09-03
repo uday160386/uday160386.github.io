@@ -1,12 +1,11 @@
 # main links links
 main:
 
-  # - title: "Thoughts"
-  #   url: /posts/
+  - title: "Thoughts"
+    url: /projects/
 
-
-  - title: "Thought's"
-    url: /projects/   
+  - title: "Posts"
+    url: /posts/
 
   - title: "Green Software"
     url: /greensoftware/
@@ -18,9 +17,9 @@ main:
     url: "https://www.linkedin.com/in/bkvudaykumar"   
 
   - title: "Github"
-    url: "http://github.com/uday160386"   
+    url: "https://github.com/uday160386"   
 
   - title: "VUKClicks"
-    url: "/_pages/vukclicks/index.html"    
+    url: "/vukclicks/"    
      
 
