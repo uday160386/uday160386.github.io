@@ -120,26 +120,28 @@ redirect_from:
     line-height: 1.6;
   }
 
-  /* Get in Touch Button */
-  .get-in-touch-btn {
-    display: inline-block;
-    margin-top: 16px;
-    padding: 12px 32px;
-    background: #2f7f93;
-    color: #ffffff;
-    font-size: 0.88rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+  /* Hero social icon links */
+  .hero-links {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1.1rem;
+  }
+  .hero-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid #2f7f93;
+    color: #2f7f93;
+    font-size: 1.05rem;
     text-decoration: none !important;
-    border-radius: 6px;
-    border: 2px solid #2f7f93;
-    font-family: 'Courier New', monospace;
     transition: background 0.2s, color 0.2s;
   }
-  .get-in-touch-btn:hover {
-    background: #ffffff;
-    color: #2f7f93 !important;
+  .hero-icon-link:hover {
+    background: #2f7f93;
+    color: #ffffff !important;
   }
 
   /* Core Expertise badges */
@@ -229,8 +231,24 @@ redirect_from:
       <div class="hero-name">{{ site.author.name }}</div>
       <div class="hero-title">Engineering Lead — AI Systems &amp; Green Software</div>
       <p class="hero-intro">I am an Engineering Lead with a strong global track record across Banking, Energy &amp; Utilities, and Digital Transformation. I specialize in closing the gap between business strategy and technical delivery — bringing hands-on depth in designing and shipping production-ready, cloud-native APIs at enterprise scale.</p>
-      {% if site.author.email %}
-        <a class="get-in-touch-btn" href="mailto:{{ site.author.email }}">Get in touch</a>
+      {% if site.author.linkedin or site.author.github or site.author.uri %}
+        <div class="hero-links">
+          {% if site.author.linkedin %}
+            <a class="hero-icon-link" href="https://www.linkedin.com/in/{{ site.author.linkedin }}" aria-label="LinkedIn">
+              <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>
+            </a>
+          {% endif %}
+          {% if site.author.github %}
+            <a class="hero-icon-link" href="https://github.com/{{ site.author.github }}" aria-label="GitHub">
+              <i class="fab fa-fw fa-github" aria-hidden="true"></i>
+            </a>
+          {% endif %}
+          {% if site.author.uri %}
+            <a class="hero-icon-link" href="{{ site.author.uri }}" aria-label="Website">
+              <i class="fas fa-fw fa-link" aria-hidden="true"></i>
+            </a>
+          {% endif %}
+        </div>
       {% endif %}
     </div>
   </div>
