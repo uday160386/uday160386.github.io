@@ -8,9 +8,9 @@
 
   <div class="author__avatar">
     {% if author.avatar contains "://" %}
-    	<!-- <img src="{{ author.avatar }}" alt="{{ author.name }}"> -->
+    	<img src="{{ author.avatar }}" alt="{{ author.name }}">
     {% else %}
-    	<!-- <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}"> -->
+    	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
     {% endif %}
   </div>
 
@@ -23,15 +23,15 @@
     
       <ul class="author__urls social-icons">
         <!-- Font Awesome icons / Biographic information  -->
-        <!-- {% if author.location %}
+        {% if author.location %}
           <li class="author__desktop"><i class="fa-solid fa-location-dot icon-pad-right" aria-hidden="true"></i>{{ author.location }}</li>
-        {% endif %} -->
+        {% endif %}
         {% if author.employer %}
           <li class="author__desktop"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>{{ author.employer }}</li>
         {% endif %}
-        <!-- {% if author.uri %}
+        {% if author.uri %}
           <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
-        {% endif %} -->
+        {% endif %}
         {% if author.email %}
           <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
         {% endif %}
@@ -104,15 +104,15 @@
         {% if author.keybase %}
           <li><a href="https://keybase.io/{{ author.keybase }}"><i class="fas fa-fw fa-key icon-pad-right" aria-hidden="true"></i>Keybase</a></li>
         {% endif %}
-        <!-- {% if author.instagram %}
+        {% if author.instagram %}
           <li><a href="https://instagram.com/{{ author.instagram }}"><i class="fab fa-fw fa-instagram icon-pad-right" aria-hidden="true"></i>Instagram</a></li>
-        {% endif %}       -->
+        {% endif %}
         {% if author.lastfm %}
           <li><a href="https://last.fm/user/{{ author.lastfm }}"><i class="fab fa-fw fa-lastfm icon-pad-right" aria-hidden="true"></i>Last.fm</a></li>
         {% endif %}      
-        <!-- {% if author.linkedin %}
+        {% if author.linkedin %}
           <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i>LinkedIn</a></li>
-        {% endif %}       -->
+        {% endif %}
         {% if author.mastodon %}
           <li><a href="{{ author.mastodon }}"><i class="fab fa-fw fa-mastodon icon-pad-right" aria-hidden="true"></i>Mastodon</a></li>
         {% endif %}

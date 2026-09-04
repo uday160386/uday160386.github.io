@@ -1,6 +1,6 @@
 ---
 layout: archive
-permalink: /
+permalink: /index.html
 title: ""
 author_profile: true
 redirect_from: 
@@ -163,8 +163,15 @@ redirect_from:
 
 <div style="max-width: 3800px; margin: 10px auto; border-radius: 1px; box-shadow: 0 4px 24px rgba(0,0,0,0.30); overflow: hidden; padding: 32px 24px; text-align: left;">
   <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
-   
-  
+
+    <div class="avatar-ring">
+      <div class="avatar-inner">
+        <img src="/images{{ site.author.avatar }}" alt="{{ site.author.name }}"
+             style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="avatar-status" aria-hidden="true"></div>
+    </div>
+
     <p>Based in Singapore 🇸🇬, I am an Engineering Lead with a strong global track record across Banking, Energy &amp; Utilities, and Digital Transformation. I specialize in closing the gap between business strategy and technical delivery — bringing hands-on depth in designing and shipping production-ready, cloud-native APIs at enterprise scale.</p>
   </div>
       <div class="page__footer-follow" style="text-align: center; margin-bottom: 10px;">
