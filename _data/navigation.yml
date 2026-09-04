@@ -15,14 +15,11 @@ main:
   
   - title: "LinkedIn"
     url: "https://www.linkedin.com/in/bkvudaykumar"
-    icon: "fab fa-fw fa-linkedin"
 
   - title: "Github"
     url: "https://github.com/uday160386"
-    icon: "fab fa-fw fa-github"
 
   - title: "VUKClicks"
     url: "/vukclicks/"
-    icon: "fas fa-fw fa-link"
      
 
