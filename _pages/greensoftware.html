@@ -8,30 +8,37 @@ author_profile: true
 {% include base_path %}
 
 <style>
-  /* ── Green Software: measurement-forward, not leaf clipart ── */
+  /* ── Green Software: dark panel, matching AI Engineering's treatment,
+     with its own moss-green identity instead of AI Eng's slate-blue ── */
+  .gsl-panel {
+    background: #12161c;
+    border-radius: 14px;
+    padding: 2rem 2.25rem 1rem;
+    margin: 0.5rem 0 2rem;
+  }
   .gsl-header {
-    padding: 2rem 0 1.75rem;
-    border-bottom: 2px solid #4a6741;
+    padding-bottom: 1.75rem;
+    border-bottom: 2px solid #5c7a4e;
     margin-bottom: 0;
   }
   .gsl-kicker {
     font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace;
     font-size: 0.78rem;
-    color: #4a6741;
+    color: #9bc47f;
     letter-spacing: 0.01em;
     margin-bottom: 0.6rem;
   }
   .gsl-title {
     font-size: 1.9rem;
     font-weight: 700;
-    color: #1f2a1c;
+    color: #f4f6f8;
     letter-spacing: -0.01em;
     line-height: 1.25;
     margin-bottom: 0.6rem;
   }
   .gsl-dek {
     font-size: 1rem;
-    color: #5b6455;
+    color: #b3bcac;
     max-width: 46em;
     line-height: 1.6;
   }
@@ -46,38 +53,38 @@ author_profile: true
     gap: 1.5rem;
     padding: 1.75rem 0;
     padding-left: 1rem;
-    border-bottom: 1px solid #e8ebe4;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     border-left: 3px solid transparent;
     text-decoration: none !important;
     color: inherit !important;
     transition: border-color 0.15s, background 0.15s;
   }
-  .gsl-entry:first-of-type {
-    padding-top: 1.75rem;
+  .gsl-entry:last-of-type {
+    border-bottom: none;
   }
   .gsl-entry:hover {
-    border-left-color: #4a6741;
-    background: #fafaf7;
+    border-left-color: #9bc47f;
+    background: rgba(155,196,127,0.05);
   }
   .gsl-date {
     font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace;
     font-size: 0.8rem;
-    color: #93998c;
+    color: #838c7c;
     padding-top: 0.2rem;
   }
   .gsl-entry-title {
     font-size: 1.12rem;
     font-weight: 600;
-    color: #1f2a1c;
+    color: #f4f6f8;
     line-height: 1.4;
     margin-bottom: 0.5rem;
   }
   .gsl-entry:hover .gsl-entry-title {
-    color: #4a6741;
+    color: #9bc47f;
   }
   .gsl-entry-excerpt {
     font-size: 0.92rem;
-    color: #5f6759;
+    color: #b3bcac;
     line-height: 1.6;
     max-width: 42em;
     margin-bottom: 0.75rem;
@@ -90,42 +97,45 @@ author_profile: true
   .gsl-tag {
     font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace;
     font-size: 0.68rem;
-    color: #4a6741;
-    background: #eef2e9;
+    color: #9bc47f;
+    background: rgba(155,196,127,0.12);
     padding: 0.18rem 0.5rem;
     border-radius: 3px;
   }
 
   @media (max-width: 600px) {
+    .gsl-panel { padding: 1.5rem 1.25rem 0.75rem; border-radius: 10px; }
     .gsl-title { font-size: 1.5rem; }
     .gsl-entry { grid-template-columns: 1fr; gap: 0.4rem; padding-left: 0.75rem; }
     .gsl-date { padding-top: 0; }
   }
 </style>
 
-<div class="gsl-header">
-  <div class="gsl-kicker">greensoftware / register</div>
-  <div class="gsl-title">Green Software</div>
-  <p class="gsl-dek">Measuring and reducing the carbon and energy cost of the systems I build — practical Green AI, not slogans.</p>
-</div>
+<div class="gsl-panel">
+  <div class="gsl-header">
+    <div class="gsl-kicker">greensoftware / register</div>
+    <div class="gsl-title">Green Software</div>
+    <p class="gsl-dek">Measuring and reducing the carbon and energy cost of the systems I build — practical Green AI, not slogans.</p>
+  </div>
 
-<div class="gsl-register">
-{% for post in site.greensoftware reversed %}
-  <a class="gsl-entry" href="{{ base_path }}{{ post.url }}">
-    <div class="gsl-date">{% if post.date %}{{ post.date | date: "%Y-%m" }}{% endif %}</div>
-    <div>
-      <div class="gsl-entry-title">{{ post.title }}</div>
-      {% if post.excerpt %}
-        <div class="gsl-entry-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</div>
-      {% endif %}
-      {% if post.tags %}
-        <div class="gsl-tags">
-          {% for tag in post.tags limit: 5 %}
-            <span class="gsl-tag">{{ tag }}</span>
-          {% endfor %}
-        </div>
-      {% endif %}
-    </div>
-  </a>
-{% endfor %}
+  <div class="gsl-register">
+  {% for post in site.greensoftware reversed %}
+    <a class="gsl-entry" href="{{ base_path }}{{ post.url }}">
+      <div class="gsl-date">{% if post.date %}{{ post.date | date: "%Y-%m" }}{% endif %}</div>
+      <div>
+        <div class="gsl-entry-title">{{ post.title }}</div>
+        {% if post.excerpt %}
+          <div class="gsl-entry-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</div>
+        {% endif %}
+        {% if post.tags %}
+          <div class="gsl-tags">
+            {% for tag in post.tags limit: 5 %}
+              <span class="gsl-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </a>
+  {% endfor %}
+  </div>
 </div>

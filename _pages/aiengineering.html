@@ -8,30 +8,36 @@ author_profile: true
 {% include base_path %}
 
 <style>
-  /* ── AI Engineering: an engineering log, not a card grid ── */
+  /* ── AI Engineering: a dark engineering-log panel, white text ── */
+  .ael-panel {
+    background: #12161c;
+    border-radius: 14px;
+    padding: 2rem 2.25rem 1rem;
+    margin: 0.5rem 0 2rem;
+  }
   .ael-header {
-    padding: 2rem 0 1.75rem;
-    border-bottom: 2px solid #3b5169;
+    padding-bottom: 1.75rem;
+    border-bottom: 2px solid #3d5a78;
     margin-bottom: 0;
   }
   .ael-kicker {
     font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace;
     font-size: 0.78rem;
-    color: #3b5169;
+    color: #7fa8c9;
     letter-spacing: 0.01em;
     margin-bottom: 0.6rem;
   }
   .ael-title {
     font-size: 1.9rem;
     font-weight: 700;
-    color: #1b232c;
+    color: #f4f6f8;
     letter-spacing: -0.01em;
     line-height: 1.25;
     margin-bottom: 0.6rem;
   }
   .ael-dek {
     font-size: 1rem;
-    color: #56626d;
+    color: #aab4bd;
     max-width: 46em;
     line-height: 1.6;
   }
@@ -45,36 +51,36 @@ author_profile: true
     grid-template-columns: 7.5rem 1fr;
     gap: 1.5rem;
     padding: 1.75rem 0;
-    border-bottom: 1px solid #e6e9ec;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     text-decoration: none !important;
     color: inherit !important;
   }
-  .ael-entry:first-of-type {
-    padding-top: 1.75rem;
+  .ael-entry:last-of-type {
+    border-bottom: none;
   }
   .ael-date {
     font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace;
     font-size: 0.8rem;
-    color: #8a97a3;
+    color: #7c8792;
     padding-top: 0.2rem;
   }
   .ael-entry-title {
     font-size: 1.12rem;
     font-weight: 600;
-    color: #1b232c;
+    color: #f4f6f8;
     line-height: 1.4;
     margin-bottom: 0.5rem;
     transition: color 0.15s;
   }
   .ael-entry:hover .ael-entry-title {
-    color: #3b5169;
+    color: #7fa8c9;
     text-decoration: underline;
-    text-decoration-color: #b7c3cc;
+    text-decoration-color: #3d5a78;
     text-underline-offset: 3px;
   }
   .ael-entry-excerpt {
     font-size: 0.92rem;
-    color: #5c6873;
+    color: #aab4bd;
     line-height: 1.6;
     max-width: 42em;
     margin-bottom: 0.75rem;
@@ -87,43 +93,46 @@ author_profile: true
   .ael-tag {
     font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace;
     font-size: 0.68rem;
-    color: #3b5169;
-    background: #eef1f4;
+    color: #7fa8c9;
+    background: rgba(127,168,201,0.12);
     padding: 0.18rem 0.5rem;
     border-radius: 3px;
   }
 
   @media (max-width: 600px) {
+    .ael-panel { padding: 1.5rem 1.25rem 0.75rem; border-radius: 10px; }
     .ael-title { font-size: 1.5rem; }
     .ael-entry { grid-template-columns: 1fr; gap: 0.4rem; }
     .ael-date { padding-top: 0; }
   }
 </style>
 
-<div class="ael-header">
-  <div class="ael-kicker">aiengineering / log</div>
-  <div class="ael-title">AI Engineering</div>
-  <p class="ael-dek">Notes from building production AI systems — retrieval, agents, speech, and the operational reality of shipping them, not just the demo.</p>
-</div>
+<div class="ael-panel">
+  <div class="ael-header">
+    <div class="ael-kicker">aiengineering / log</div>
+    <div class="ael-title">AI Engineering</div>
+    <p class="ael-dek">Notes from building production AI systems — retrieval, agents, speech, and the operational reality of shipping them, not just the demo.</p>
+  </div>
 
-<div class="ael-register">
-{% assign posts = site.aiengineering | reverse %}
-{% for post in posts %}
-  <a class="ael-entry" href="{{ base_path }}{{ post.url }}">
-    <div class="ael-date">{% if post.date %}{{ post.date | date: "%Y-%m" }}{% endif %}</div>
-    <div>
-      <div class="ael-entry-title">{{ post.title }}</div>
-      {% if post.excerpt %}
-        <div class="ael-entry-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</div>
-      {% endif %}
-      {% if post.tags %}
-        <div class="ael-tags">
-          {% for tag in post.tags limit: 5 %}
-            <span class="ael-tag">{{ tag }}</span>
-          {% endfor %}
-        </div>
-      {% endif %}
-    </div>
-  </a>
-{% endfor %}
+  <div class="ael-register">
+  {% assign posts = site.aiengineering | reverse %}
+  {% for post in posts %}
+    <a class="ael-entry" href="{{ base_path }}{{ post.url }}">
+      <div class="ael-date">{% if post.date %}{{ post.date | date: "%Y-%m" }}{% endif %}</div>
+      <div>
+        <div class="ael-entry-title">{{ post.title }}</div>
+        {% if post.excerpt %}
+          <div class="ael-entry-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</div>
+        {% endif %}
+        {% if post.tags %}
+          <div class="ael-tags">
+            {% for tag in post.tags limit: 5 %}
+              <span class="ael-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </a>
+  {% endfor %}
+  </div>
 </div>

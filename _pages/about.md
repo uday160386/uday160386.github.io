@@ -9,104 +9,59 @@ redirect_from:
 ---
 
 <style>
-  .avatar-ring {
-    position: relative;
-    width: 160px;
-    height: 160px;
-    margin: 0 auto 16px;
-  }
-  .avatar-ring::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    background: conic-gradient(from 0deg, #2f7f93, #7a8288, #dcdfe1, #2f7f93);
-    animation: avatarSpin 4s linear infinite;
-    z-index: 0;
-  }
-  @keyframes avatarSpin {
-    to { transform: rotate(360deg); }
-  }
-  .avatar-inner {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: #f6f7f8;
-    border: 3px solid #ffffff;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-  }
-  .avatar-status {
-    position: absolute;
-    bottom: 6px;
-    right: 6px;
-    width: 18px;
-    height: 18px;
-    background: #62c462;
-    border: 3px solid #ffffff;
-    border-radius: 50%;
-    z-index: 2;
-    animation: avatarPulse 2s infinite;
-  }
-  @keyframes avatarPulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(98,196,98,0.5); }
-    50% { box-shadow: 0 0 0 5px rgba(98,196,98,0); }
+  .home-panel {
+    background: #12161c;
+    border-radius: 14px;
+    padding: 0.5rem 2.25rem 2rem;
+    margin: 0.5rem auto 2rem;
+    max-width: 900px;
   }
 
   /* ── Hero ── */
   .hero-wrap {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 2.5rem;
-    align-items: center;
+    display: block;
     padding: 2.5rem 0 2rem;
   }
   .hero-eyebrow {
     font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace;
     font-size: 0.78rem;
-    color: #2f7f93;
+    color: #5cb3c9;
     margin-bottom: 0.5rem;
   }
   .hero-name {
     font-size: 2rem;
     font-weight: 700;
-    color: #1b232c;
+    color: #f4f6f8;
     letter-spacing: -0.01em;
     line-height: 1.2;
     margin-bottom: 0.35rem;
   }
   .hero-title {
     font-size: 1.05rem;
-    color: #56626d;
+    color: #b3bcc2;
     margin-bottom: 1.1rem;
   }
   .hero-intro {
     font-size: 0.98rem;
     line-height: 1.65;
-    color: #3c454d;
+    color: #c7ced3;
     max-width: 46em;
     margin-bottom: 1.3rem;
   }
   @media (max-width: 640px) {
-    .hero-wrap { grid-template-columns: 1fr; text-align: center; }
     .hero-intro { max-width: none; }
   }
 
   /* ── Section rhythm ── */
   .section-divider {
     border: none;
-    border-top: 1px solid #e6e9ec;
+    border-top: 1px solid rgba(255,255,255,0.08);
     margin: 2.25rem 0;
   }
   .section-heading {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #1b232c;
+    color: #f4f6f8;
     margin-bottom: 0.9rem;
   }
 
@@ -114,6 +69,7 @@ redirect_from:
   .focus-points {
     margin: 20px 0 10px 0;
     padding-left: 1.2em;
+    color: #c7ced3;
   }
   .focus-points li {
     margin-bottom: 12px;
@@ -133,15 +89,15 @@ redirect_from:
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1.5px solid #2f7f93;
-    color: #2f7f93;
+    border: 1.5px solid #5cb3c9;
+    color: #5cb3c9;
     font-size: 1.05rem;
     text-decoration: none !important;
     transition: background 0.2s, color 0.2s;
   }
   .hero-icon-link:hover {
-    background: #2f7f93;
-    color: #ffffff !important;
+    background: #5cb3c9;
+    color: #12161c !important;
   }
 
   /* Core Expertise badges */
@@ -154,19 +110,19 @@ redirect_from:
     list-style: none;
   }
   .expertise-badge {
-    background: rgba(47,127,147,0.08);
-    border: 1px solid rgba(47,127,147,0.35);
+    background: rgba(92,179,201,0.10);
+    border: 1px solid rgba(92,179,201,0.35);
     border-radius: 8px;
     padding: 0.5rem 0.9rem;
     font-size: 0.82rem;
-    color: #1d5a68;
+    color: #8fd4e3;
     font-weight: 500;
     line-height: 1.3;
     transition: border-color 0.2s, background 0.2s, transform 0.18s;
   }
   .expertise-badge:hover {
-    border-color: #2f7f93;
-    background: rgba(47,127,147,0.15);
+    border-color: #5cb3c9;
+    background: rgba(92,179,201,0.18);
     transform: translateY(-1px);
   }
 
@@ -178,8 +134,8 @@ redirect_from:
     margin: 1rem 0 0.5rem 0;
   }
   .edu-item {
-    background: #f6f7f8;
-    border: 1px solid rgba(0,0,0,0.08);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 10px;
     padding: 1rem 1.3rem;
     display: flex;
@@ -188,14 +144,14 @@ redirect_from:
     transition: border-color 0.2s, background 0.2s;
   }
   .edu-item:hover {
-    border-color: rgba(47,127,147,0.4);
-    background: #eef0f1;
+    border-color: rgba(92,179,201,0.4);
+    background: rgba(92,179,201,0.06);
   }
   .edu-dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #2f7f93;
+    background: #5cb3c9;
     margin-top: 6px;
     flex-shrink: 0;
   }
@@ -206,29 +162,32 @@ redirect_from:
   .edu-name {
     font-size: 0.92rem;
     font-weight: 600;
-    color: #2b2e2f;
+    color: #f4f6f8;
     line-height: 1.5;
   }
   .edu-school {
     font-size: 0.8rem;
-    color: #6b7278;
+    color: #9aa3a8;
     line-height: 1.4;
+  }
+
+  /* Body copy inside the panel that isn't covered by a component above
+     (the plain <p> tags under Professional Overview / Content sections) */
+  .home-panel p,
+  .home-panel ul:not(.expertise-grid):not(.focus-points) {
+    color: #c7ced3;
+  }
+  .home-panel h3 {
+    color: #f4f6f8;
   }
 </style>
 
-<div style="max-width: 900px; margin: 0 auto; text-align: left;">
+<div class="home-panel" style="text-align: left;">
 
   <div class="hero-wrap">
-    <div class="avatar-ring">
-      <div class="avatar-inner">
-        <img src="/images{{ site.author.avatar }}" alt="{{ site.author.name }}"
-             style="width: 100%; height: 100%; object-fit: cover;">
-      </div>
-      <div class="avatar-status" aria-hidden="true"></div>
-    </div>
     <div>
       <div class="hero-eyebrow">Singapore 🇸🇬</div>
-      <div class="hero-name">{{ site.author.name }}</div>
+      <!-- <div class="hero-name">{{ site.author.name }}</div> -->
       <div class="hero-title">Engineering Lead — Applied AI | Transformation | Solutions &amp; Integrations</div>
       <p class="hero-intro">I am an Engineering Lead with a strong global track record across Banking, Energy &amp; Utilities, and Digital Transformation. I specialize in closing the gap between business strategy and technical delivery — bringing hands-on depth in designing and shipping production-ready, cloud-native APIs at enterprise scale.</p>
       {% if site.author.linkedin or site.author.github or site.author.uri %}
