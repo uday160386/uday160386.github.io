@@ -222,11 +222,11 @@ redirect_from:
     <li class="expertise-badge">Technical Leadership</li>
     <li class="expertise-badge">Open API</li>
     <li class="expertise-badge">Solution Design</li>
-    <li class="expertise-badge">Artificial Intelligence</li>
-    <li class="expertise-badge">ML Models</li>
+    <li class="expertise-badge">AI Implementation and Transformation</li>
+    <li class="expertise-badge">Applied AI and Delivery</li>
     <li class="expertise-badge">Automated Speech</li>
     <li class="expertise-badge">Green Software</li>
-    <li class="expertise-badge">Cloud Migration</li>
+
   </ul>
 
   <hr class="section-divider">
