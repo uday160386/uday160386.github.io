@@ -1,6 +1,6 @@
 ---
 layout: archive
-permalink: /
+permalink: /index.html
 title: ""
 author_profile: true
 redirect_from: 
@@ -20,7 +20,7 @@ redirect_from:
     position: absolute;
     inset: -4px;
     border-radius: 50%;
-    background: conic-gradient(from 0deg, #fff, #888, #333, #fff);
+    background: conic-gradient(from 0deg, #2f7f93, #7a8288, #dcdfe1, #2f7f93);
     animation: avatarSpin 4s linear infinite;
     z-index: 0;
   }
@@ -33,12 +33,13 @@ redirect_from:
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: #111;
-    border: 3px solid #111;
+    background: #f6f7f8;
+    border: 3px solid #ffffff;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
   }
   .avatar-status {
     position: absolute;
@@ -46,15 +47,67 @@ redirect_from:
     right: 6px;
     width: 18px;
     height: 18px;
-    background: #fff;
-    border: 3px solid #111;
+    background: #62c462;
+    border: 3px solid #ffffff;
     border-radius: 50%;
     z-index: 2;
     animation: avatarPulse 2s infinite;
   }
   @keyframes avatarPulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
-    50% { box-shadow: 0 0 0 5px rgba(255,255,255,0); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(98,196,98,0.5); }
+    50% { box-shadow: 0 0 0 5px rgba(98,196,98,0); }
+  }
+
+  /* ── Hero ── */
+  .hero-wrap {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 2.5rem 0 2rem;
+  }
+  .hero-eyebrow {
+    font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace;
+    font-size: 0.78rem;
+    color: #2f7f93;
+    margin-bottom: 0.5rem;
+  }
+  .hero-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1b232c;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 0.35rem;
+  }
+  .hero-title {
+    font-size: 1.05rem;
+    color: #56626d;
+    margin-bottom: 1.1rem;
+  }
+  .hero-intro {
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: #3c454d;
+    max-width: 46em;
+    margin-bottom: 1.3rem;
+  }
+  @media (max-width: 640px) {
+    .hero-wrap { grid-template-columns: 1fr; text-align: center; }
+    .hero-intro { max-width: none; }
+  }
+
+  /* ── Section rhythm ── */
+  .section-divider {
+    border: none;
+    border-top: 1px solid #e6e9ec;
+    margin: 2.25rem 0;
+  }
+  .section-heading {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1b232c;
+    margin-bottom: 0.9rem;
   }
 
   /* Focus Points */
@@ -72,21 +125,21 @@ redirect_from:
     display: inline-block;
     margin-top: 16px;
     padding: 12px 32px;
-    background: #FFFFFF;
-    color: #000000;
+    background: #2f7f93;
+    color: #ffffff;
     font-size: 0.88rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     text-decoration: none !important;
     border-radius: 6px;
-    border: 2px solid #000;
+    border: 2px solid #2f7f93;
     font-family: 'Courier New', monospace;
-    /* transition: background 0.2s, color 0.2s; */
+    transition: background 0.2s, color 0.2s;
   }
   .get-in-touch-btn:hover {
-    background: #fff;
-    color: #000000 !important;
+    background: #ffffff;
+    color: #2f7f93 !important;
   }
 
   /* Core Expertise badges */
@@ -99,19 +152,19 @@ redirect_from:
     list-style: none;
   }
   .expertise-badge {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(47,127,147,0.08);
+    border: 1px solid rgba(47,127,147,0.35);
     border-radius: 8px;
     padding: 0.5rem 0.9rem;
     font-size: 0.82rem;
-    color: #ffffff;
+    color: #1d5a68;
     font-weight: 500;
     line-height: 1.3;
     transition: border-color 0.2s, background 0.2s, transform 0.18s;
   }
   .expertise-badge:hover {
-    border-color: #ffffff;
-    background: rgba(255,255,255,0.12);
+    border-color: #2f7f93;
+    background: rgba(47,127,147,0.15);
     transform: translateY(-1px);
   }
 
@@ -123,8 +176,8 @@ redirect_from:
     margin: 1rem 0 0.5rem 0;
   }
   .edu-item {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.2);
+    background: #f6f7f8;
+    border: 1px solid rgba(0,0,0,0.08);
     border-radius: 10px;
     padding: 1rem 1.3rem;
     display: flex;
@@ -133,14 +186,14 @@ redirect_from:
     transition: border-color 0.2s, background 0.2s;
   }
   .edu-item:hover {
-    border-color: rgba(255,255,255,0.5);
-    background: rgba(255,255,255,0.09);
+    border-color: rgba(47,127,147,0.4);
+    background: #eef0f1;
   }
   .edu-dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #ffffff;
+    background: #2f7f93;
     margin-top: 6px;
     flex-shrink: 0;
   }
@@ -151,30 +204,43 @@ redirect_from:
   .edu-name {
     font-size: 0.92rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #2b2e2f;
     line-height: 1.5;
   }
   .edu-school {
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.65);
+    color: #6b7278;
     line-height: 1.4;
   }
 </style>
 
-<div style="max-width: 3800px; margin: 10px auto; border-radius: 1px; box-shadow: 0 4px 24px rgba(0,0,0,0.30); overflow: hidden; padding: 32px 24px; text-align: left;">
-  <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
-   
-  
-    <p>Based in Singapore 🇸🇬, I am an Engineering Lead with a strong global track record across Banking, Energy &amp; Utilities, and Digital Transformation. I specialize in closing the gap between business strategy and technical delivery — bringing hands-on depth in designing and shipping production-ready, cloud-native APIs at enterprise scale.</p>
+<div style="max-width: 900px; margin: 0 auto; text-align: left;">
+
+  <div class="hero-wrap">
+    <div class="avatar-ring">
+      <div class="avatar-inner">
+        <img src="/images{{ site.author.avatar }}" alt="{{ site.author.name }}"
+             style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="avatar-status" aria-hidden="true"></div>
+    </div>
+    <div>
+      <div class="hero-eyebrow">Singapore 🇸🇬</div>
+      <div class="hero-name">{{ site.author.name }}</div>
+      <div class="hero-title">Engineering Lead — AI Systems &amp; Green Software</div>
+      <p class="hero-intro">I am an Engineering Lead with a strong global track record across Banking, Energy &amp; Utilities, and Digital Transformation. I specialize in closing the gap between business strategy and technical delivery — bringing hands-on depth in designing and shipping production-ready, cloud-native APIs at enterprise scale.</p>
+      {% if site.author.email %}
+        <a class="get-in-touch-btn" href="mailto:{{ site.author.email }}">Get in touch</a>
+      {% endif %}
+    </div>
   </div>
-      <div class="page__footer-follow" style="text-align: center; margin-bottom: 10px;">
- 
-</div>
-  <h2>Professional Overview</h2>
-    <h2>Engineering Lead | AI enthusiast | Green Software Practioner</h2>
+
+  <hr class="section-divider">
+
+  <h2 class="section-heading">Professional Overview</h2>
   <p>My background spans the full delivery lifecycle: requirements gathering, architecture, API management, backend and test engineering, and production-grade execution. Having begun my career in the IT sector at age 20, I currently serve as Engineering Tech Lead for the SME Digital, Open API and Partnerships program at Standard Chartered, Singapore, where I continue to deliver high-impact solutions across multiple domains.</p>
 
-  <h3>Core Expertise</h3>
+  <h2 class="section-heading" style="margin-top: 1.75rem;">Core Expertise</h2>
   <ul class="expertise-grid">
     <li class="expertise-badge">Technical Leadership</li>
     <li class="expertise-badge">Open API</li>
@@ -183,26 +249,23 @@ redirect_from:
     <li class="expertise-badge">ML Models</li>
     <li class="expertise-badge">Automated Speech</li>
     <li class="expertise-badge">Green Software</li>
-        <li class="expertise-badge">Cloud Migration</li>
+    <li class="expertise-badge">Cloud Migration</li>
   </ul>
 
-  <h2>Education</h2>
+  <hr class="section-divider">
 
-   <ul>
+  <h2 class="section-heading">Education</h2>
+  <ul>
     <li>PG Certification Program in Artificial Intelligence and Machine Learning from IIIT Hyderabad</li>
     <li>Masters in Software Engineering from BITS Pilani</li>
   </ul>
 
+  <hr class="section-divider">
 
-  <h2>Content &amp; Knowledge Sharing</h2>
-  <p>I leverage this platform to publish technical insights and posts in several key areas:</p>
-  <ul>
-    <li>Provide practical insights from hands-on experience</li>
-    <li>Share lessons learned from solution implementations</li>
-  </ul>
+  <h2 class="section-heading">Content &amp; Knowledge Sharing</h2>
+  <p>I leverage this platform to publish technical insights and posts in several key areas — practical lessons from hands-on implementation, not theory:</p>
 
   <h3>My Focus Areas</h3>
-
   <ul class="focus-points">
     <li>Driving productivity through strategic AI implementations; analyzing organizational challenges and crafting solutions through an AI-first lens.</li>
     <li>Building AI-powered applications with a focus on automated speech recognition and conversational AI systems.</li>

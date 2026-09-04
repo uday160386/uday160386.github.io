@@ -1,5 +1,16 @@
 {% include base_path %}
 
+<style>
+  /* Icon-style nav items (LinkedIn, GitHub, Website) — sized up slightly
+     from the surrounding text links since a Font Awesome glyph at normal
+     nav font-size reads too small/cramped next to word-length labels. */
+  .masthead__menu-item .fab,
+  .masthead__menu-item .fas {
+    font-size: 1.1rem;
+    vertical-align: -2px;
+  }
+</style>
+
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
@@ -14,7 +25,15 @@
               {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            <li class="masthead__menu-item">
+              <a href="{{ domain }}{{ link.url }}">
+                {% if link.icon %}
+                  <i class="{{ link.icon }}" aria-hidden="true"></i><span class="sr-only">{{ link.title }}</span>
+                {% else %}
+                  {{ link.title }}
+                {% endif %}
+              </a>
+            </li>
           {% endfor %}
         </ul>
         <ul class="hidden-links hidden"></ul>
