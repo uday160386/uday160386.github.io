@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Uday BKV"
 title_separator          : "-"
 name                     : &name "(Uday)"
-description              : &description "Engineering Lead based in Singapore — passionate about technology and its responsible use, adept at creative problem-solving, a continuous learner, dreamer and achiever."
+description              : &description "- passionate about technology and right usage,- adept at creatively, - continious learner, - dreamer and acheiver"
 url                      : https://uday160386.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
@@ -22,14 +22,14 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "/aboutme/profile.jpeg"
-  name             : "Uday BKV"
+  name             : ""
   pronouns         :  ""
-  bio              : "Engineering Lead in Singapore, building production-grade AI and cloud-native systems."
-  location         : "Singapore 🇸🇬"
+  bio              : ""
+  location         : ""
     # employer         : "Bits Pilani"
   uri              : "/vukclicks/"
  
-  email            : "venkata.uday24@gmail.com" 
+  # email            : "venkata.uday24@gmail.com" 
 
   # Academic websites
   researchgate     : # URL
