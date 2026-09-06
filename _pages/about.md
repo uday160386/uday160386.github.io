@@ -189,7 +189,7 @@ redirect_from:
       <div class="hero-eyebrow">Singapore 🇸🇬</div>
       <!-- <div class="hero-name">{{ site.author.name }}</div> -->
       <div class="hero-title">Engineering Lead — Applied AI | Transformation | Solutions &amp; Integrations</div>
-      <p class="hero-intro">I am an Engineering Lead with a strong global track record across Banking, Energy &amp; Utilities, and Digital Transformation. I specialize in closing the gap between business strategy and technical delivery — bringing hands-on depth in designing and shipping production-ready, cloud-native APIs at enterprise scale.</p>
+      <p class="hero-intro">I am an Engineering Lead with a strong global track record across Banking, Energy &amp; Utilities, and Digital Transformation. I specialize in closing the gap between business strategy and technical delivery — bringing hands-on depth in designing and shipping production-ready, mobile apps, cloud-native APIs at enterprise scale.</p>
       {% if site.author.linkedin or site.author.github or site.author.uri %}
         <div class="hero-links">
           {% if site.author.linkedin %}

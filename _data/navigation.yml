@@ -4,9 +4,6 @@ main:
   - title: "Thoughts"
     url: /projects/
 
-  - title: "Posts"
-    url: /posts/
-
   - title: "Green Software"
     url: /greensoftware/
 
