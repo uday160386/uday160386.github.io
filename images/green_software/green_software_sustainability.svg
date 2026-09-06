@@ -1,0 +1,81 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle with gradient -->
+  <defs>
+    <radialGradient id="bgGradient" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#e8f5e8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c8e6c9;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4caf50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2e7d32;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="screenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d47a1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <circle cx="200" cy="200" r="190" fill="url(#bgGradient)" stroke="#66bb6a" stroke-width="2"/>
+  
+  <!-- Laptop/Monitor base -->
+  <rect x="120" y="160" width="160" height="100" rx="8" fill="#424242" opacity="0.9"/>
+  <rect x="125" y="165" width="150" height="80" rx="4" fill="url(#screenGradient)"/>
+  
+  <!-- Laptop stand -->
+  <rect x="185" y="260" width="30" height="8" rx="4" fill="#616161"/>
+  <ellipse cx="200" cy="275" rx="45" ry="5" fill="#757575" opacity="0.6"/>
+  
+  <!-- Green leaves growing from laptop -->
+  <!-- Leaf 1 -->
+  <path d="M 180 140 Q 160 120 140 100 Q 145 95 160 110 Q 175 125 180 140" fill="url(#leafGradient)"/>
+  <path d="M 180 140 Q 165 125 150 108" stroke="#2e7d32" stroke-width="2" fill="none"/>
+  
+  <!-- Leaf 2 -->
+  <path d="M 200 130 Q 190 105 185 80 Q 195 75 205 95 Q 210 115 200 130" fill="url(#leafGradient)"/>
+  <path d="M 200 130 Q 195 115 190 95" stroke="#2e7d32" stroke-width="2" fill="none"/>
+  
+  <!-- Leaf 3 -->
+  <path d="M 220 140 Q 240 120 260 100 Q 255 95 240 110 Q 225 125 220 140" fill="url(#leafGradient)"/>
+  <path d="M 220 140 Q 235 125 250 108" stroke="#2e7d32" stroke-width="2" fill="none"/>
+  
+  <!-- Code/binary elements on screen -->
+  <text x="140" y="185" font-family="monospace" font-size="8" fill="#4caf50" opacity="0.8">01001</text>
+  <text x="180" y="195" font-family="monospace" font-size="8" fill="#4caf50" opacity="0.8">11010</text>
+  <text x="160" y="205" font-family="monospace" font-size="8" fill="#4caf50" opacity="0.8">00101</text>
+  <text x="200" y="215" font-family="monospace" font-size="8" fill="#4caf50" opacity="0.8">10110</text>
+  <text x="140" y="225" font-family="monospace" font-size="8" fill="#4caf50" opacity="0.8">01011</text>
+  <text x="180" y="235" font-family="monospace" font-size="8" fill="#4caf50" opacity="0.8">11001</text>
+  
+  <!-- Recycling symbol -->
+  <g transform="translate(320, 120) scale(0.8)">
+    <path d="M -15 -20 L -5 -35 L 5 -20 L 0 -15 L -10 -15 Z" fill="#4caf50"/>
+    <path d="M 15 -5 L 25 -20 L 20 -10 L 15 -15 L 10 0 Z" fill="#4caf50"/>
+    <path d="M 0 25 L -15 10 L 0 15 L 5 10 L 5 20 Z" fill="#4caf50"/>
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#4caf50" stroke-width="2" opacity="0.3"/>
+  </g>
+  
+  <!-- Energy-saving indicators -->
+  <g transform="translate(80, 120)">
+    <!-- Battery with green charge -->
+    <rect x="0" y="0" width="30" height="15" rx="2" fill="none" stroke="#4caf50" stroke-width="2"/>
+    <rect x="30" y="4" width="3" height="7" fill="#4caf50"/>
+    <rect x="3" y="3" width="20" height="9" fill="#4caf50" opacity="0.8"/>
+    <!-- Lightning bolt -->
+    <path d="M 12 -8 L 8 2 L 12 2 L 10 8 L 14 -2 L 10 -2 Z" fill="#ffeb3b"/>
+  </g>
+  
+  <!-- WiFi/connectivity waves with green color -->
+  <g transform="translate(320, 300)">
+    <path d="M -20 0 Q -10 -15 0 0 Q 10 -15 20 0" fill="none" stroke="#4caf50" stroke-width="3" opacity="0.8"/>
+    <path d="M -15 2 Q -7 -8 0 2 Q 7 -8 15 2" fill="none" stroke="#4caf50" stroke-width="2" opacity="0.6"/>
+    <path d="M -10 4 Q -5 -2 0 4 Q 5 -2 10 4" fill="none" stroke="#4caf50" stroke-width="2" opacity="0.4"/>
+  </g>
+  
+  <!-- Central eco-friendly badge -->
+  <circle cx="200" cy="320" r="25" fill="#4caf50" opacity="0.9"/>
+  <path d="M 190 315 L 195 322 L 210 308" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Title text -->
+  <text x="200" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2e7d32">GREEN SOFTWARE</text>
+</svg>
