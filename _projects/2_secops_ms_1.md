@@ -2,6 +2,8 @@
 title: "Enabling SecOps for Cloud Native Apps"
 excerpt: "SecOps for cloud native Spring Boot apps using open source tools"
 collection: projects
+header:
+  teaser: "/images/projects/pipelines.png"
 tags:
   - Java
   - SpringBoot

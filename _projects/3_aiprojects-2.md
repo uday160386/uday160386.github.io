@@ -2,6 +2,8 @@
 title: "Gen AI: Audio Generation from Imported Photos"
 excerpt: "Generate meaningful audio narration from an uploaded photo using HuggingFace, LangChain, and OpenAI.<br/><a href='https://github.com/uday160386/image-audio-hf-openai'>repo link..</a>"
 collection: projects
+header:
+  teaser: "/images/projects/output.png"
 tags:
   - Python
   - Audio Generation

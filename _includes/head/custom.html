@@ -17,4 +17,102 @@
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+<!-- ============================================================
+     "Signal & System" theme override — site-wide reskin
+     Added on top of the default AcademicPages/minimal-mistakes
+     skin so the masthead/footer match the redesigned home page.
+     Safe to remove this block to fall back to the stock theme.
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sys-bg: #14110d;
+    --sys-panel: #1b1712;
+    --sys-line: rgba(242,236,227,0.10);
+    --sys-line-strong: rgba(242,236,227,0.18);
+    --sys-ink: #f2ece3;
+    --sys-ink-muted: #a79c8c;
+    --sys-warm: #e8a23d;
+    --sys-cool: #4fc3b0;
+  }
+  body{
+    background: var(--sys-bg) !important;
+    color: var(--sys-ink) !important;
+    font-family: 'IBM Plex Sans', -apple-system, sans-serif !important;
+  }
+  h1, h2, h3, h4, h5, h6{
+    font-family: 'Space Grotesk', sans-serif !important;
+    color: var(--sys-ink) !important;
+  }
+  a{ color: var(--sys-warm); }
+  a:hover{ color: var(--sys-cool); }
+
+  /* masthead / nav — matches the "uday.bkv" mark from the home page */
+  .sg-masthead{
+    background: var(--sys-panel) !important;
+    border-bottom: 1px solid var(--sys-line) !important;
+  }
+  .sg-masthead__wrap{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    max-width: 900px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 1.75rem;
+    box-sizing: border-box;
+  }
+  .sg-mark{
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+    color: var(--sys-ink) !important;
+    text-decoration: none !important;
+    letter-spacing: -0.01em;
+  }
+  .sg-mark span{ color: var(--sys-warm); }
+  .sg-nav ul{
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none !important;
+    margin: 0;
+    padding: 0;
+  }
+  .sg-nav a{
+    color: var(--sys-ink-muted) !important;
+    font-family: 'IBM Plex Mono', monospace !important;
+    font-size: 0.8rem !important;
+    font-weight: 400 !important;
+    text-decoration: none !important;
+    transition: color 0.15s;
+  }
+  .sg-nav a:hover{ color: var(--sys-ink) !important; }
+  .sg-nav li:last-child a{ color: var(--sys-warm) !important; }
+  @media (max-width: 600px){
+    .sg-nav ul{ gap: 1rem; }
+  }
+
+  /* main content area */
+  #main, .archive, .page{ background: transparent !important; }
+  #main{ background: var(--sys-bg) !important; }
+  .page__content, .page__content p, .page__content li{ color: var(--sys-ink-muted); }
+
+  /* footer */
+  .page__footer{
+    background: var(--sys-panel) !important;
+    border-top: 1px solid var(--sys-line) !important;
+  }
+  .page__footer, .page__footer footer, .page__footer a{
+    color: var(--sys-ink-muted) !important;
+  }
+  .page__footer a:hover{ color: var(--sys-warm) !important; }
+
+  ::selection{ background: var(--sys-warm); color: var(--sys-bg); }
+</style>
+<!-- end "Signal & System" theme override -->
+
 <!-- end custom head snippets -->
