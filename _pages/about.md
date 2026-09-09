@@ -198,8 +198,10 @@ redirect_from:
   <section id="overview">
     <div class="sg-label">Overview</div>
     <p>My background spans the full delivery lifecycle: requirements gathering, architecture, API management, backend and test engineering, and production-grade execution. Having begun my career in the IT sector at age 20, I currently serve as Engineering Tech Lead for the SME Digital, Open API and Partnerships program at Standard Chartered, Singapore, where I continue to deliver high-impact solutions across multiple domains.</p>
+  </section>
 
-    <h3 class="sg-sub">Current focus</h3>
+  <section id="focus">
+    <div class="sg-label">Current focus</div>
     <ul class="sg-chips">
       <li class="sg-chip">PyTorch</li>
       <li class="sg-chip">Conversational AI</li>
@@ -207,10 +209,7 @@ redirect_from:
       <li class="sg-chip">AI Transformation</li>
       <li class="sg-chip">Multi-Modal AI</li>
     </ul>
-  </section>
 
-  <section id="focus">
-    <div class="sg-label">Focus areas</div>
     <h2>What I write and build about</h2>
     <p>I use this space to publish technical insights and posts drawn from hands-on implementation, not theory.</p>
     <ul class="sg-focus">
@@ -257,18 +256,6 @@ redirect_from:
 
   <footer class="sg-footer">
     <p class="sg-cta">Building something in Applied AI? Let's talk.</p>
-    <div class="sg-contact-row">
-      {% if site.author.linkedin %}
-        <a class="sg-icon-link" href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
-        </a>
-      {% endif %}
-      {% if site.author.github %}
-        <a class="sg-icon-link" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.93.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.68-.1-.26-.45-1.28.1-2.66 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.66.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
-        </a>
-      {% endif %}
-    </div>
   </footer>
 
 </div>
