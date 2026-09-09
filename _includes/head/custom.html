@@ -63,6 +63,7 @@
     margin: 0 auto;
     padding: 0 1.75rem;
     box-sizing: border-box;
+    gap: 1rem;
   }
   .sg-mark{
     font-family: 'Space Grotesk', sans-serif !important;
@@ -71,29 +72,40 @@
     color: var(--sys-ink) !important;
     text-decoration: none !important;
     letter-spacing: -0.01em;
+    flex-shrink: 0;
   }
   .sg-mark span{ color: var(--sys-warm); }
+  .sg-nav{ min-width: 0; overflow: hidden; }
   .sg-nav ul{
     display: flex !important;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     gap: 1.5rem;
     list-style: none !important;
     margin: 0;
     padding: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
+  .sg-nav ul::-webkit-scrollbar{ display: none; }
+  .sg-nav li{ flex-shrink: 0; }
   .sg-nav a{
     color: var(--sys-ink-muted) !important;
     font-family: 'IBM Plex Mono', monospace !important;
     font-size: 0.8rem !important;
     font-weight: 400 !important;
     text-decoration: none !important;
+    white-space: nowrap;
     transition: color 0.15s;
   }
   .sg-nav a:hover{ color: var(--sys-ink) !important; }
   .sg-nav li:last-child a{ color: var(--sys-warm) !important; }
   @media (max-width: 600px){
+    .sg-masthead__wrap{ padding: 0 1.1rem; gap: 0.75rem; }
+    .sg-mark{ font-size: 0.95rem !important; }
     .sg-nav ul{ gap: 1rem; }
+    .sg-nav a{ font-size: 0.72rem !important; }
   }
 
   /* main content area */

@@ -167,8 +167,6 @@ redirect_from:
 <div class="home">
 
   <header class="sg-hero">
-    <div class="sg-status"><span class="dot"></span> Based in {{ site.author.location }} — open to share thoughts and collaborations</div>
-
     <h1 class="sg-name">{{ site.author.name }}</h1>
     <p class="sg-role">Engineering Lead <span class="sep">/</span> Applied AI, Open API &amp; Cloud-Native Delivery</p>
 
@@ -260,9 +258,6 @@ redirect_from:
   <footer class="sg-footer">
     <p class="sg-cta">Building something in Applied AI? Let's talk.</p>
     <div class="sg-contact-row">
-      {% if site.author.email %}
-        <a class="sg-mail" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
-      {% endif %}
       {% if site.author.linkedin %}
         <a class="sg-icon-link" href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
