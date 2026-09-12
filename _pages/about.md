@@ -221,13 +221,13 @@ redirect_from:
 
   <header class="sg-hero">
     <h1 class="sg-name">{{ site.author.name }}</h1>
-    <p class="sg-role">Engineering Lead <span class="sep">/</span> Applied AI, Open API &amp; Cloud-Native Delivery</p>
+    <p class="sg-role">Engineering Lead <span class="sep">/</span> Applied AI | Open APIs | Cloud-Native</p>
 
     <svg class="sg-trace" viewBox="0 0 480 48" preserveAspectRatio="none">
       <path d="M0,24 L55,24 L69,7 L88,41 L106,13 L120,24 L185,24 C199,24 199,9 213,9 C227,9 227,24 241,24 L314,24 L328,37 L347,11 L363,24 L480,24" />
     </svg>
 
-    <p class="sg-intro">I'm an <strong>Engineering Lead</strong> with a strong track record across Banking, Energy &amp; Utilities, and Digital Transformation. I specialise in closing the gap between business strategy and technical delivery — bringing hands-on depth in designing and shipping production-ready mobile apps and cloud-native APIs at enterprise scale.</p>
+    <p class="sg-intro">I'm an <strong>Engineering Lead</strong> with a strong track record across Banking, Energy &amp; Utilities, and Digital Transformation. I specialise in closing the gap between business strategy and technical delivery — bringing hands-on depth in designing and shipping production-ready applications at enterprise scale.</p>
 
     <div class="sg-links">
       {% if site.author.linkedin %}
@@ -253,7 +253,7 @@ redirect_from:
 
       <section id="overview">
         <div class="sg-label">Overview</div>
-        <p>My background spans the full delivery lifecycle: requirements gathering, architecture, API management, backend and test engineering, and production-grade execution. Having begun my career in the IT sector at age 20, I currently serve as Engineering Tech Lead for the SME Digital, Open API and Partnerships program at Standard Chartered, Singapore, where I continue to deliver high-impact solutions across multiple domains.</p>
+        <p>My background spans the full delivery lifecycle: requirements gathering, architecture, API management, backend and test engineering, and production-grade execution. Having begun my career in the IT sector at age 20, I currently serve as Sr.Engineering Tech Lead for the SME Digital Channels, Open API and Partnerships program at <i>Standard Chartered, Singapore</i>, where I continue to deliver high-impact solutions across multiple domains.</p>
       </section>
 
       <section id="focus">
@@ -261,8 +261,10 @@ redirect_from:
         <ul class="sg-chips">
           <li class="sg-chip">PyTorch</li>
           <li class="sg-chip">Conversational AI</li>
+          <li class="sg-chip">AI Adoption</li>
           <li class="sg-chip">Autonomous Multi-Agent AI Systems</li>
           <li class="sg-chip">AI Transformation</li>
+          <li class="sg-chip">LLM</li>
           <li class="sg-chip">Multi-Modal AI</li>
         </ul>
 
