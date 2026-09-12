@@ -34,7 +34,7 @@ redirect_from:
   }
 
   .home{
-    max-width: 760px;
+    max-width: 1060px;
     margin: 0 auto;
     padding: 0.5rem 1.25rem 2rem;
     font-family: 'IBM Plex Sans', sans-serif;
@@ -158,6 +158,59 @@ redirect_from:
     border-bottom:1px solid rgba(232,162,61,0.35);
   }
 
+  /* two-column layout: main content + right sidebar */
+  .home-grid{
+    display:grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    align-items:start;
+    gap: 0 3rem;
+  }
+  .home-main section:first-child{ border-top:1px solid var(--sg-line); }
+  .home-main{ min-width:0; }
+
+  .home-sidebar{
+    position:sticky;
+    top:1.75rem;
+    padding:2.25rem 0 2.25rem 0;
+    border-top:1px solid var(--sg-line);
+  }
+  .sg-sidebar-section + .sg-sidebar-section{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--sg-line); }
+  .home-sidebar h2{
+    font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:1.02rem;
+    margin:0 0 1rem; color: var(--sg-ink);
+  }
+
+  .sg-ext-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:1.1rem; }
+  .sg-ext-post a{
+    display:block; padding:0.85rem 0.9rem; border:1px solid var(--sg-line);
+    border-radius:9px; transition:border-color .15s, background .15s, transform .15s;
+  }
+  .sg-ext-post a:hover{ border-color: var(--sg-warm); background: var(--sg-warm-soft); transform:translateX(2px); }
+  .sg-ext-title{
+    display:block; font-family:'Space Grotesk', sans-serif; font-weight:600;
+    font-size:0.92rem; line-height:1.35; color: var(--sg-ink); margin-bottom:0.4rem;
+  }
+  .sg-ext-post a:hover .sg-ext-title{ color: var(--sg-warm); }
+  .sg-ext-meta{
+    display:flex; align-items:center; gap:0.4rem;
+    font-family:'IBM Plex Mono', monospace; font-size:0.7rem; color: var(--sg-ink-dim);
+    text-transform:uppercase; letter-spacing:0.03em;
+  }
+  .sg-ext-meta .fa-arrow-up-right-from-square{ font-size:0.65rem; margin-left:auto; color: var(--sg-ink-dim); }
+  .sg-ext-post a:hover .sg-ext-meta,
+  .sg-ext-post a:hover .sg-ext-meta .fa-arrow-up-right-from-square{ color: var(--sg-cool); }
+
+  .sg-ext-more{ margin-top:1.2rem; }
+  .sg-ext-more a{
+    font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color: var(--sg-warm);
+  }
+
+  @media (max-width:900px){
+    .home-grid{ grid-template-columns: 1fr; }
+    .home-sidebar{ position:static; border-top:none; padding-top:0; }
+    .home-main section:first-child{ border-top:none; }
+  }
+
   @media (max-width:600px){
     .sg-edu-item{ flex-direction:column; gap:0.2rem; }
     .sg-edu-item .where{ text-align:left; }
@@ -195,64 +248,96 @@ redirect_from:
     </div>
   </header>
 
-  <section id="overview">
-    <div class="sg-label">Overview</div>
-    <p>My background spans the full delivery lifecycle: requirements gathering, architecture, API management, backend and test engineering, and production-grade execution. Having begun my career in the IT sector at age 20, I currently serve as Engineering Tech Lead for the SME Digital, Open API and Partnerships program at Standard Chartered, Singapore, where I continue to deliver high-impact solutions across multiple domains.</p>
-  </section>
+  <div class="home-grid">
+    <div class="home-main">
 
-  <section id="focus">
-    <div class="sg-label">Current focus</div>
-    <ul class="sg-chips">
-      <li class="sg-chip">PyTorch</li>
-      <li class="sg-chip">Conversational AI</li>
-      <li class="sg-chip">Autonomous Multi-Agent AI Systems</li>
-      <li class="sg-chip">AI Transformation</li>
-      <li class="sg-chip">Multi-Modal AI</li>
-    </ul>
+      <section id="overview">
+        <div class="sg-label">Overview</div>
+        <p>My background spans the full delivery lifecycle: requirements gathering, architecture, API management, backend and test engineering, and production-grade execution. Having begun my career in the IT sector at age 20, I currently serve as Engineering Tech Lead for the SME Digital, Open API and Partnerships program at Standard Chartered, Singapore, where I continue to deliver high-impact solutions across multiple domains.</p>
+      </section>
 
-    <h2>What I write and build about</h2>
-    <p>I use this space to publish technical insights and posts drawn from hands-on implementation, not theory.</p>
-    <ul class="sg-focus">
-      <li><b>AI-first problem solving</b> — analysing organisational challenges and driving productivity through strategic AI implementations.</li>
-      <li><b>Conversational &amp; speech systems</b> — building AI-powered applications focused on automated speech recognition and conversational AI.</li>
-      <li><b>Research into practice</b> — translating cutting-edge research papers into practical solutions that deliver measurable business value.</li>
-      <li><b>Responsible AI</b> — promoting awareness and education around safe, ethical AI usage — what to do, and what to avoid.</li>
-    </ul>
-  </section>
+      <section id="focus">
+        <div class="sg-label">Current focus</div>
+        <ul class="sg-chips">
+          <li class="sg-chip">PyTorch</li>
+          <li class="sg-chip">Conversational AI</li>
+          <li class="sg-chip">Autonomous Multi-Agent AI Systems</li>
+          <li class="sg-chip">AI Transformation</li>
+          <li class="sg-chip">Multi-Modal AI</li>
+        </ul>
 
-  <section id="education">
-    <div class="sg-label">Education</div>
-    <div class="sg-edu">
-      <div class="sg-edu-item">
-        <div class="what">PG Certification in Artificial Intelligence &amp; Machine Learning</div>
-        <div class="where">IIIT Hyderabad</div>
-      </div>
-      <div class="sg-edu-item">
-        <div class="what">Master's in Software Engineering</div>
-        <div class="where">BITS Pilani</div>
-      </div>
-    </div>
-  </section>
+        <h2>What I write and build about</h2>
+        <p>I use this space to publish technical insights and posts drawn from hands-on implementation, not theory.</p>
+        <ul class="sg-focus">
+          <li><b>AI-first problem solving</b> — analysing organisational challenges and driving productivity through strategic AI implementations.</li>
+          <li><b>Conversational &amp; speech systems</b> — building AI-powered applications focused on automated speech recognition and conversational AI.</li>
+          <li><b>Research into practice</b> — translating cutting-edge research papers into practical solutions that deliver measurable business value.</li>
+          <li><b>Responsible AI</b> — promoting awareness and education around safe, ethical AI usage — what to do, and what to avoid.</li>
+        </ul>
+      </section>
 
-  <section id="projects">
-    <div class="sg-label">Selected projects</div>
-    <h2>Recent work</h2>
-    <div class="sg-projects">
-      {% assign featured = site.projects | reverse %}
-      {% for project in featured limit:4 %}
-        <div class="sg-proj">
-          <div class="bar"></div>
-          <div>
-            <div class="name"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></div>
-            <div class="desc">{{ project.excerpt | strip_html | truncate: 160 }}</div>
-            <div class="tags">
-              {% for tag in project.tags limit:4 %}{% if tag %}<span>{{ tag }}</span>{% endif %}{% endfor %}
-            </div>
+      <section id="education">
+        <div class="sg-label">Education</div>
+        <div class="sg-edu">
+          <div class="sg-edu-item">
+            <div class="what">PG Certification in Artificial Intelligence &amp; Machine Learning</div>
+            <div class="where">IIIT Hyderabad</div>
+          </div>
+          <div class="sg-edu-item">
+            <div class="what">Master's in Software Engineering</div>
+            <div class="where">BITS Pilani</div>
           </div>
         </div>
-      {% endfor %}
+      </section>
+
+      <section id="projects">
+        <div class="sg-label">Selected projects</div>
+        <h2>Recent work</h2>
+        <div class="sg-projects">
+          {% assign featured = site.projects | reverse %}
+          {% for project in featured limit:4 %}
+            <div class="sg-proj">
+              <div class="bar"></div>
+              <div>
+                <div class="name"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></div>
+                <div class="desc">{{ project.excerpt | strip_html | truncate: 160 }}</div>
+                <div class="tags">
+                  {% for tag in project.tags limit:4 %}{% if tag %}<span>{{ tag }}</span>{% endif %}{% endfor %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+
     </div>
-  </section>
+
+    <aside class="home-sidebar">
+      <section id="external-posts" class="sg-sidebar-section">
+        <div class="sg-label">Elsewhere</div>
+        <h2>External posts</h2>
+        <ul class="sg-ext-list">
+          {% assign ext_posts = site.data.external_posts | sort: "date" | reverse %}
+          {% for post in ext_posts limit:5 %}
+            <li class="sg-ext-post">
+              <a href="{{ post.url }}" target="_blank" rel="noopener noreferrer">
+                <span class="sg-ext-title">{{ post.title }}</span>
+                <span class="sg-ext-meta">
+                  {{ post.source }} · {{ post.date | date: "%b %Y" }}
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+        {% if site.author.medium or site.author.linkedin %}
+          <p class="sg-ext-more">
+            {% if site.author.medium %}<a href="{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">More on Medium →</a>{% endif %}
+          </p>
+        {% endif %}
+      </section>
+    </aside>
+  </div>
 
   <footer class="sg-footer">
     <p class="sg-cta">Building something in Applied AI? Let's talk.</p>

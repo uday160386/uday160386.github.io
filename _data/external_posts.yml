@@ -1,0 +1,15 @@
+# External posts shown in the "Elsewhere" section of the home page right sidebar.
+# Add one entry per post you've published outside this site (Medium, dev.to,
+# LinkedIn Articles, a company engineering blog, etc). Newest-first ordering
+# is handled automatically by the `date` field — no need to reorder manually.
+#
+# Fields:
+#   title  - post title as shown in the sidebar
+#   url    - full URL to the external post
+#   source - platform / publication name (e.g. Medium, dev.to, InfoQ)
+#   date   - YYYY-MM-DD, used for sorting and display (shown as "Mon YYYY")
+
+- title: "Green AI and Claude Code"
+  url: "https://medium.com/@venkata.uday24/green-ai-and-claude-code-14df2e982267"
+  source: "Medium"
+  date: 2026-09-12
