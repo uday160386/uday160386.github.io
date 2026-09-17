@@ -1,0 +1,16 @@
+# Downloadable files shown in the "Files" section of the home page right
+# sidebar, underneath "External posts" (Elsewhere). Add one entry per file
+# you want linked — slides, presentations, one-pagers, papers, etc.
+#
+# Fields:
+#   title       - file title as shown in the sidebar
+#   description - one short line on what it is
+#   url         - path to the file, relative to site root (e.g. /Documents/foo.pdf)
+#   type        - short label shown next to the file (PDF, DOCX, ZIP, ...)
+#   date        - YYYY-MM-DD, used for sorting and display (shown as "Mon YYYY")
+
+- title: "Automatic Speech Recognition"
+  description: "Overview deck: Kaldi, Vosk, Azure AKS and FastAPI pipeline"
+  url: "/Documents/ASR-Presentation.pdf"
+  type: "PDF"
+  date: 2026-01-15

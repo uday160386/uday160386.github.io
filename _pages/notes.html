@@ -1,0 +1,165 @@
+---
+layout: archive
+title: ""
+permalink: /notes/
+author_profile: false
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     "Signal & System" — Notes (sticky-note board)
+     Same base tokens as home/thoughts, plus a small note palette.
+     ============================================================ */
+  :root{
+    --nt-bg: #14110d;
+    --nt-panel: #1b1712;
+    --nt-line: rgba(242,236,227,0.10);
+    --nt-line-strong: rgba(242,236,227,0.18);
+    --nt-ink: #f2ece3;
+    --nt-ink-muted: #a79c8c;
+    --nt-ink-dim: #7c7364;
+    --nt-warm: #e8a23d;
+    --nt-cool: #4fc3b0;
+    --nt-rose: #d98a86;
+
+    /* note paper + ink per colorway, tuned for a dark corkboard */
+    --nt-warm-paper: #2a2015;
+    --nt-warm-edge: rgba(232,162,61,0.35);
+    --nt-cool-paper: #142523;
+    --nt-cool-edge: rgba(79,195,176,0.32);
+    --nt-rose-paper: #26181a;
+    --nt-rose-edge: rgba(217,138,134,0.32);
+  }
+
+  .notes-board{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 2.25rem 1.25rem 3.5rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--nt-ink-muted);
+    line-height: 1.6;
+  }
+  .notes-board a{ color: inherit; text-decoration: none; }
+
+  .nt-label{
+    font-family:'IBM Plex Mono', monospace; font-size:0.74rem;
+    color: var(--nt-ink-dim); margin-bottom:0.9rem; display:flex; align-items:center; gap:0.55rem;
+  }
+  .nt-label::before{ content:''; width:5px; height:5px; border-radius:50%; background:var(--nt-warm); }
+
+  .nt-title{
+    font-family:'Space Grotesk', sans-serif; font-weight:700;
+    font-size: clamp(1.9rem, 4.6vw, 2.5rem); color: var(--nt-ink);
+    letter-spacing: -0.01em; margin: 0 0 0.6rem;
+  }
+  .nt-sub{ max-width: 58ch; font-size: 1rem; margin: 0 0 1rem; }
+
+  .nt-count{
+    font-family:'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--nt-ink-dim);
+    padding-top: 1.4rem; border-top: 1px solid var(--nt-line); margin-bottom: 2rem;
+  }
+
+  /* board */
+  .nt-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2rem 1.75rem;
+  }
+
+  .nt-note{
+    position:relative;
+    display:flex; flex-direction:column;
+    min-height: 220px;
+    padding: 1.5rem 1.3rem 1.3rem;
+    border-radius: 3px;
+    box-shadow: 0 10px 22px -10px rgba(0,0,0,0.55), 0 2px 5px rgba(0,0,0,0.35);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  /* gentle alternating tilt, per-card override below */
+  .nt-grid .nt-note:nth-child(3n+1){ transform: rotate(-1.4deg); }
+  .nt-grid .nt-note:nth-child(3n+2){ transform: rotate(1.1deg); }
+  .nt-grid .nt-note:nth-child(3n){ transform: rotate(-0.6deg); }
+  .nt-note:hover{
+    transform: rotate(0deg) translateY(-4px) scale(1.015) !important;
+    box-shadow: 0 18px 32px -12px rgba(0,0,0,0.6), 0 4px 10px rgba(0,0,0,0.4);
+    z-index: 2;
+  }
+
+  /* pin */
+  .nt-note::before{
+    content:''; position:absolute; top:-7px; left:50%; margin-left:-6px;
+    width:12px; height:12px; border-radius:50%;
+    background: radial-gradient(circle at 35% 30%, #fff6 0%, #0000 45%), var(--pin-color, var(--nt-warm));
+    box-shadow: 0 3px 5px rgba(0,0,0,0.45);
+  }
+
+  .nt-note.warm{ background: var(--nt-warm-paper); border: 1px solid var(--nt-warm-edge); --pin-color: var(--nt-warm); }
+  .nt-note.cool{ background: var(--nt-cool-paper); border: 1px solid var(--nt-cool-edge); --pin-color: var(--nt-cool); }
+  .nt-note.rose{ background: var(--nt-rose-paper); border: 1px solid var(--nt-rose-edge); --pin-color: var(--nt-rose); }
+
+  .nt-date{
+    font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.04em;
+    text-transform:uppercase; color: var(--nt-ink-dim); margin-bottom:0.6rem;
+  }
+  .nt-note.warm .nt-date{ color: var(--nt-warm); opacity:0.85; }
+  .nt-note.cool .nt-date{ color: var(--nt-cool); opacity:0.85; }
+  .nt-note.rose .nt-date{ color: var(--nt-rose); opacity:0.85; }
+
+  .nt-note .name{
+    font-family:'Caveat', cursive; font-weight:700; font-size:1.55rem; line-height:1.25;
+    color: var(--nt-ink); margin-bottom:0.65rem;
+  }
+
+  .nt-note .desc{
+    font-size:0.9rem; color: var(--nt-ink-muted); flex:1; margin-bottom:1rem;
+  }
+
+  .nt-tags{ display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:auto; }
+  .nt-tags span{
+    font-family:'IBM Plex Mono', monospace; font-size:0.66rem;
+    padding:0.18rem 0.5rem; border-radius:5px;
+    background: rgba(0,0,0,0.22); color: var(--nt-ink-muted);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .nt-empty{
+    padding: 2.5rem 0; text-align:center; font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem; color: var(--nt-ink-dim); border-top:1px solid var(--nt-line);
+  }
+
+  @media (max-width:560px){
+    .nt-grid{ grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap:1.6rem 1.1rem; }
+    .nt-note{ min-height: 190px; }
+  }
+</style>
+
+<div class="notes-board">
+  <div class="nt-label">Notes</div>
+  <h1 class="nt-title">Quick notes, pinned as I go</h1>
+  <p class="nt-sub">Short-form learnings from day-to-day engineering</p>
+
+  {% assign all_notes = site.notes | sort: "date" | reverse %}
+  <div class="nt-count">{{ all_notes.size }} note{% unless all_notes.size == 1 %}s{% endunless %} pinned</div>
+
+  {% if all_notes.size > 0 %}
+    <div class="nt-grid">
+      {% for note in all_notes %}
+        {% assign note_color = note.color | default: "warm" %}
+        <a class="nt-note {{ note_color }}" href="{{ note.url | relative_url }}">
+          <div class="nt-date">{{ note.date | date: "%d %b %Y" }}</div>
+          <div class="name">{{ note.title }}</div>
+          <div class="desc">{{ note.excerpt | default: note.content | strip_html | truncate: 140 }}</div>
+          <div class="nt-tags">
+            {% for tag in note.tags limit:4 %}{% if tag %}<span>{{ tag }}</span>{% endif %}{% endfor %}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="nt-empty">No notes pinned yet — check back soon.</div>
+  {% endif %}
+</div>

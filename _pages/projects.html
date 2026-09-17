@@ -11,7 +11,7 @@ author_profile: false
 
 <style>
   /* ============================================================
-     "Signal & System" — Thoughts (projects) listing
+     "Signal & System" — Thoughts (projects) — tile grid redesign
      Same tokens as the home page.
      ============================================================ */
   :root{
@@ -29,9 +29,9 @@ author_profile: false
   }
 
   .thoughts{
-    max-width: 780px;
+    max-width: 1080px;
     margin: 0 auto;
-    padding: 2.25rem 1.25rem 3rem;
+    padding: 2.25rem 1.25rem 3.5rem;
     font-family: 'IBM Plex Sans', sans-serif;
     color: var(--tg-ink-muted);
     line-height: 1.6;
@@ -50,59 +50,86 @@ author_profile: false
     font-size: clamp(1.9rem, 4.6vw, 2.5rem); color: var(--tg-ink);
     letter-spacing: -0.01em; margin: 0 0 0.6rem;
   }
-  .tg-sub{ max-width: 56ch; font-size: 1rem; margin: 0 0 1rem; }
+  .tg-sub{ max-width: 58ch; font-size: 1rem; margin: 0 0 1rem; }
+
+  /* filter chips */
+  .tg-filters{
+    display:flex; flex-wrap:wrap; gap:0.5rem;
+    padding-top: 1.4rem; margin-bottom: 1.6rem; border-top: 1px solid var(--tg-line);
+  }
+  .tg-filter{
+    font-family:'IBM Plex Mono', monospace; font-size:0.72rem; cursor:pointer;
+    color: var(--tg-ink-muted); background: transparent;
+    border:1px solid var(--tg-line-strong); border-radius:100px;
+    padding:0.35rem 0.85rem; transition: all .15s;
+  }
+  .tg-filter:hover{ border-color: var(--tg-warm); color: var(--tg-warm); }
+  .tg-filter.active{ background: var(--tg-warm-soft); border-color: var(--tg-warm); color: var(--tg-warm); }
 
   .tg-count{
     font-family:'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--tg-ink-dim);
-    padding-top: 1.4rem; border-top: 1px solid var(--tg-line); margin-bottom: 0.4rem;
+    margin-bottom: 1.6rem;
   }
 
-  .tg-list{ display:flex; flex-direction:column; }
-  .tg-proj{
-    display:grid; grid-template-columns:3px 84px 1fr; gap:1.1rem; align-items:start;
-    padding:1.5rem 0; border-top:1px solid var(--tg-line);
-    text-decoration:none; transition:padding-left .15s;
+  /* card grid */
+  .tg-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
   }
-  .tg-proj:hover{ padding-left:0.4rem; }
-  .tg-proj .bar{ background: var(--tg-line-strong); border-radius:2px; transition:background .15s; align-self:stretch; }
-  .tg-proj:hover .bar{ background: var(--tg-warm); }
 
-  .tg-thumb{
-    width:84px; height:84px; border-radius:10px; overflow:hidden;
-    border:1px solid var(--tg-line-strong); background: var(--tg-panel);
-    flex-shrink:0;
+  .tg-card{
+    display:flex; flex-direction:column;
+    border:1px solid var(--tg-line); border-radius:14px;
+    background: var(--tg-panel); overflow:hidden;
+    text-decoration:none; transition: border-color .18s, transform .18s, box-shadow .18s;
   }
-  .tg-thumb img{
+  .tg-card:hover{
+    border-color: var(--tg-warm);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 28px -14px rgba(0,0,0,0.55);
+  }
+
+  .tg-card-media{
+    width:100%; aspect-ratio: 16/9; overflow:hidden;
+    background: var(--tg-panel); border-bottom:1px solid var(--tg-line);
+  }
+  .tg-card-media img{
     width:100%; height:100%; object-fit:cover; display:block;
     filter: saturate(0.9);
-    transition: transform .25s ease;
+    transition: transform .3s ease;
   }
-  .tg-proj:hover .tg-thumb img{ transform: scale(1.06); }
-  .tg-thumb.placeholder{
+  .tg-card:hover .tg-card-media img{ transform: scale(1.05); }
+  .tg-card-media.placeholder{
     display:flex; align-items:center; justify-content:center;
     background: linear-gradient(155deg, var(--tg-warm-soft), var(--tg-cool-soft));
   }
-  .tg-thumb.placeholder svg{ width:34px; height:34px; }
-  .tg-thumb.placeholder path{
+  .tg-card-media.placeholder svg{ width:38px; height:38px; }
+  .tg-card-media.placeholder path{
     fill:none; stroke: var(--tg-cool); stroke-width:1.6;
     stroke-linecap:round; stroke-linejoin:round;
   }
 
-  .tg-proj .name{
+  .tg-card-body{ display:flex; flex-direction:column; flex:1; padding:1.15rem 1.2rem 1.3rem; }
+  .tg-card-body .name{
     font-family:'Space Grotesk', sans-serif; color: var(--tg-ink); font-weight:600;
-    font-size:1.08rem; margin-bottom:0.4rem;
+    font-size:1.04rem; line-height:1.35; margin-bottom:0.5rem;
   }
-  .tg-proj .desc{ font-size:0.92rem; max-width:56ch; margin-bottom:0.7rem; }
-  .tg-proj .tags{ display:flex; flex-wrap:wrap; gap:0.45rem; }
-  .tg-proj .tags span{
-    font-family:'IBM Plex Mono', monospace; font-size:0.7rem; color: var(--tg-cool);
+  .tg-card-body .desc{ font-size:0.88rem; margin-bottom:0.9rem; flex:1; }
+  .tg-card-body .tags{ display:flex; flex-wrap:wrap; gap:0.4rem; }
+  .tg-card-body .tags span{
+    font-family:'IBM Plex Mono', monospace; font-size:0.68rem; color: var(--tg-cool);
     background: var(--tg-cool-soft); border:1px solid rgba(79,195,176,0.25);
-    border-radius:5px; padding:0.2rem 0.55rem;
+    border-radius:5px; padding:0.18rem 0.5rem;
   }
+
+  .tg-empty{
+    grid-column: 1 / -1; padding: 2.5rem 0; text-align:center;
+    font-family:'IBM Plex Mono', monospace; font-size:0.85rem; color: var(--tg-ink-dim);
+  }
+
   @media (max-width:600px){
-    .tg-proj{ grid-template-columns:3px 60px 1fr; gap:0.8rem; }
-    .tg-thumb{ width:60px; height:60px; border-radius:8px; }
-    .tg-thumb.placeholder svg{ width:24px; height:24px; }
+    .tg-grid{ grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap:1.1rem; }
   }
 </style>
 
@@ -112,29 +139,62 @@ author_profile: false
   <p class="tg-sub">Hands-on notes from applied AI, API platforms and cloud-native delivery — practical lessons, not theory.</p>
 
   {% assign all_projects = site.projects | reverse %}
+
+  {% assign all_tags = all_projects | map: "tags" | flatten | uniq | sort %}
+
+  {% if all_tags.size > 0 %}
+    <div class="tg-filters" id="tg-filters">
+      <span class="tg-filter active" data-filter="all">All</span>
+      {% for tag in all_tags %}
+        <span class="tg-filter" data-filter="{{ tag }}">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  {% endif %}
+
   <div class="tg-count">{{ all_projects.size }} project{% unless all_projects.size == 1 %}s{% endunless %}</div>
 
-  <div class="tg-list">
+  <div class="tg-grid" id="tg-grid">
     {% for project in all_projects %}
-      <a class="tg-proj" href="{{ project.url | relative_url }}">
-        <div class="bar"></div>
+      <a class="tg-card" href="{{ project.url | relative_url }}" data-tags="{{ project.tags | join: '|' }}">
         {% if project.header.teaser %}
-          <div class="tg-thumb">
+          <div class="tg-card-media">
             <img src="{{ project.header.teaser | relative_url }}" alt="{{ project.title }}" loading="lazy">
           </div>
         {% else %}
-          <div class="tg-thumb placeholder">
+          <div class="tg-card-media placeholder">
             <svg viewBox="0 0 40 40"><path d="M2,20 L10,20 L13,10 L18,30 L22,14 L25,20 L38,20"/></svg>
           </div>
         {% endif %}
-        <div>
+        <div class="tg-card-body">
           <div class="name">{{ project.title }}</div>
-          <div class="desc">{{ project.excerpt | strip_html | truncate: 180 }}</div>
+          <div class="desc">{{ project.excerpt | strip_html | truncate: 150 }}</div>
           <div class="tags">
             {% for tag in project.tags limit:5 %}{% if tag %}<span>{{ tag }}</span>{% endif %}{% endfor %}
           </div>
         </div>
       </a>
     {% endfor %}
+    {% if all_projects.size == 0 %}
+      <div class="tg-empty">No projects yet — check back soon.</div>
+    {% endif %}
   </div>
 </div>
+
+<script>
+(function(){
+  var filters = document.querySelectorAll('#tg-filters .tg-filter');
+  var cards = document.querySelectorAll('#tg-grid .tg-card');
+  if(!filters.length) return;
+  filters.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filters.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var f = btn.getAttribute('data-filter');
+      cards.forEach(function(card){
+        var tags = (card.getAttribute('data-tags') || '').split('|');
+        card.style.display = (f === 'all' || tags.indexOf(f) !== -1) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>

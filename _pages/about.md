@@ -205,6 +205,15 @@ redirect_from:
     font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color: var(--sg-warm);
   }
 
+  .sg-file-desc{
+    display:block; font-size:0.8rem; color: var(--sg-ink-muted);
+    margin-bottom:0.5rem; line-height:1.4;
+  }
+  .sg-file-post .sg-ext-meta .fa-arrow-down{
+    font-size:0.65rem; margin-left:auto; color: var(--sg-ink-dim);
+  }
+  .sg-file-post a:hover .fa-arrow-down{ color: var(--sg-cool); }
+
   @media (max-width:900px){
     .home-grid{ grid-template-columns: 1fr; }
     .home-sidebar{ position:static; border-top:none; padding-top:0; }
@@ -221,7 +230,7 @@ redirect_from:
 
   <header class="sg-hero">
     <h1 class="sg-name">{{ site.author.name }}</h1>
-    <p class="sg-role">Engineering Lead <span class="sep">/</span> Applied AI | Open APIs | Cloud-Native</p>
+    <p class="sg-role">shipping software <span class="sep">|</span> chasing AI<span class="sep">| </span> never done learning </p>
 
     <svg class="sg-trace" viewBox="0 0 480 48" preserveAspectRatio="none">
       <path d="M0,24 L55,24 L69,7 L88,41 L106,13 L120,24 L185,24 C199,24 199,9 213,9 C227,9 227,24 241,24 L314,24 L328,37 L347,11 L363,24 L480,24" />
@@ -251,13 +260,8 @@ redirect_from:
   <div class="home-grid">
     <div class="home-main">
 
-      <section id="overview">
-        <div class="sg-label">Overview</div>
-        <p>My background spans the full delivery lifecycle: requirements gathering, architecture, API management, backend and test engineering, and production-grade execution. Having begun my career in the IT sector at age 20, I currently serve as Sr.Engineering Tech Lead for the SME Digital Channels, Open API and Partnerships program at <i>Standard Chartered, Singapore</i>, where I continue to deliver high-impact solutions across multiple domains.</p>
-      </section>
-
-      <section id="focus">
-        <div class="sg-label">Current focus</div>
+ <section id="focus">
+        <div class="sg-label">Working on</div>
         <ul class="sg-chips">
           <li class="sg-chip">PyTorch</li>
           <li class="sg-chip">Conversational AI</li>
@@ -266,7 +270,20 @@ redirect_from:
           <li class="sg-chip">AI Transformation</li>
           <li class="sg-chip">LLM</li>
           <li class="sg-chip">Multi-Modal AI</li>
+          <li class="sg-chip">Automated Speech Recognization</li>
         </ul>
+
+       
+      </section>
+
+      <section id="overview">
+        <div class="sg-label">Background</div>
+        <p>My background spans the full delivery lifecycle: requirements gathering, architecture, API management, backend and test engineering, and production-grade execution. Having begun my career in the IT sector at age 20, I currently serve as Sr.Engineering Tech Lead for the SME Digital Channels, Open API and Partnerships program at <i>Standard Chartered, Singapore</i>, where I continue to deliver high-impact solutions across multiple domains.</p>
+      </section>
+
+      <section id="focus">
+        <div class="sg-label">Current focus</div>
+    
 
         <h2>What I write and build about</h2>
         <p>I use this space to publish technical insights and posts drawn from hands-on implementation, not theory.</p>
@@ -317,7 +334,7 @@ redirect_from:
     <aside class="home-sidebar">
       <section id="external-posts" class="sg-sidebar-section">
         <div class="sg-label">Elsewhere</div>
-        <h2>External posts</h2>
+        
         <ul class="sg-ext-list">
           {% assign ext_posts = site.data.external_posts | sort: "date" | reverse %}
           {% for post in ext_posts limit:5 %}
@@ -338,6 +355,28 @@ redirect_from:
           </p>
         {% endif %}
       </section>
+
+      {% assign site_files = site.data.files | sort: "date" | reverse %}
+      {% if site_files.size > 0 %}
+        <section id="files" class="sg-sidebar-section">
+          <div class="sg-label">Downloads</div>
+         
+          <ul class="sg-ext-list">
+            {% for file in site_files %}
+              <li class="sg-ext-post sg-file-post">
+                <a href="{{ file.url | relative_url }}" target="_blank" rel="noopener noreferrer" download>
+                  <span class="sg-ext-title">{{ file.title }}</span>
+                  {% if file.description %}<span class="sg-file-desc">{{ file.description }}</span>{% endif %}
+                  <span class="sg-ext-meta">
+                    {% if file.type %}{{ file.type }} ·{% endif %} {{ file.date | date: "%b %Y" }}
+                    <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                  </span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
     </aside>
   </div>
 
