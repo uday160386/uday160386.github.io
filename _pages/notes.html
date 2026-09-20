@@ -36,7 +36,7 @@ author_profile: false
   }
 
   .notes-board{
-    max-width: 1080px;
+    max-width: 1680px;
     margin: 0 auto;
     padding: 2.25rem 1.25rem 3.5rem;
     font-family: 'IBM Plex Sans', sans-serif;
@@ -73,9 +73,9 @@ author_profile: false
   .nt-note{
     position:relative;
     display:flex; flex-direction:column;
-    min-height: 220px;
+    min-height: 20px;
     padding: 1.5rem 1.3rem 1.3rem;
-    border-radius: 3px;
+    border-radius: 1px;
     box-shadow: 0 10px 22px -10px rgba(0,0,0,0.55), 0 2px 5px rgba(0,0,0,0.35);
     transition: transform .18s ease, box-shadow .18s ease;
   }
@@ -91,10 +91,10 @@ author_profile: false
 
   /* pin */
   .nt-note::before{
-    content:''; position:absolute; top:-7px; left:50%; margin-left:-6px;
-    width:12px; height:12px; border-radius:50%;
+    content:''; position:absolute; top:-3.5px; left:50%; margin-left:-3px;
+    width:6px; height:6px; border-radius:50%;
     background: radial-gradient(circle at 35% 30%, #fff6 0%, #0000 45%), var(--pin-color, var(--nt-warm));
-    box-shadow: 0 3px 5px rgba(0,0,0,0.45);
+    box-shadow: 0 1.5px 2.5px rgba(0,0,0,0.45);
   }
 
   .nt-note.warm{ background: var(--nt-warm-paper); border: 1px solid var(--nt-warm-edge); --pin-color: var(--nt-warm); }
@@ -140,7 +140,7 @@ author_profile: false
 <div class="notes-board">
   <div class="nt-label">Notes</div>
   <h1 class="nt-title">Quick notes, pinned as I go</h1>
-  <p class="nt-sub">Short-form learnings from day-to-day engineering</p>
+  <p class="nt-sub">Short-form observations from day-to-day engineering — smaller than a write-up.</p>
 
   {% assign all_notes = site.notes | sort: "date" | reverse %}
   <div class="nt-count">{{ all_notes.size }} note{% unless all_notes.size == 1 %}s{% endunless %} pinned</div>
@@ -152,7 +152,7 @@ author_profile: false
         <a class="nt-note {{ note_color }}" href="{{ note.url | relative_url }}">
           <div class="nt-date">{{ note.date | date: "%d %b %Y" }}</div>
           <div class="name">{{ note.title }}</div>
-          <div class="desc">{{ note.excerpt | default: note.content | strip_html | truncate: 140 }}</div>
+        
           <div class="nt-tags">
             {% for tag in note.tags limit:4 %}{% if tag %}<span>{{ tag }}</span>{% endif %}{% endfor %}
           </div>
