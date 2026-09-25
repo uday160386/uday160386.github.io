@@ -2,7 +2,7 @@
 title: "Agentic AI Multi-Agent vs Agent to Agent Communication"
 collection: notes
 date: 2026-09-25
-color: blue
+color: warm
 tags:
   - Reading
   - AI Solution
