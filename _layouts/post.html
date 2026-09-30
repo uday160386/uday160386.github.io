@@ -1,0 +1,83 @@
+---
+layout: default
+body_class: is-article
+---
+{%- assign stream = site.streams[page.collection] -%}
+{%- assign words = content | number_of_words -%}
+{%- assign mins = words | divided_by: site.words_per_minute | at_least: 1 -%}
+{%- assign raw_ex = page.excerpt | append: "" -%}
+{%- assign has_fm_excerpt = false -%}
+{%- if page.dek -%}{%- assign dek = page.dek -%}{%- assign has_fm_excerpt = true -%}{%- endif -%}
+{%- unless page.dek -%}
+  {%- comment -%} front-matter excerpts are plain strings; auto excerpts contain <p> {%- endcomment -%}
+  {%- unless raw_ex contains "<p>" -%}
+    {%- assign dek = raw_ex | split: "<br" | first | strip_html | remove: "**" | remove: "TL;DR" | normalize_whitespace -%}
+    {%- if dek != "" -%}{%- assign has_fm_excerpt = true -%}{%- endif -%}
+  {%- endunless -%}
+{%- endunless -%}
+{%- assign repo = page.repo -%}
+{%- unless repo -%}
+  {%- assign parts = raw_ex | split: "href='" -%}
+  {%- if parts.size > 1 -%}{%- assign repo = parts[1] | split: "'" | first -%}{%- endif -%}
+{%- endunless -%}
+
+<article class="article" data-article>
+  <header class="article-head wrap">
+    <p class="kicker">
+      {%- if stream -%}
+        <a class="stream-link tone-{{ stream.tone }}" href="{{ stream.url | relative_url }}"><i></i>{{ stream.label }}</a>
+      {%- else -%}
+        <a class="stream-link" href="{{ '/archive/' | relative_url }}"><i></i>Writing</a>
+      {%- endif -%}
+    </p>
+    <h1 class="article-title">{{ page.title | markdownify | strip_html | strip }}</h1>
+    {%- if has_fm_excerpt -%}<p class="article-dek">{{ dek }}</p>{%- endif -%}
+
+    <div class="article-meta">
+      {%- if page.collection != "projects" -%}
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %B %Y" }}</time>
+      {%- endif -%}
+      {%- if page.read_time != false -%}<span>{{ mins }} min read</span>{%- endif -%}
+      {%- if repo -%}
+        <a class="btn btn-small" href="{{ repo }}" target="_blank" rel="noopener">{% include icon.html name="github" %} View the code</a>
+      {%- endif -%}
+    </div>
+
+    {%- assign tagcount = 0 -%}{%- for t in page.tags -%}{%- if t -%}{%- assign tagcount = tagcount | plus: 1 -%}{%- endif -%}{%- endfor -%}
+    {%- if tagcount > 0 -%}
+      <ul class="tags tags-head">
+        {%- for t in page.tags -%}{%- if t -%}
+          <li><a href="{{ stream.url | default: '/archive/' | relative_url }}?tag={{ t | slugify }}">{{ t }}</a></li>
+        {%- endif -%}{%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </header>
+
+  <div class="article-grid wrap">
+    <div class="prose" data-prose>
+      {{ content }}
+    </div>
+    <aside class="toc" data-toc hidden>
+      <p class="toc-label">On this page</p>
+      <ol data-toc-list></ol>
+    </aside>
+  </div>
+
+  <footer class="article-foot wrap">
+    <nav class="pager" aria-label="More in this section">
+      {%- if page.previous -%}
+        <a class="pager-link prev" href="{{ page.previous.url | relative_url }}">
+          <span class="pager-dir">{% include icon.html name="arrow-left" %} Previous</span>
+          <span class="pager-title">{{ page.previous.title | markdownify | strip_html | strip }}</span>
+        </a>
+      {%- else -%}<span></span>{%- endif -%}
+      {%- if page.next -%}
+        <a class="pager-link next" href="{{ page.next.url | relative_url }}">
+          <span class="pager-dir">Next {% include icon.html name="arrow" %}</span>
+          <span class="pager-title">{{ page.next.title | markdownify | strip_html | strip }}</span>
+        </a>
+      {%- endif -%}
+    </nav>
+    <a class="back-link" href="{{ stream.url | default: '/archive/' | relative_url }}">{% include icon.html name="arrow-left" %} All {{ stream.label | default: "writing" }}{% if stream.label == "Project" or stream.label == "Note" %}s{% endif %}</a>
+  </footer>
+</article>

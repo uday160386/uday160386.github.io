@@ -1,0 +1,48 @@
+# Everything on the /sparetime/ "Learning" page (and the education list on the home page).
+# Add a line here and the site updates — no HTML needed.
+
+education:
+  - title: "PG Certification in Artificial Intelligence & Machine Learning"
+    school: "IIIT Hyderabad"
+  - title: "Master's in Software Engineering"
+    school: "BITS Pilani"
+
+certifications:
+  - name: "AWS Certified Security – Specialty"
+    issuer: "Amazon Web Services"
+  - name: "AWS Cloud Practitioner"
+    issuer: "Amazon Web Services"
+  - name: "Azure Fundamentals"
+    issuer: "Microsoft"
+  - name: "Green Software for Practitioners"
+    issuer: "Linux Foundation · Green Software Foundation"
+  - name: "SRE Foundation℠"
+    issuer: "DevOps Institute"
+  - name: "SAFe® 6 Agilist"
+    issuer: "Scaled Agile"
+  - name: "Certified ScrumMaster"
+    issuer: "Scrum Alliance"
+
+courses:
+  - group: "AI & Product Development"
+    items:
+      - { title: "AI Product Development: Technical Feasibility and Prototyping", platform: "LinkedIn" }
+      - { title: "Integrating AI into the Product Architecture", platform: "LinkedIn" }
+      - { title: "AI-102: Azure AI Engineer Associate Prep", platform: "Microsoft" }
+  - group: "Architecture & Security"
+    items:
+      - { title: "REST API Management, Monitoring & Analytics using Kong 3", platform: "Udemy" }
+      - { title: "Microservices Software Architecture: Patterns and Techniques", platform: "Udemy" }
+      - { title: "Microservices: Security", platform: "LinkedIn" }
+      - { title: "Cloud Security Architecture for the Enterprise", platform: "LinkedIn" }
+      - { title: "Design a Cloud Migration Strategy", platform: "LinkedIn" }
+  - group: "Leadership"
+    items:
+      - { title: "Mentoring Others", platform: "LinkedIn" }
+      - { title: "Leadership Foundations", platform: "LinkedIn" }
+
+presentations:
+  - title: "Automated Speech Recognition in English"
+    date: 2024-10-22
+    url: "/Documents/ASR-Presentation.pdf"
+    note: "Kaldi, Vosk, Azure AKS and a FastAPI pipeline"

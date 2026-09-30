@@ -1,0 +1,24 @@
+{%- comment -%}
+  Filter chips for tags that appear on 2+ items (case-insensitive).
+  Pass: docs=<array of documents>
+{%- endcomment -%}
+{%- assign slugs = "" | split: "" -%}
+{%- for d in include.docs -%}{%- for t in d.tags -%}{%- if t -%}{%- assign s = t | slugify -%}{%- assign slugs = slugs | push: s -%}{%- endif -%}{%- endfor -%}{%- endfor -%}
+{%- assign uniq_slugs = slugs | uniq | sort -%}
+{%- capture chips -%}
+  {%- for s in uniq_slugs -%}
+    {%- assign n = 0 -%}
+    {%- for x in slugs -%}{%- if x == s -%}{%- assign n = n | plus: 1 -%}{%- endif -%}{%- endfor -%}
+    {%- if n > 1 -%}
+      {%- assign label = s -%}
+      {%- for d in include.docs -%}{%- for t in d.tags -%}{%- if t -%}{%- assign ts = t | slugify -%}{%- if ts == s -%}{%- assign label = t -%}{%- break -%}{%- endif -%}{%- endif -%}{%- endfor -%}{%- endfor -%}
+      <button type="button" class="chip" data-filter="{{ s }}">{{ label }} <span class="chip-n">{{ n }}</span></button>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if chips != "" -%}
+<div class="filters" data-filters role="group" aria-label="Filter by topic">
+  <button type="button" class="chip is-active" data-filter="">All</button>
+  {{ chips }}
+</div>
+{%- endif -%}
