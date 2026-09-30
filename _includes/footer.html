@@ -1,9 +1,13 @@
-<footer class="site-footer">
-  <div class="wrap">
+<!-- {% include base_path %}
 
-    <div class="footer-base">
-      <span>© {{ site.author.name }}</span>
-      <span class="muted">Written by hand, built with Jekyll.</span>
-    </div>
-  </div>
-</footer>
+<!-- {% if site.author.github or site.author.bitbucket or site.atom_feed.hide != true %} -->
+<div class="page__footer-follow" style="text-align: center; margin-bottom: 10px;">
+  
+</div>
+{% endif %}
+
+<div class="page__footer-copyright" style="text-align: center; margin-bottom: 10px;">
+  &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}, {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp;
+   <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>.<br />
+
+</div> 

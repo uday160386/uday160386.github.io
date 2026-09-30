@@ -1,29 +1,127 @@
 ---
-layout: default
-title: "Notes"
+layout: archive
+title: ""
 permalink: /notes/
+author_profile: false
 ---
-{%- assign notes = site.notes | sort: "date" | reverse -%}
-<div class="wrap">
-  <header class="page-head">
-    <p class="kicker"><span class="count">{{ notes.size }}</span> note{% unless notes.size == 1 %}s{% endunless %}</p>
-    <h1 class="page-title">Notes</h1>
-    <p class="page-dek">Short-form observations from day-to-day engineering — smaller than a write-up, pinned as I go.</p>
-  </header>
 
-  {%- if notes.size > 0 -%}
-  <div class="notes-grid">
-    {%- for n in notes -%}
-      {%- assign tone = n.color | default: "warm" -%}
-      <a class="note-card tone-{{ tone }}" href="{{ n.url | relative_url }}">
-        <time datetime="{{ n.date | date_to_xmlschema }}">{{ n.date | date: "%d %b %Y" }}</time>
-        <span class="note-title">{{ n.title }}</span>
-        {%- if n.excerpt -%}<span class="note-quote">{{ n.excerpt | strip_html | normalize_whitespace }}</span>{%- endif -%}
-        <ul class="tags">{%- for t in n.tags limit: 3 -%}{%- if t -%}<li>{{ t }}</li>{%- endif -%}{%- endfor -%}</ul>
-      </a>
-    {%- endfor -%}
-  </div>
-  {%- else -%}
-    <p class="empty">No notes pinned yet — check back soon.</p>
-  {%- endif -%}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     "Signal & System" — Notes (plain list, grouped by year)
+     Colours come from the site-wide theme tokens in head/custom.html,
+     so black and white backgrounds both work.
+     ============================================================ */
+  .notes-list{
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2.25rem 1.25rem 3.5rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--sys-ink-muted);
+    line-height: 1.6;
+  }
+  .notes-list a{ color: inherit; text-decoration: none; }
+
+  .nt-label{
+    font-family:'IBM Plex Mono', monospace; font-size:0.74rem;
+    color: var(--sys-ink-dim); margin-bottom:0.9rem; display:flex; align-items:center; gap:0.55rem;
+  }
+  .nt-label::before{ content:''; width:5px; height:5px; border-radius:50%; background:var(--sys-warm); }
+
+  .nt-title{
+    font-family:'Space Grotesk', sans-serif; font-weight:700;
+    font-size: clamp(1.9rem, 4.6vw, 2.5rem); color: var(--sys-ink);
+    letter-spacing: -0.01em; margin: 0 0 0.6rem;
+  }
+  .nt-sub{ max-width: 62ch; font-size: 1rem; margin: 0 0 1rem; }
+
+  .nt-count{
+    font-family:'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--sys-ink-dim);
+    padding-top: 1.4rem; border-top: 1px solid var(--sys-line); margin-bottom: 0.5rem;
+  }
+
+  .nt-year{
+    font-family:'IBM Plex Mono', monospace; font-size:0.78rem; font-weight:500;
+    color: var(--sys-warm); margin: 2rem 0 0.25rem;
+  }
+
+  .nt-items{ list-style:none; margin:0; padding:0; }
+  .nt-items li{ margin:0; }
+
+  .nt-item{
+    display:grid; grid-template-columns: 6.2rem 1fr; gap: 1.25rem;
+    padding: 1.2rem 0.5rem 1.2rem 0.75rem;
+    border-top: 1px solid var(--sys-line);
+    border-left: 2px solid transparent;
+    transition: border-color .15s, background .15s;
+  }
+  .nt-items li:first-child .nt-item{ border-top: none; }
+  .nt-item:hover{ border-left-color: var(--sys-warm); background: var(--sys-warm-soft); }
+
+  .nt-date{
+    font-family:'IBM Plex Mono', monospace; font-size:0.74rem;
+    color: var(--sys-ink-dim); padding-top: 0.2rem;
+  }
+  .nt-item .name{
+    font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:1.06rem; line-height:1.35;
+    color: var(--sys-ink); margin-bottom:0.35rem;
+  }
+  .nt-item:hover .name{ color: var(--sys-warm); }
+  .nt-item .desc{ font-size:0.92rem; margin: 0 0 0.6rem; max-width: 60ch; }
+
+  .nt-tags{ display:flex; flex-wrap:wrap; gap:0.4rem; }
+  .nt-tags span{
+    font-family:'IBM Plex Mono', monospace; font-size:0.66rem;
+    padding:0.16rem 0.5rem; border-radius:5px;
+    color: var(--sys-cool); background: var(--sys-cool-soft); border: 1px solid var(--sys-cool-line);
+  }
+
+  .nt-empty{
+    padding: 2.5rem 0; text-align:center; font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem; color: var(--sys-ink-dim); border-top:1px solid var(--sys-line);
+  }
+
+  @media (max-width:600px){
+    .nt-item{ grid-template-columns: 1fr; gap: 0.3rem; padding-left: 0.6rem; }
+    .nt-date{ padding-top: 0; }
+  }
+</style>
+
+<div class="notes-list">
+  <div class="nt-label">Notes</div>
+  <h1 class="nt-title">Quick notes, as I go</h1>
+  <p class="nt-sub">Short-form observations from day-to-day engineering — smaller than a write-up.</p>
+
+  {% assign all_notes = site.notes | sort: "date" | reverse %}
+  <div class="nt-count">{{ all_notes.size }} note{% unless all_notes.size == 1 %}s{% endunless %}</div>
+
+  {% if all_notes.size > 0 %}
+    {% assign by_year = all_notes | group_by_exp: "n", "n.date | date: '%Y'" %}
+    {% for year in by_year %}
+      <div class="nt-year">{{ year.name }}</div>
+      <ul class="nt-items">
+        {% for note in year.items %}
+          <li>
+            <a class="nt-item" href="{{ note.url | relative_url }}">
+              <div class="nt-date">{{ note.date | date: "%d %b" }}</div>
+              <div>
+                <div class="name">{{ note.title }}</div>
+                {% if note.excerpt %}<p class="desc">{{ note.excerpt | strip_html | truncate: 170 }}</p>{% endif %}
+                {% if note.tags %}
+                  <div class="nt-tags">
+                    {% for tag in note.tags limit:4 %}{% if tag %}<span>{{ tag }}</span>{% endif %}{% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  {% else %}
+    <div class="nt-empty">No notes yet — check back soon.</div>
+  {% endif %}
 </div>

@@ -4,17 +4,45 @@
   <div class="masthead__inner-wrap sg-masthead__wrap">
     <a class="sg-mark" href="{{ base_path }}/">uday<span>.</span>bkv</a>
 
-    <nav class="sg-nav" id="site-nav">
-      <ul>
-        {% for link in site.data.navigation.main %}
-          {% if link.url contains 'http' %}
-            {% assign domain = '' %}
-          {% else %}
-            {% assign domain = base_path %}
-          {% endif %}
-          <li><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </nav>
+    <div class="sg-masthead__right">
+      <nav class="sg-nav" id="site-nav">
+        <ul>
+          {% for link in site.data.navigation.main %}
+            {% if link.url contains 'http' %}
+              <li class="sg-nav__ext"><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title }}<span class="sg-nav__arrow" aria-hidden="true">↗</span></a></li>
+            {% else %}
+              <li><a href="{{ base_path }}{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
+
+      <button type="button" class="sg-theme-toggle" id="sg-theme-toggle" aria-label="Switch to light background" title="Switch background">
+        <!-- sun: shown in dark mode (click → light) -->
+        <svg class="sg-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <!-- moon: shown in light mode (click → dark) -->
+        <svg class="sg-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
   </div>
 </div>
+
+<script>
+(function(){
+  var btn = document.getElementById('sg-theme-toggle');
+  if(!btn) return;
+  function current(){ return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark'; }
+  function label(){
+    var next = current() === 'light' ? 'black' : 'white';
+    btn.setAttribute('aria-label', 'Switch to ' + next + ' background');
+    btn.setAttribute('title', 'Switch to ' + next + ' background');
+  }
+  label();
+  btn.addEventListener('click', function(){
+    var next = current() === 'light' ? 'dark' : 'light';
+    window.sgSetTheme(next);
+    try { localStorage.setItem('sg-theme', next); } catch(e) {}
+    label();
+  });
+})();
+</script>

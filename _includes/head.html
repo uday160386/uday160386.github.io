@@ -1,42 +1,22 @@
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- if page.title and page.title != "" -%}
-    {%- assign page_title = page.title | strip_html | append: " — " | append: site.title -%}
-  {%- else -%}
-    {%- assign page_title = site.title | append: " — " | append: site.author.role | append: ", " | append: site.author.location -%}
-  {%- endif -%}
-  {%- assign page_desc = page.description | default: page.dek | default: page.excerpt | default: site.description | split: "<br" | first | strip_html | remove: "**" | normalize_whitespace | truncate: 180 -%}
-  {%- assign page_image = page.header.teaser | default: site.author.portrait | absolute_url -%}
-  <title>{{ page_title }}</title>
-  <meta name="description" content="{{ page_desc | escape }}">
-  <meta name="author" content="{{ site.author.name }}">
-  <link rel="canonical" href="{{ page.url | absolute_url }}">
+{% include base_path %}
 
-  <meta property="og:site_name" content="{{ site.title }}">
-  <meta property="og:title" content="{{ page_title | escape }}">
-  <meta property="og:description" content="{{ page_desc | escape }}">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{{ page_image }}">
-  <meta property="og:type" content="{% if page.collection %}article{% else %}website{% endif %}">
-  <meta name="twitter:card" content="summary_large_image">
+<meta charset="utf-8">
 
-  <meta name="theme-color" content="#F1F2EE" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0E0F11" media="(prefers-color-scheme: dark)">
-  <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}" sizes="any">
-  <link rel="apple-touch-icon" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
-  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+{% include seo.html %}
 
-  <script>
-    /* set theme before paint to avoid a flash */
-    (function () {
-      var t = null;
-      try { t = localStorage.getItem("theme"); } catch (e) {}
-      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
-    })();
-  </script>
+<link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
 
-  <link rel="preload" href="{{ '/assets/fonts/instrument-serif-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="{{ '/assets/fonts/geist-latin-wght-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-</head>
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+

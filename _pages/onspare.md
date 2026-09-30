@@ -20,19 +20,19 @@ redirect_from:
 .ll-page-title {
   font-size: clamp(1.4rem, 3vw, 2rem);
   font-weight: 700;
-  color: #ffffff;
+  color: var(--sys-ink);
   letter-spacing: -0.03em;
   margin: 0 0 0.3rem 0;
 }
 .ll-page-sub {
   font-size: 0.85rem;
-  color: #ffffff;
+  color: var(--sys-ink);
   margin: 0 0 2.5rem 0;
   line-height: 1.5;
 }
 .ll-page-divider {
   border: none;
-  border-top: 2px solid #f1f5f9;
+  border-top: 2px solid var(--sys-line);
   margin: 0 0 2.5rem 0;
 }
 
@@ -66,12 +66,12 @@ redirect_from:
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--sys-ink);
 }
 .ll-section-line {
   flex: 1;
   height: 1px;
-  background: #e5e7eb;
+  background: var(--sys-line-strong);
 }
 
 /* ── Education ── */

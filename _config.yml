@@ -1,115 +1,316 @@
-# ─────────────────────────────────────────────────────────────
-#  Uday BKV — personal site
-#  Custom theme (no external theme gem). Everything visual lives in
-#  _layouts/, _includes/ and assets/. Content lives in the _collections.
-# ─────────────────────────────────────────────────────────────
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your entire site, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# `jekyll serve -l -H localhost`. If you change this file, please restart the 
+# server process.
 
-title: "Uday BKV"
-description: "Engineering Lead in Singapore building production-grade AI and cloud-native systems — and writing down what I learn."
-url: "https://uday160386.github.io"
-baseurl: ""
-lang: "en"
-timezone: Asia/Singapore
+# Basic Site Settings
+locale                   : "en-US"
+title                    : "Uday BKV"
+title_separator          : "-"
+name                     : &name "(Uday)"
+description              : &description "Engineering Lead based in Singapore — passionate about technology and its responsible use, adept at creative problem-solving, a continuous learner, dreamer and achiever."
+url                      : https://uday160386.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
+repository               : "academicpages/academicpages.github.io"
 
+# Site Author - The following control what appear as part of the author content on the side bar.
+#               If a field is blank the icon and link will not appear, otherwise it will be shown.
+#               Additional customization can be done by editing /_includes/author-profile.html
 author:
-  name: "Uday BKV"
-  role: "Engineering Lead"
-  location: "Singapore"
-  email: "venkata.uday24@gmail.com"
-  github: "uday160386"
-  linkedin: "bkvudaykumar"
-  instagram: "vukclicks"
-  medium: "https://medium.com/@venkata.uday24"
-  avatar: "/images/aboutme/profile.jpeg"
-  portrait: "/images/aboutme/profile-blur.jpg"   # profile.jpeg with a light (20%) blur
+  # Biographic information
+  avatar           : "/aboutme/profile.jpeg"
+  name             : "Uday BKV"
+  pronouns         :  ""
+  bio              : "Engineering Lead in Singapore, building production-grade AI and cloud-native systems."
+  location         : "Singapore 🇸🇬"
+    # employer         : "Bits Pilani"
+  uri              : # was "/vukclicks/" — that folder was removed; photography now links out (see _data/photography.yml)
+ 
+  email            : "venkata.uday24@gmail.com" 
+
+  # Academic websites
+  researchgate     : # URL
+
+  # Repositories and software development
+  github           : "uday160386"
+  
+
+  # Social media
+  instagram        : "vukclicks"
+  flickr           : "vukhere"
+  linkedin         : "bkvudaykumar"
+  medium           : "https://medium.com/@venkata.uday24"
+  
+  
+# Site Settings
+teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
+breadcrumbs              : true # true, false (default)
+words_per_minute         : 160
+future                   : true
+read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
+talkmap_link             : false #change to true to add link to talkmap on talks page
+comments:
+  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  disqus:
+    shortname            :
+  discourse:
+    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+  facebook:
+    appid                :
+    num_posts            : # 5 (default)
+    colorscheme          : # "light" (default), "dark"
+staticman:
+  allowedFields          : ['name', 'email', 'url', 'message']
+  branch                 : "gh-pages" # "master", "gh-pages"
+  commitMessage          : "New comment."
+  filename               : comment-{@timestamp}
+  format                 : "yml"
+  moderation             : true
+  path                   : "_data/comments/{options.slug}"
+  requiredFields         : ['name', 'email', 'message']
+  transforms:
+    email                : "md5"
+  generatedFields:
+    date:
+      type               : "date"
+      options:
+        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+atom_feed:
+  hide                   : false     # change to true to hide the RSS feed in the footer
+  path                   : # blank (default) uses feed.xml
 
 
-# Top navigation (order = display order)
-navigation:
-  - title: "Projects"
-    url: /projects/
-  - title: "AI Engineering"
-    url: /aiengineering/
-  - title: "Green Software"
-    url: /greensoftware/
-  - title: "Notes"
-    url: /notes/
-  - title: "Learning"
-    url: /sparetime/
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+alexa_site_verification  :
+yandex_site_verification :
 
 
-# Labels + accent for each writing stream. `key` matches collection label.
-streams:
-  aiengineering: { label: "AI Engineering", tone: "blue",  url: /aiengineering/ }
-  greensoftware: { label: "Green Software", tone: "green", url: /greensoftware/ }
-  posts:         { label: "Field Notes",    tone: "amber", url: /archive/ }
-  notes:         { label: "Note",           tone: "amber", url: /notes/ }
-  projects:      { label: "Project",        tone: "red",   url: /projects/ }
+# Social Sharing
+twitter:
+  username               : &twitter
+facebook:
+  username               :
+  app_id                 :
+  publisher              :
+og_image                 :  # Open Graph/Twitter default site image
+# For specifying social profiles
+# - https://developers.google.com/structured-data/customize/social-profiles
+social:
+  type                   : # Person or Organization (defaults to Person)
+  name                   : # If the user or organization name differs from the site's name
+  links: # An array of links to social media profiles
 
-words_per_minute: 200
 
-# ── Collections ────────────────────────────────────────────────
+# Analytics
+analytics:
+  provider               :  "google-universal" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  google:
+    tracking_id          :
+
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+  - files
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - CHANGELOG
+  - Capfile
+  - Gemfile
+  - Gruntfile.js
+  - LICENSE
+  - README
+  - Rakefile
+  - assets/js/_main.js
+  - assets/js/plugins
+  - assets/js/vendor
+  - config
+  - gulpfile.js
+  - log
+  - node_modules
+  - package.json
+  - tmp
+  - vendor
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+
+# Collections
 collections:
+  greensoftware:
+    output: true
+    permalink: /:collection/:path/
+  publications:
+    output: true
+    permalink: /:collection/:path/
   projects:
     output: true
     permalink: /:collection/:path/
   aiengineering:
     output: true
-    permalink: /:collection/:path/
-  greensoftware:
+    permalink: /:collection/:path/  
+  robotoys:
     output: true
     permalink: /:collection/:path/
   notes:
     output: true
     permalink: /:collection/:path/
+    
 
+
+# Defaults
 defaults:
-  - scope: { path: "" }
-    values: { layout: page }
-  - scope: { path: "", type: posts }
-    values: { layout: post }
-  - scope: { path: "", type: projects }
-    values: { layout: post }
-  - scope: { path: "", type: aiengineering }
-    values: { layout: post }
-  - scope: { path: "", type: greensoftware }
-    values: { layout: post }
-  - scope: { path: "", type: notes }
-    values: { layout: post, read_time: false }
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true 
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _greensoftware
+  - scope:
+      path: ""
+      type: greensoftware
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
 
+  # projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+
+  # aiengineering
+  - scope:
+      path: ""
+      type: aiengineering
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true   
+
+  # notes
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: true
+      share: true
+      related: false
+
+
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+
+# Outputting
 permalink: /:categories/:title/
-future: true
+# paginate: 5 # amount of posts to show
+# paginate_path: /page:num/
+timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-# ── Build ──────────────────────────────────────────────────────
-markdown: kramdown
-highlighter: rouge
-excerpt_separator: "\n\n"
-kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  syntax_highlighter: rouge
 
+# Plugins
 plugins:
-  - jekyll-feed
+  - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
   - jekyll-redirect-from
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
 
-feed:
-  collections:
-    - aiengineering
-    - greensoftware
-    - notes
 
-include:
-  - _pages
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path/my-awesome-category/index.html ~> path: /
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
 
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - vendor
-  - node_modules
-  - .bundle
-  - .jekyll-cache
+# HTML Compression
+# - http://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development

@@ -1,8 +1,155 @@
 ---
-layout: stream
-stream: greensoftware
+layout: archive
+title: ""
 permalink: /greensoftware/
-title: "Green Software"
-kicker: "write-ups"
-dek: "Measuring and reducing the carbon and energy cost of the systems I build — practical Green AI, not slogans."
+author_profile: true
 ---
+
+{% include base_path %}
+
+<style>
+  /* ── Green Software: dark panel, matching AI Engineering's treatment,
+     with its own moss-green identity instead of AI Eng's slate-blue ── */
+  .gsl-panel {
+    background: #12161c;
+    border-radius: 14px;
+    padding: 2rem 2.25rem 1rem;
+    margin: 0.5rem 0 2rem;
+  }
+  .gsl-header {
+    padding-bottom: 1.75rem;
+    border-bottom: 2px solid #5c7a4e;
+    margin-bottom: 0;
+  }
+  .gsl-kicker {
+    font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace;
+    font-size: 0.78rem;
+    color: #9bc47f;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.6rem;
+  }
+  .gsl-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #f4f6f8;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    margin-bottom: 0.6rem;
+  }
+  .gsl-dek {
+    font-size: 1rem;
+    color: #b3bcac;
+    max-width: 46em;
+    line-height: 1.6;
+  }
+
+  /* ── Register (the entry list) ── */
+  .gsl-register {
+    margin-top: 0;
+  }
+  .gsl-entry {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 1.5rem;
+    padding: 1.75rem 0;
+    padding-left: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-left: 3px solid transparent;
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .gsl-entry:last-of-type {
+    border-bottom: none;
+  }
+  .gsl-entry:hover {
+    border-left-color: #9bc47f;
+    background: rgba(155,196,127,0.05);
+  }
+  .gsl-date {
+    font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace;
+    font-size: 0.8rem;
+    color: #838c7c;
+    padding-top: 0.2rem;
+  }
+  .gsl-entry-title {
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: #f4f6f8;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+  .gsl-entry:hover .gsl-entry-title {
+    color: #9bc47f;
+  }
+  .gsl-entry-excerpt {
+    font-size: 0.92rem;
+    color: #b3bcac;
+    line-height: 1.6;
+    max-width: 42em;
+    margin-bottom: 0.75rem;
+  }
+  .gsl-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .gsl-tag {
+    font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace;
+    font-size: 0.68rem;
+    color: #9bc47f;
+    background: rgba(155,196,127,0.12);
+    padding: 0.18rem 0.5rem;
+    border-radius: 3px;
+  }
+
+  /* white background: same layout, light panel, darker accent for contrast */
+  :root[data-theme="light"] .gsl-panel{ background: var(--sys-panel-2); border: 1px solid var(--sys-line); }
+  :root[data-theme="light"] .gsl-title,
+  :root[data-theme="light"] .gsl-entry-title{ color: var(--sys-ink); }
+  :root[data-theme="light"] .gsl-dek,
+  :root[data-theme="light"] .gsl-entry-excerpt{ color: var(--sys-ink-muted); }
+  :root[data-theme="light"] .gsl-date{ color: var(--sys-ink-dim); }
+  :root[data-theme="light"] .gsl-kicker,
+  :root[data-theme="light"] .gsl-tag,
+  :root[data-theme="light"] .gsl-entry:hover .gsl-entry-title{ color: #3f6b2a; }
+  :root[data-theme="light"] .gsl-tag{ background: color-mix(in srgb, #3f6b2a 10%, transparent); }
+  :root[data-theme="light"] .gsl-entry{ border-bottom-color: var(--sys-line); }
+  :root[data-theme="light"] .gsl-entry:hover{ border-left-color: #3f6b2a; background: rgba(63,107,42,0.06); }
+
+  @media (max-width: 600px) {
+    .gsl-panel { padding: 1.5rem 1.25rem 0.75rem; border-radius: 10px; }
+    .gsl-title { font-size: 1.5rem; }
+    .gsl-entry { grid-template-columns: 1fr; gap: 0.4rem; padding-left: 0.75rem; }
+    .gsl-date { padding-top: 0; }
+  }
+</style>
+
+<div class="gsl-panel">
+  <div class="gsl-header">
+    <div class="gsl-kicker">greensoftware / register</div>
+    <div class="gsl-title">Green Software</div>
+    <p class="gsl-dek">Measuring and reducing the carbon and energy cost of the systems I build — practical Green AI, not slogans.</p>
+  </div>
+
+  <div class="gsl-register">
+  {% for post in site.greensoftware reversed %}
+    <a class="gsl-entry" href="{{ base_path }}{{ post.url }}">
+      <div class="gsl-date">{% if post.date %}{{ post.date | date: "%Y-%m" }}{% endif %}</div>
+      <div>
+        <div class="gsl-entry-title">{{ post.title }}</div>
+        {% if post.excerpt %}
+          <div class="gsl-entry-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</div>
+        {% endif %}
+        {% if post.tags %}
+          <div class="gsl-tags">
+            {% for tag in post.tags limit: 5 %}
+              <span class="gsl-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </a>
+  {% endfor %}
+  </div>
+</div>

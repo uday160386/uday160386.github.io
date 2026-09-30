@@ -107,6 +107,9 @@
         {% if author.instagram %}
           <li><a href="https://instagram.com/{{ author.instagram }}"><i class="fab fa-fw fa-instagram icon-pad-right" aria-hidden="true"></i>Instagram</a></li>
         {% endif %}
+        {% if author.flickr %}
+          <li><a href="https://www.flickr.com/photos/{{ author.flickr }}/" target="_blank" rel="noopener"><i class="fab fa-fw fa-flickr icon-pad-right" aria-hidden="true"></i>Flickr</a></li>
+        {% endif %}
         {% if author.lastfm %}
           <li><a href="https://last.fm/user/{{ author.lastfm }}"><i class="fab fa-fw fa-lastfm icon-pad-right" aria-hidden="true"></i>Last.fm</a></li>
         {% endif %}      

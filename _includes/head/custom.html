@@ -9,7 +9,24 @@
 <link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-192x192.png" sizes="192x192"/>
 <link rel="manifest" href="{{ base_path }}/images/manifest.json"/>
 <link rel="icon" href="/images/favicon.ico"/>
-<meta name="theme-color" content="#ffffff"/>
+<meta name="theme-color" content="#14110d"/>
+<!-- Black / white background: pick the theme before first paint so there's no flash.
+     Order: the visitor's saved choice → their OS setting → black. -->
+<script>
+  (function(){
+    var root = document.documentElement;
+    window.sgSetTheme = function(t){
+      root.setAttribute('data-theme', t);
+      var m = document.querySelector('meta[name="theme-color"]');
+      if(m) m.setAttribute('content', t === 'light' ? '#ffffff' : '#14110d');
+    };
+    var saved = null;
+    try { saved = localStorage.getItem('sg-theme'); } catch(e) {}
+    var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    root.setAttribute('data-theme', saved || (prefersLight ? 'light' : 'dark'));
+  })();
+</script>
+
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
 
 
@@ -27,20 +44,67 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /* ---------- theme tokens ----------
+     Every page (home, thoughts, notes, writing lists, posts) reads these,
+     so the black/white switch only has to change them here. */
   :root{
+    color-scheme: dark;
     --sys-bg: #14110d;
     --sys-panel: #1b1712;
+    --sys-panel-2: #12161c;
     --sys-line: rgba(242,236,227,0.10);
     --sys-line-strong: rgba(242,236,227,0.18);
     --sys-ink: #f2ece3;
     --sys-ink-muted: #a79c8c;
+    --sys-ink-dim: #7c7364;
     --sys-warm: #e8a23d;
+    --sys-warm-soft: rgba(232,162,61,0.12);
+    --sys-warm-line: rgba(232,162,61,0.35);
     --sys-cool: #4fc3b0;
+    --sys-cool-soft: rgba(79,195,176,0.12);
+    --sys-cool-line: rgba(79,195,176,0.28);
+    --sys-shadow: 0 16px 28px -14px rgba(0,0,0,0.55);
   }
+  :root[data-theme="light"]{
+    color-scheme: light;
+    --sys-bg: #ffffff;
+    --sys-panel: #f7f5f1;
+    --sys-panel-2: #f5f7f9;
+    --sys-line: rgba(20,17,13,0.10);
+    --sys-line-strong: rgba(20,17,13,0.20);
+    --sys-ink: #15120e;
+    --sys-ink-muted: #4d463d;
+    --sys-ink-dim: #6f675b;
+    --sys-warm: #a85f00;
+    --sys-warm-soft: rgba(168,95,0,0.08);
+    --sys-warm-line: rgba(168,95,0,0.35);
+    --sys-cool: #0b7667;
+    --sys-cool-soft: rgba(11,118,103,0.08);
+    --sys-cool-line: rgba(11,118,103,0.30);
+    --sys-shadow: 0 14px 26px -16px rgba(20,17,13,0.25);
+
+    /* stock AcademicPages variables used by posts, sidebar, tables, code */
+    --global-bg-color: #ffffff;
+    --global-base-color: #15120e;
+    --global-text-color: #15120e;
+    --global-text-color-light: #6f675b;
+    --global-border-color: rgba(20,17,13,0.12);
+    --global-link-color: #a85f00;
+    --global-link-color-hover: #0b7667;
+    --global-link-color-visited: #8a4f00;
+    --global-masthead-link-color: #15120e;
+    --global-masthead-link-color-hover: #a85f00;
+    --global-thead-color: #f7f5f1;
+    --global-fig-caption-color: #6f675b;
+    --global-code-background-color: #f4f1ec;
+    --global-code-text-color: #15120e;
+  }
+
   body{
     background: var(--sys-bg) !important;
     color: var(--sys-ink) !important;
     font-family: 'IBM Plex Sans', -apple-system, sans-serif !important;
+    transition: background-color .2s ease, color .2s ease;
   }
   h1, h2, h3, h4, h5, h6{
     font-family: 'Space Grotesk', sans-serif !important;
@@ -58,13 +122,14 @@
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    max-width: 900px;
+    max-width: 1060px;
     height: 100%;
     margin: 0 auto;
     padding: 0 1.75rem;
     box-sizing: border-box;
     gap: 1rem;
   }
+  .sg-masthead__right{ display:flex; align-items:center; gap:1.25rem; min-width:0; }
   .sg-mark{
     font-family: 'Space Grotesk', sans-serif !important;
     font-size: 1.05rem !important;
@@ -89,7 +154,7 @@
     scrollbar-width: none;
   }
   .sg-nav ul::-webkit-scrollbar{ display: none; }
-  .sg-nav li{ flex-shrink: 0; }
+  .sg-nav li{ flex-shrink: 0; margin: 0; }
   .sg-nav a{
     color: var(--sys-ink-muted) !important;
     font-family: 'IBM Plex Mono', monospace !important;
@@ -99,19 +164,54 @@
     white-space: nowrap;
     transition: color 0.15s;
   }
-  .sg-nav a:hover{ color: var(--sys-ink) !important; }
-  .sg-nav li:last-child a{ color: var(--sys-warm) !important; }
+  .sg-nav a:hover, .sg-nav a[aria-current="page"]{ color: var(--sys-ink) !important; }
+  .sg-nav a[aria-current="page"]{ box-shadow: inset 0 -1px 0 var(--sys-warm); }
+  .sg-nav__ext a{ color: var(--sys-warm) !important; }
+  .sg-nav__ext a:hover{ color: var(--sys-cool) !important; }
+  .sg-nav__arrow{ font-size: 0.7em; margin-left: 0.2em; opacity: 0.8; }
+
+  .sg-theme-toggle{
+    flex-shrink: 0;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px; padding: 0; margin: 0;
+    border-radius: 9px; border: 1px solid var(--sys-line-strong);
+    background: transparent; color: var(--sys-ink-muted); cursor: pointer;
+    transition: color .15s, border-color .15s, background .15s;
+  }
+  .sg-theme-toggle:hover{ color: var(--sys-warm); border-color: var(--sys-warm); background: var(--sys-warm-soft); }
+  .sg-theme-toggle:focus-visible{ outline: 2px solid var(--sys-warm); outline-offset: 2px; }
+  .sg-theme-toggle svg{ width: 16px; height: 16px; }
+  .sg-theme-toggle .sg-icon-moon{ display: none; }
+  :root[data-theme="light"] .sg-theme-toggle .sg-icon-sun{ display: none; }
+  :root[data-theme="light"] .sg-theme-toggle .sg-icon-moon{ display: block; }
+
   @media (max-width: 600px){
-    .sg-masthead__wrap{ padding: 0 1.1rem; gap: 0.75rem; }
+    .sg-masthead__wrap{ padding: 0 1rem; gap: 0.75rem; }
+    .sg-masthead__right{ gap: 0.75rem; }
     .sg-mark{ font-size: 0.95rem !important; }
     .sg-nav ul{ gap: 1rem; }
     .sg-nav a{ font-size: 0.72rem !important; }
+    .sg-theme-toggle{ width: 30px; height: 30px; }
   }
 
   /* main content area */
   #main, .archive, .page{ background: transparent !important; }
   #main{ background: var(--sys-bg) !important; }
   .page__content, .page__content p, .page__content li{ color: var(--sys-ink-muted); }
+  .page__title, .page__content strong{ color: var(--sys-ink); }
+  .page__content blockquote{ border-left-color: var(--sys-warm); color: var(--sys-ink-muted); }
+  .page__content hr{ border-color: var(--sys-line); }
+  .page__content table, .page__content th, .page__content td{ border-color: var(--sys-line) !important; }
+  .page__meta, .page__taxonomy, .breadcrumbs, .breadcrumbs a{ color: var(--sys-ink-dim) !important; }
+  .page__taxonomy-item{ color: var(--sys-ink-muted) !important; border-color: var(--sys-line-strong) !important; }
+  .author__name, .author__bio{ color: var(--sys-ink) !important; }
+  .author__urls, .author__urls a, .author__urls li{ color: var(--sys-ink-muted) !important; }
+  .author__urls{ background: var(--sys-bg) !important; border-color: var(--sys-line) !important; }
+
+  /* light mode: stock theme spots that hard-code light text or dark code panels */
+  :root[data-theme="light"] .page__content p code,
+  :root[data-theme="light"] .page__content li code{ background: var(--global-code-background-color); color: var(--sys-ink); }
+  :root[data-theme="light"] .btn--inverse{ color: var(--sys-ink) !important; border-color: var(--sys-line-strong) !important; background: transparent !important; }
 
   /* footer */
   .page__footer{

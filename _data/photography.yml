@@ -1,0 +1,22 @@
+# External photography links, shown in the site nav ("Photography"),
+# the home page sidebar and the home page hero icons.
+# Add another entry (500px, Unsplash, VSCO…) and it appears automatically.
+#
+# Fields:
+#   name   - platform name
+#   handle - how the account is shown
+#   url    - full profile URL
+#   icon   - flickr, instagram or medium (anything else shows a camera icon)
+#   blurb  - one line on what lives there
+
+- name: "Flickr"
+  handle: "vukhere"
+  url: "https://www.flickr.com/photos/vukhere/"
+  icon: "flickr"
+  blurb: "Full-resolution albums — travel, street, landscape, architecture."
+
+- name: "Instagram"
+  handle: "@vukclicks"
+  url: "https://www.instagram.com/vukclicks/"
+  icon: "instagram"
+  blurb: "Day-to-day frames and recent picks."

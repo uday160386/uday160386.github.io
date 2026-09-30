@@ -20,17 +20,17 @@ redirect_from:
      Palette + type scale match /_includes/head/custom.html
      ============================================================ */
   :root{
-    --sg-bg: #14110d;
-    --sg-panel: #1b1712;
-    --sg-line: rgba(242,236,227,0.10);
-    --sg-line-strong: rgba(242,236,227,0.18);
-    --sg-ink: #f2ece3;
-    --sg-ink-muted: #a79c8c;
-    --sg-ink-dim: #7c7364;
-    --sg-warm: #e8a23d;
-    --sg-warm-soft: rgba(232,162,61,0.12);
-    --sg-cool: #4fc3b0;
-    --sg-cool-soft: rgba(79,195,176,0.12);
+    --sg-bg: var(--sys-bg);
+    --sg-panel: var(--sys-panel);
+    --sg-line: var(--sys-line);
+    --sg-line-strong: var(--sys-line-strong);
+    --sg-ink: var(--sys-ink);
+    --sg-ink-muted: var(--sys-ink-muted);
+    --sg-ink-dim: var(--sys-ink-dim);
+    --sg-warm: var(--sys-warm);
+    --sg-warm-soft: var(--sys-warm-soft);
+    --sg-cool: var(--sys-cool);
+    --sg-cool-soft: var(--sys-cool-soft);
   }
 
   .home{
@@ -114,7 +114,7 @@ redirect_from:
   .sg-chip{
     font-family:'IBM Plex Mono', monospace; font-size:0.78rem;
     color: var(--sg-cool); background: var(--sg-cool-soft);
-    border:1px solid rgba(79,195,176,0.28); border-radius:7px; padding:0.45rem 0.75rem;
+    border:1px solid var(--sys-cool-line); border-radius:7px; padding:0.45rem 0.75rem;
   }
 
   .sg-focus{ list-style:none; padding:0; margin:1.1rem 0 0; display:flex; flex-direction:column; gap:0.9rem; }
@@ -155,7 +155,7 @@ redirect_from:
   .sg-contact-row{ display:flex; flex-wrap:wrap; align-items:center; gap:1.3rem; }
   .sg-mail{
     color: var(--sg-warm) !important; font-family:'IBM Plex Mono', monospace; font-size:0.9rem;
-    border-bottom:1px solid rgba(232,162,61,0.35);
+    border-bottom:1px solid var(--sys-warm-line);
   }
 
   /* two-column layout: main content + right sidebar */
@@ -174,6 +174,7 @@ redirect_from:
     padding:2.25rem 0 2.25rem 0;
     border-top:1px solid var(--sg-line);
   }
+  .home-sidebar section.sg-sidebar-section{ padding:0; border-top:none; }
   .sg-sidebar-section + .sg-sidebar-section{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--sg-line); }
   .home-sidebar h2{
     font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:1.02rem;
@@ -214,6 +215,60 @@ redirect_from:
   }
   .sg-file-post a:hover .fa-arrow-down{ color: var(--sg-cool); }
 
+
+  /* hero status pill + labelled links */
+  .sg-status .loc{ color: var(--sg-ink); }
+  .sg-status .dot{ flex:0 0 auto; }
+  @media (max-width:600px){ .sg-status-extra{ display:none; } }
+  .sg-links{ flex-wrap:wrap; align-items:center; }
+  .sg-links .sg-divider{ width:1px; height:22px; background:var(--sg-line-strong); margin:0 0.25rem; }
+  .sg-photo-list .ico svg{ width:16px; height:16px; }
+
+  /* latest writing */
+  .sg-writing{ list-style:none; margin:1.1rem 0 0; padding:0; }
+  .sg-writing li{ margin:0; }
+  .sg-writing a{
+    display:grid; grid-template-columns: 5.6rem 1fr auto; gap:1rem; align-items:baseline;
+    padding:0.85rem 0.25rem; border-top:1px solid var(--sg-line);
+    transition: background .15s, padding-left .15s;
+  }
+  .sg-writing li:first-child a{ border-top:none; }
+  .sg-writing a:hover{ background: var(--sg-warm-soft); padding-left:0.6rem; }
+  .sg-writing .when{ font-family:'IBM Plex Mono', monospace; font-size:0.74rem; color: var(--sg-ink-dim); }
+  .sg-writing .what{ color: var(--sg-ink); font-weight:500; font-size:0.97rem; line-height:1.4; }
+  .sg-writing a:hover .what{ color: var(--sg-warm); }
+  .sg-writing .kind{
+    font-family:'IBM Plex Mono', monospace; font-size:0.66rem; text-transform:uppercase; letter-spacing:0.04em;
+    color: var(--sg-cool); border:1px solid var(--sys-cool-line); border-radius:5px; padding:0.12rem 0.45rem; white-space:nowrap;
+  }
+  .sg-more-row{ display:flex; flex-wrap:wrap; gap:1.2rem; margin-top:1rem; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; }
+
+  /* photography sidebar card */
+  .sg-photo-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0.7rem; }
+  .sg-photo-list li{ margin:0; }
+  .sg-photo-list a{
+    display:grid; grid-template-columns: 34px 1fr auto; gap:0.75rem; align-items:center;
+    padding:0.7rem 0.8rem; border:1px solid var(--sg-line); border-radius:9px;
+    transition:border-color .15s, background .15s, transform .15s;
+  }
+  .sg-photo-list a:hover{ border-color: var(--sg-warm); background: var(--sg-warm-soft); transform:translateX(2px); }
+  .sg-photo-list .ico{
+    width:34px; height:34px; border-radius:8px; display:flex; align-items:center; justify-content:center;
+    background: var(--sg-cool-soft); color: var(--sg-cool);
+  }
+  .sg-photo-list .nm{ display:block; color: var(--sg-ink); font-weight:600; font-size:0.9rem; line-height:1.2; }
+  .sg-photo-list .hd{ display:block; font-family:'IBM Plex Mono', monospace; font-size:0.7rem; color: var(--sg-ink-dim); }
+  .sg-photo-list .fa-arrow-up-right-from-square{ font-size:0.65rem; color: var(--sg-ink-dim); }
+  .sg-photo-note{ font-size:0.82rem; margin:0 0 0.9rem; color: var(--sg-ink-muted); }
+
+  .sg-contact-row a.sg-plain{ font-family:'IBM Plex Mono', monospace; font-size:0.82rem; color: var(--sg-ink-muted); }
+  .sg-contact-row a.sg-plain:hover{ color: var(--sg-warm); }
+
+  @media (max-width:600px){
+    .sg-writing a{ grid-template-columns: 1fr auto; gap:0.25rem 0.75rem; }
+    .sg-writing .when{ grid-column: 1 / -1; }
+  }
+
   @media (max-width:900px){
     .home-grid{ grid-template-columns: 1fr; }
     .home-sidebar{ position:static; border-top:none; padding-top:0; }
@@ -229,10 +284,11 @@ redirect_from:
 <div class="home">
 
   <header class="sg-hero">
+    <div class="sg-status"><span class="dot"></span><span><span class="loc">Singapore</span> · Sr. Engineering Tech Lead<span class="sg-status-extra"> · </span></span></div>
     <h1 class="sg-name">{{ site.author.name }}</h1>
-    <p class="sg-role">shipping software <span class="sep">|</span> chasing AI<span class="sep">| </span> never done learning </p>
+    <p class="sg-role">shipping software <span class="sep">|</span> chasing AI <span class="sep">|</span> never done learning</p>
 
-    <svg class="sg-trace" viewBox="0 0 480 48" preserveAspectRatio="none">
+    <svg class="sg-trace" viewBox="0 0 480 48" preserveAspectRatio="none" aria-hidden="true">
       <path d="M0,24 L55,24 L69,7 L88,41 L106,13 L120,24 L185,24 C199,24 199,9 213,9 C227,9 227,24 241,24 L314,24 L328,37 L347,11 L363,24 L480,24" />
     </svg>
 
@@ -240,19 +296,28 @@ redirect_from:
 
     <div class="sg-links">
       {% if site.author.linkedin %}
-        <a class="sg-icon-link" href="https://www.linkedin.com/in/{{ site.author.linkedin }}" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <a class="sg-icon-link" href="https://www.linkedin.com/in/{{ site.author.linkedin }}" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
         </a>
       {% endif %}
       {% if site.author.github %}
-        <a class="sg-icon-link" href="https://github.com/{{ site.author.github }}" aria-label="GitHub" target="_blank" rel="noopener">
+        <a class="sg-icon-link" href="https://github.com/{{ site.author.github }}" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.93.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.68-.1-.26-.45-1.28.1-2.66 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.66.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
         </a>
       {% endif %}
-      {% if site.author.uri %}
-        <a class="sg-icon-link" href="{{ base_path }}{{ site.author.uri }}" aria-label="Website">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9s1.3-6.4 3.8-9z"/></svg>
+      {% if site.author.medium %}
+        <a class="sg-icon-link" href="{{ site.author.medium }}" aria-label="Medium" title="Medium" target="_blank" rel="noopener">
+          {% include brand-icon.html name="medium" %}
         </a>
+      {% endif %}
+    
+      {% if site.data.photography.size > 0 %}
+        <span class="sg-divider" aria-hidden="true"></span>
+        {% for p in site.data.photography %}
+          <a class="sg-icon-link" href="{{ p.url }}" aria-label="Photography on {{ p.name }}" title="Photography on {{ p.name }}" target="_blank" rel="noopener">
+            {% include brand-icon.html name=p.icon %}
+          </a>
+        {% endfor %}
       {% endif %}
     </div>
   </header>
@@ -260,7 +325,7 @@ redirect_from:
   <div class="home-grid">
     <div class="home-main">
 
- <section id="focus">
+      <section id="working-on">
         <div class="sg-label">Working on</div>
         <ul class="sg-chips">
           <li class="sg-chip">PyTorch</li>
@@ -270,31 +335,57 @@ redirect_from:
           <li class="sg-chip">AI Transformation</li>
           <li class="sg-chip">LLM</li>
           <li class="sg-chip">Multi-Modal AI</li>
-          <li class="sg-chip">Automated Speech Recognization</li>
+          <li class="sg-chip">Automatic Speech Recognition</li>
         </ul>
-
-       
       </section>
 
       <section id="overview">
         <div class="sg-label">Background</div>
-        <p>My background spans the full delivery lifecycle: requirements gathering, architecture, API management, backend and test engineering, and production-grade execution. Having begun my career in the IT sector at age 20, I currently serve as Sr.Engineering Tech Lead for the SME Digital Channels, Open API and Partnerships program at <i>Standard Chartered, Singapore</i>, where I continue to deliver high-impact solutions across multiple domains.</p>
+        <p>My background spans the full delivery lifecycle: requirements gathering, architecture, API management, backend and test engineering, and production-grade execution. Having begun my career in the IT sector at age 20, I currently serve as Sr. Engineering Tech Lead for the SME Digital Channels, Open API and Partnerships program at <i>Standard Chartered, Singapore</i>, where I continue to deliver high-impact solutions across multiple domains.</p>
       </section>
 
       <section id="focus">
         <div class="sg-label">Current focus</div>
-    
-
         <h2>What I write and build about</h2>
         <p>I use this space to publish technical insights and posts drawn from hands-on implementation, not theory.</p>
         <ul class="sg-focus">
-          <li><b>AI-first problem solving</b> — analysing organisational challenges and driving productivity through strategic AI implementations.</li>
-          <li><b>Conversational &amp; speech systems</b> — building AI-powered applications focused on automated speech recognition and conversational AI.</li>
-          <li><b>Research into practice</b> — translating cutting-edge research papers into practical solutions that deliver measurable business value.</li>
-          <li><b>Responsible AI</b> — promoting awareness and education around safe, ethical AI usage — what to do, and what to avoid.</li>
+          <li><span><b>AI-first problem solving</b> — analysing organisational challenges and driving productivity through strategic AI implementations.</span></li>
+          <li><span><b>Conversational &amp; speech systems</b> — building AI-powered applications focused on automatic speech recognition and conversational AI.</span></li>
+          <li><span><b>Research into practice</b> — translating cutting-edge research papers into practical solutions that deliver measurable business value.</span></li>
+          <li><span><b>Responsible AI</b> — promoting awareness and education around safe, ethical AI usage — what to do, and what to avoid.</span></li>
         </ul>
       </section>
 
+      <section id="latest">
+        <div class="sg-label">Latest writing</div>
+        <h2>Recently published</h2>
+        {% assign writing = site.aiengineering | concat: site.greensoftware | concat: site.notes | where_exp: "d", "d.title" | sort: "date" | reverse %}
+        <ul class="sg-writing">
+          {% for w in writing limit:5 %}
+            {% case w.collection %}
+              {% when "aiengineering" %}{% assign kind = "AI Eng" %}
+              {% when "greensoftware" %}{% assign kind = "Green SW" %}
+              {% when "notes" %}{% assign kind = "Note" %}
+              {% else %}{% assign kind = w.collection %}
+            {% endcase %}
+            <li>
+              <a href="{{ w.url | relative_url }}">
+                <span class="when">{{ w.date | date: "%d %b %Y" }}</span>
+                <span class="what">{{ w.title }}</span>
+                <span class="kind">{{ kind }}</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="sg-more-row">
+          <a href="{{ '/aiengineering/' | relative_url }}">AI Engineering →</a>
+          <a href="{{ '/greensoftware/' | relative_url }}">Green Software →</a>
+          <a href="{{ '/notes/' | relative_url }}">Notes →</a>
+          {% if site.author.medium %}<a href="{{ site.author.medium }}" target="_blank" rel="noopener">Medium ↗</a>{% endif %}
+        </div>
+      </section>
+
+     
       <section id="education">
         <div class="sg-label">Education</div>
         <div class="sg-edu">
@@ -309,32 +400,11 @@ redirect_from:
         </div>
       </section>
 
-      <section id="projects">
-        <div class="sg-label">Selected projects</div>
-        <h2>Recent work</h2>
-        <div class="sg-projects">
-          {% assign featured = site.projects | reverse %}
-          {% for project in featured limit:4 %}
-            <div class="sg-proj">
-              <div class="bar"></div>
-              <div>
-                <div class="name"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></div>
-                <div class="desc">{{ project.excerpt | strip_html | truncate: 160 }}</div>
-                <div class="tags">
-                  {% for tag in project.tags limit:4 %}{% if tag %}<span>{{ tag }}</span>{% endif %}{% endfor %}
-                </div>
-              </div>
-            </div>
-          {% endfor %}
-        </div>
-      </section>
-
     </div>
 
     <aside class="home-sidebar">
       <section id="external-posts" class="sg-sidebar-section">
         <div class="sg-label">Elsewhere</div>
-        
         <ul class="sg-ext-list">
           {% assign ext_posts = site.data.external_posts | sort: "date" | reverse %}
           {% for post in ext_posts limit:5 %}
@@ -349,18 +419,17 @@ redirect_from:
             </li>
           {% endfor %}
         </ul>
-        {% if site.author.medium or site.author.linkedin %}
-          <p class="sg-ext-more">
-            {% if site.author.medium %}<a href="{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">More on Medium →</a>{% endif %}
-          </p>
+        {% if site.author.medium %}
+          <p class="sg-ext-more"><a href="{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">More on Medium →</a></p>
         {% endif %}
       </section>
+
+      
 
       {% assign site_files = site.data.files | sort: "date" | reverse %}
       {% if site_files.size > 0 %}
         <section id="files" class="sg-sidebar-section">
           <div class="sg-label">Downloads</div>
-         
           <ul class="sg-ext-list">
             {% for file in site_files %}
               <li class="sg-ext-post sg-file-post">
@@ -380,8 +449,6 @@ redirect_from:
     </aside>
   </div>
 
-  <footer class="sg-footer">
-    <p class="sg-cta">Building something in Applied AI? Let's talk.</p>
-  </footer>
+  
 
 </div>

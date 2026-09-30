@@ -1,22 +1,318 @@
 ---
-layout: default
-title: "Projects"
+layout: archive
+title: ""
 permalink: /projects/
+author_profile: false
 ---
-{%- assign projects = site.projects | reverse -%}
-<div class="wrap">
-  <header class="page-head">
-    <p class="kicker"><span class="count">{{ projects.size }}</span> things built</p>
-    <h1 class="page-title">Projects</h1>
-    <p class="page-dek">Things I've built and written up — applied AI, API platforms and cloud-native delivery. Most come with the code.</p>
-  </header>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+<style>
+  /* ============================================================
+     "Signal & System" — Thoughts (projects) — tile grid redesign
+     Same tokens as the home page.
+     ============================================================ */
+  :root{
+    --tg-bg: var(--sys-bg);
+    --tg-panel: var(--sys-panel);
+    --tg-line: var(--sys-line);
+    --tg-line-strong: var(--sys-line-strong);
+    --tg-ink: var(--sys-ink);
+    --tg-ink-muted: var(--sys-ink-muted);
+    --tg-ink-dim: var(--sys-ink-dim);
+    --tg-warm: var(--sys-warm);
+    --tg-warm-soft: var(--sys-warm-soft);
+    --tg-cool: var(--sys-cool);
+    --tg-cool-soft: var(--sys-cool-soft);
+  }
 
-  <div class="cards cards-page" data-filter-scope>
-    {%- for p in projects -%}
-      {% include project-card.html doc=p index=forloop.index %}
-    {%- endfor -%}
-    <p class="empty" data-empty hidden>No projects with that tag.</p>
+  .thoughts{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 2.25rem 1.25rem 3.5rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--tg-ink-muted);
+    line-height: 1.6;
+  }
+  .thoughts a{ color: var(--tg-warm); text-decoration: none; }
+  .thoughts a:hover{ color: var(--tg-cool); }
+
+  .tg-label{
+    font-family:'IBM Plex Mono', monospace; font-size:0.74rem;
+    color: var(--tg-ink-dim); margin-bottom:0.9rem; display:flex; align-items:center; gap:0.55rem;
+  }
+  .tg-label::before{ content:''; width:5px; height:5px; border-radius:50%; background:var(--tg-warm); }
+
+  .tg-title{
+    font-family:'Space Grotesk', sans-serif; font-weight:700;
+    font-size: clamp(1.9rem, 4.6vw, 2.5rem); color: var(--tg-ink);
+    letter-spacing: -0.01em; margin: 0 0 0.6rem;
+  }
+  .tg-sub{ max-width: 58ch; font-size: 1rem; margin: 0 0 1rem; }
+
+  /* filter bar (replaces the old tag cloud) */
+  .tg-toolbar{
+    display:none; /* shown by the script, so no-JS visitors just see every card */
+    flex-wrap:wrap; align-items:center; gap:0.6rem;
+    padding-top: 1.4rem; margin-bottom: 1rem; border-top: 1px solid var(--tg-line);
+  }
+  .tg-toolbar.ready{ display:flex; }
+  .tg-field{ position:relative; display:flex; align-items:center; }
+  .tg-field svg{ position:absolute; left:0.7rem; width:14px; height:14px; color: var(--tg-ink-dim); pointer-events:none; }
+  .tg-toolbar input[type="search"],
+  .tg-toolbar select{
+    font-family:'IBM Plex Mono', monospace; font-size:0.78rem;
+    color: var(--tg-ink); background: var(--tg-panel);
+    border:1px solid var(--tg-line-strong); border-radius:9px;
+    height:36px; margin:0; box-shadow:none; transition:border-color .15s;
+  }
+  .tg-toolbar input[type="search"]{ width: 15rem; padding: 0 0.8rem 0 2rem; }
+  .tg-toolbar select{ padding: 0 2rem 0 0.8rem; min-width: 11rem; cursor:pointer;
+    -webkit-appearance:none; appearance:none;
+    background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+    background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
+    background-size: 5px 5px; background-repeat:no-repeat;
+  }
+  .tg-toolbar input[type="search"]::placeholder{ color: var(--tg-ink-dim); }
+  .tg-toolbar input:focus, .tg-toolbar select:focus{ outline:none; border-color: var(--tg-warm); }
+  .tg-clear{
+    font-family:'IBM Plex Mono', monospace; font-size:0.74rem; cursor:pointer;
+    background:none; border:none; color: var(--tg-warm); padding:0 0.3rem; height:36px;
+  }
+  .tg-clear[hidden]{ display:none; }
+  .tg-clear:hover{ color: var(--tg-cool); }
+
+  /* the active topic shows as one removable pill, not a cloud */
+  .tg-active{ display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; }
+  .tg-active:empty{ display:none; }
+  .tg-pill{
+    font-family:'IBM Plex Mono', monospace; font-size:0.72rem; cursor:pointer;
+    background: var(--tg-warm-soft); border:1px solid var(--tg-warm); color: var(--tg-warm);
+    border-radius:100px; padding:0.3rem 0.75rem;
+  }
+  .tg-pill span{ margin-left:0.4rem; opacity:0.8; }
+
+  .tg-count{
+    font-family:'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--tg-ink-dim);
+    margin-bottom: 1.6rem;
+  }
+
+  /* card grid */
+  .tg-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .tg-card{
+    display:flex; flex-direction:column;
+    border:1px solid var(--tg-line); border-radius:14px;
+    background: var(--tg-panel); overflow:hidden;
+    text-decoration:none; transition: border-color .18s, transform .18s, box-shadow .18s;
+  }
+  .tg-card:hover{
+    border-color: var(--tg-warm);
+    transform: translateY(-4px);
+    box-shadow: var(--sys-shadow);
+  }
+
+  .tg-card-media{
+    width:100%; aspect-ratio: 16/9; overflow:hidden;
+    background: var(--tg-panel); border-bottom:1px solid var(--tg-line);
+  }
+  .tg-card-media img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    filter: saturate(0.9);
+    transition: transform .3s ease;
+  }
+  .tg-card:hover .tg-card-media img{ transform: scale(1.05); }
+  .tg-card-media.placeholder{
+    display:flex; align-items:center; justify-content:center;
+    background: linear-gradient(155deg, var(--tg-warm-soft), var(--tg-cool-soft));
+  }
+  .tg-card-media.placeholder svg{ width:38px; height:38px; }
+  .tg-card-media.placeholder path{
+    fill:none; stroke: var(--tg-cool); stroke-width:1.6;
+    stroke-linecap:round; stroke-linejoin:round;
+  }
+
+  .tg-card-body{ display:flex; flex-direction:column; flex:1; padding:1.15rem 1.2rem 1.3rem; }
+  .tg-card-body .name{
+    font-family:'Space Grotesk', sans-serif; color: var(--tg-ink); font-weight:600;
+    font-size:1.04rem; line-height:1.35; margin-bottom:0.5rem;
+  }
+  .tg-card-body .desc{ color: var(--tg-ink-muted); font-size:0.88rem; margin-bottom:0.9rem; flex:1; }
+  .tg-card-body .tags{ display:flex; flex-wrap:wrap; gap:0.4rem; }
+  .tg-card-body .tags span{
+    font-family:'IBM Plex Mono', monospace; font-size:0.68rem; color: var(--tg-cool);
+    background: var(--tg-cool-soft); border:1px solid var(--sys-cool-line);
+    border-radius:5px; padding:0.18rem 0.5rem;
+  }
+
+  .tg-empty{
+    grid-column: 1 / -1; padding: 2.5rem 0; text-align:center;
+    font-family:'IBM Plex Mono', monospace; font-size:0.85rem; color: var(--tg-ink-dim);
+  }
+
+  @media (max-width:600px){
+    .tg-field, .tg-toolbar input[type="search"]{ width:100%; flex:1 1 100%; }
+    .tg-toolbar select{ flex:1 1 40%; min-width:0; }
+    .tg-grid{ grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap:1.1rem; }
+  }
+</style>
+
+<div class="thoughts">
+  <div class="tg-label">Thoughts</div>
+  <h1 class="tg-title">Things I've built and written up</h1>
+  <p class="tg-sub">Hands-on notes from applied AI, API platforms and cloud-native delivery — practical lessons, not theory.</p>
+
+  {% assign all_projects = site.projects | reverse %}
+
+  <div class="tg-toolbar" id="tg-toolbar" role="search">
+    <label class="tg-field">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" id="tg-search" placeholder="Search thoughts…" aria-label="Search thoughts">
+    </label>
+    <select id="tg-topic" aria-label="Filter by topic">
+      <option value="all">All topics</option>
+    </select>
+    <select id="tg-sort" aria-label="Sort">
+      <option value="new">Newest first</option>
+      <option value="old">Oldest first</option>
+      <option value="az">A – Z</option>
+    </select>
+    <button type="button" class="tg-clear" id="tg-clear" hidden>Clear</button>
+  </div>
+  <div class="tg-active" id="tg-active"></div>
+
+  <div class="tg-count" id="tg-count">{{ all_projects.size }} project{% unless all_projects.size == 1 %}s{% endunless %}</div>
+
+  <div class="tg-grid" id="tg-grid">
+    {% for project in all_projects %}
+      <a class="tg-card" href="{{ project.url | relative_url }}" data-tags="{{ project.tags | compact | join: '|' | escape }}" data-order="{{ forloop.index0 }}" data-title="{{ project.title | escape }}">
+        {% if project.header.teaser %}
+          <div class="tg-card-media">
+            <img src="{{ project.header.teaser | relative_url }}" alt="{{ project.title }}" loading="lazy">
+          </div>
+        {% else %}
+          <div class="tg-card-media placeholder">
+            <svg viewBox="0 0 40 40"><path d="M2,20 L10,20 L13,10 L18,30 L22,14 L25,20 L38,20"/></svg>
+          </div>
+        {% endif %}
+        <div class="tg-card-body">
+          <div class="name">{{ project.title }}</div>
+          <div class="desc">{{ project.excerpt | strip_html | truncate: 150 }}</div>
+          <div class="tags">
+            {% for tag in project.tags limit:5 %}{% if tag %}<span>{{ tag }}</span>{% endif %}{% endfor %}
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+    {% if all_projects.size == 0 %}
+      <div class="tg-empty">No projects yet — check back soon.</div>
+    {% endif %}
+    <div class="tg-empty" id="tg-none" hidden>Nothing matches that filter. <a href="#" id="tg-reset">Show everything</a></div>
   </div>
 </div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tg-toolbar');
+  var grid = document.getElementById('tg-grid');
+  if(!bar || !grid) return;
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.tg-card'));
+  if(!cards.length) return;
+
+  var search = document.getElementById('tg-search');
+  var topic = document.getElementById('tg-topic');
+  var sort = document.getElementById('tg-sort');
+  var clear = document.getElementById('tg-clear');
+  var active = document.getElementById('tg-active');
+  var count = document.getElementById('tg-count');
+  var none = document.getElementById('tg-none');
+
+  function norm(t){ return (t || '').trim().toLowerCase(); }
+
+  // Build the topic list from the cards themselves: case-insensitive
+  // ("python" = "Python"), counted, most-used first.
+  var topics = {};
+  cards.forEach(function(c){
+    var seen = {};
+    c._tags = (c.getAttribute('data-tags') || '').split('|').map(function(t){ return t.trim(); }).filter(Boolean);
+    c._keys = c._tags.map(norm);
+    c._text = norm(c.textContent);
+    c._tags.forEach(function(t){
+      var k = norm(t);
+      if(seen[k]) return; seen[k] = true;
+      if(!topics[k]) topics[k] = { label: t, n: 0 };
+      topics[k].n++;
+    });
+  });
+  Object.keys(topics)
+    .sort(function(a, b){ return topics[b].n - topics[a].n || topics[a].label.localeCompare(topics[b].label); })
+    .forEach(function(k){
+      var o = document.createElement('option');
+      o.value = k; o.textContent = topics[k].label + ' (' + topics[k].n + ')';
+      topic.appendChild(o);
+    });
+
+  function apply(){
+    var q = norm(search.value), t = topic.value, shown = 0;
+    cards.forEach(function(c){
+      var ok = (t === 'all' || c._keys.indexOf(t) !== -1) && (!q || c._text.indexOf(q) !== -1);
+      c.style.display = ok ? '' : 'none';
+      if(ok) shown++;
+    });
+    var order = cards.slice().sort(function(a, b){
+      if(sort.value === 'az') return a.getAttribute('data-title').localeCompare(b.getAttribute('data-title'));
+      var d = (+a.getAttribute('data-order')) - (+b.getAttribute('data-order'));
+      return sort.value === 'old' ? -d : d;
+    });
+    order.forEach(function(c){ grid.insertBefore(c, none); });
+
+    var filtered = t !== 'all' || q;
+    count.textContent = filtered
+      ? 'Showing ' + shown + ' of ' + cards.length + ' project' + (cards.length === 1 ? '' : 's')
+      : cards.length + ' project' + (cards.length === 1 ? '' : 's');
+    none.hidden = shown !== 0;
+    clear.hidden = !(filtered || sort.value !== 'new');
+
+    active.innerHTML = '';
+    if(t !== 'all' && topics[t]){
+      var pill = document.createElement('button');
+      pill.type = 'button'; pill.className = 'tg-pill';
+      pill.setAttribute('aria-label', 'Remove topic filter ' + topics[t].label);
+      pill.innerHTML = '';
+      pill.appendChild(document.createTextNode(topics[t].label));
+      var x = document.createElement('span'); x.textContent = '×'; pill.appendChild(x);
+      pill.addEventListener('click', function(){ topic.value = 'all'; apply(); });
+      active.appendChild(pill);
+    }
+
+    // keep the filter in the URL so a filtered view can be shared
+    try {
+      var url = new URL(window.location.href);
+      if(t !== 'all') url.searchParams.set('topic', t); else url.searchParams.delete('topic');
+      history.replaceState(null, '', url);
+    } catch(e) {}
+  }
+
+  function reset(){ search.value = ''; topic.value = 'all'; sort.value = 'new'; apply(); }
+
+  search.addEventListener('input', apply);
+  topic.addEventListener('change', apply);
+  sort.addEventListener('change', apply);
+  clear.addEventListener('click', reset);
+  document.getElementById('tg-reset').addEventListener('click', function(e){ e.preventDefault(); reset(); });
+
+  try {
+    var start = norm(new URL(window.location.href).searchParams.get('topic'));
+    if(start && topics[start]) topic.value = start;
+  } catch(e) {}
+
+  bar.classList.add('ready');
+  apply();
+})();
+</script>
