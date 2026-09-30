@@ -248,10 +248,10 @@ redirect_from:
     position:relative; display:block; overflow:hidden;
     margin: 1rem 0 1.5rem; border-radius:14px; border:1px solid var(--sg-line);
     /* 30% of the old width, 150% of the old height (old box was 21:8) */
-    width: 100%; min-width: 280px; aspect-ratio: 21 / 6; background: var(--sg-panel);
+    width: 100%; min-width: 280px; aspect-ratio: 21 / 9; background: var(--sg-panel);
   }
   .sg-photo-banner img{
-    position:absolute; inset:0; width:100%; height:60%; object-fit:cover; object-position: center 40%;
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position: center 40%;
     transition: transform .5s ease;
   }
   .sg-photo-banner::after{
