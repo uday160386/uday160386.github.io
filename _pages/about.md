@@ -243,23 +243,36 @@ redirect_from:
   }
   .sg-more-row{ display:flex; flex-wrap:wrap; gap:1.2rem; margin-top:1rem; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; }
 
-  /* photography sidebar card */
-  .sg-photo-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0.7rem; }
-  .sg-photo-list li{ margin:0; }
-  .sg-photo-list a{
-    display:grid; grid-template-columns: 34px 1fr auto; gap:0.75rem; align-items:center;
-    padding:0.7rem 0.8rem; border:1px solid var(--sg-line); border-radius:9px;
-    transition:border-color .15s, background .15s, transform .15s;
+  /* travel photo banner → /vukclicks/ */
+  .sg-photo-banner{
+    position:relative; display:block; overflow:hidden;
+    margin: 1rem 0 1.5rem; border-radius:14px; border:1px solid var(--sg-line);
+    /* 30% of the old width, 150% of the old height (old box was 21:8) */
+    width: 100%; min-width: 280px; aspect-ratio: 21 / 6; background: var(--sg-panel);
   }
-  .sg-photo-list a:hover{ border-color: var(--sg-warm); background: var(--sg-warm-soft); transform:translateX(2px); }
-  .sg-photo-list .ico{
-    width:34px; height:34px; border-radius:8px; display:flex; align-items:center; justify-content:center;
-    background: var(--sg-cool-soft); color: var(--sg-cool);
+  .sg-photo-banner img{
+    position:absolute; inset:0; width:100%; height:60%; object-fit:cover; object-position: center 40%;
+    transition: transform .5s ease;
   }
-  .sg-photo-list .nm{ display:block; color: var(--sg-ink); font-weight:600; font-size:0.9rem; line-height:1.2; }
-  .sg-photo-list .hd{ display:block; font-family:'IBM Plex Mono', monospace; font-size:0.7rem; color: var(--sg-ink-dim); }
-  .sg-photo-list .fa-arrow-up-right-from-square{ font-size:0.65rem; color: var(--sg-ink-dim); }
-  .sg-photo-note{ font-size:0.82rem; margin:0 0 0.9rem; color: var(--sg-ink-muted); }
+  .sg-photo-banner::after{
+    content:''; position:absolute; inset:0;
+    background: linear-gradient(0deg, rgba(10,8,6,0.82) 0%, rgba(10,8,6,0.25) 45%, rgba(10,8,6,0) 70%);
+  }
+  .sg-photo-banner:hover img{ transform: scale(1.04); }
+  .sg-photo-banner__text{
+    position:absolute; z-index:1; left:0; bottom:0; padding: 1.4rem 1.4rem;
+    display:flex; flex-direction:column; gap:0.35rem; max-width: 30rem;
+  }
+  .sg-photo-banner__kicker{ font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:#e8c48a; }
+  .sg-photo-banner__title{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:1.2rem; line-height:1.25; color:#f7f2ea; }
+  .sg-photo-banner__cta{ font-family:'IBM Plex Mono', monospace; font-size:0.8rem; color:#f7f2ea; opacity:0.85; }
+  .sg-photo-banner:hover .sg-photo-banner__cta{ opacity:1; text-decoration: underline; text-underline-offset:3px; }
+  @media (max-width:600px){
+    .sg-photo-banner{ width: 100%; min-width: 0; aspect-ratio: 8 / 9; } /* phones: full width, 50% taller than before */
+    .sg-photo-banner__text{ padding: 1.2rem; }
+    .sg-photo-banner__title{ font-size:1.1rem; }
+    .sg-photo-banner::after{ background: linear-gradient(0deg, rgba(10,8,6,0.8) 0%, rgba(10,8,6,0.2) 70%); }
+  }
 
   .sg-contact-row a.sg-plain{ font-family:'IBM Plex Mono', monospace; font-size:0.82rem; color: var(--sg-ink-muted); }
   .sg-contact-row a.sg-plain:hover{ color: var(--sg-warm); }
@@ -284,7 +297,7 @@ redirect_from:
 <div class="home">
 
   <header class="sg-hero">
-    <div class="sg-status"><span class="dot"></span><span><span class="loc">Singapore</span> · Sr. Engineering Tech Lead<span class="sg-status-extra"> · </span></span></div>
+    <div class="sg-status"><span class="dot"></span><span><span class="loc">Singapore</span> · Sr. Engineering Tech Lead</span></div>
     <h1 class="sg-name">{{ site.author.name }}</h1>
     <p class="sg-role">shipping software <span class="sep">|</span> chasing AI <span class="sep">|</span> never done learning</p>
 
@@ -311,14 +324,6 @@ redirect_from:
         </a>
       {% endif %}
     
-      {% if site.data.photography.size > 0 %}
-        <span class="sg-divider" aria-hidden="true"></span>
-        {% for p in site.data.photography %}
-          <a class="sg-icon-link" href="{{ p.url }}" aria-label="Photography on {{ p.name }}" title="Photography on {{ p.name }}" target="_blank" rel="noopener">
-            {% include brand-icon.html name=p.icon %}
-          </a>
-        {% endfor %}
-      {% endif %}
     </div>
   </header>
 
@@ -386,19 +391,6 @@ redirect_from:
       </section>
 
      
-      <section id="education">
-        <div class="sg-label">Education</div>
-        <div class="sg-edu">
-          <div class="sg-edu-item">
-            <div class="what">PG Certification in Artificial Intelligence &amp; Machine Learning</div>
-            <div class="where">IIIT Hyderabad</div>
-          </div>
-          <div class="sg-edu-item">
-            <div class="what">Master's in Software Engineering</div>
-            <div class="where">BITS Pilani</div>
-          </div>
-        </div>
-      </section>
 
     </div>
 
@@ -449,6 +441,15 @@ redirect_from:
     </aside>
   </div>
 
-  
+  <hr/>
+
+  <a class="sg-photo-banner" href="{{ '/vukclicks/' | relative_url }}">
+    <img src="{{ '/images/aboutme/travel.jpeg' | relative_url }}" alt="Travel photograph by Uday" loading="lazy">
+    <span class="sg-photo-banner__text">
+      <span class="sg-photo-banner__kicker">Off the keyboard</span>
+      <span class="sg-photo-banner__title">VUK Clicks — travel &amp; street photography</span>
+      <span class="sg-photo-banner__cta">See the gallery →</span>
+    </span>
+  </a>
 
 </div>

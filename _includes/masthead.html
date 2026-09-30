@@ -23,11 +23,34 @@
         <!-- moon: shown in light mode (click → dark) -->
         <svg class="sg-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       </button>
+
+      <button type="button" class="sg-menu-toggle" id="sg-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <path class="sg-menu-bars" d="M4 7h16M4 12h16M4 17h16"/>
+          <path class="sg-menu-close" d="M6 6l12 12M18 6L6 18"/>
+        </svg>
+      </button>
     </div>
   </div>
 </div>
 
 <script>
+/* mobile menu (hamburger) */
+(function(){
+  var btn = document.getElementById('sg-menu-toggle');
+  var nav = document.getElementById('site-nav');
+  if(!btn || !nav) return;
+  function set(open){
+    nav.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  btn.addEventListener('click', function(e){ e.stopPropagation(); set(!nav.classList.contains('is-open')); });
+  document.addEventListener('click', function(e){ if(!nav.contains(e.target)) set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') set(false); });
+  window.addEventListener('resize', function(){ if(window.innerWidth > 768) set(false); });
+})();
+
 (function(){
   var btn = document.getElementById('sg-theme-toggle');
   if(!btn) return;

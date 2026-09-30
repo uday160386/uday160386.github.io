@@ -27,7 +27,7 @@ author:
   bio              : "Engineering Lead in Singapore, building production-grade AI and cloud-native systems."
   location         : "Singapore 🇸🇬"
     # employer         : "Bits Pilani"
-  uri              : # was "/vukclicks/" — that folder was removed; photography now links out (see _data/photography.yml)
+  uri              : 
  
   email            : "venkata.uday24@gmail.com" 
 
@@ -39,8 +39,6 @@ author:
   
 
   # Social media
-  instagram        : "vukclicks"
-  flickr           : "vukhere"
   linkedin         : "bkvudaykumar"
   medium           : "https://medium.com/@venkata.uday24"
   
